@@ -186,7 +186,7 @@ const Footer = () => {
               </Link>
             </ul>
           </div>
-          <p style={{ color: "#696969" }}>© Homyz. All Rights Reserved 2023.</p>
+          <p style={{ color: "#696969" }}>© Gent Consulting Engineers. All Rights Reserved 2024.</p>
         </div>
 
         <div

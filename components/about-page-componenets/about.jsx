@@ -33,11 +33,11 @@ const AboutPage = () => {
           <div className="flex gap-12 max-sm:text-center text-white">
             <div className="flex max-md:items-center flex-col gap-4">
               <h2 className="text-4xl title-font font-bold">19K+</h2>
-              <p className="text-lg">Premium houses</p>
+              <p className="text-lg">Satisfied clients</p>
             </div>
             <div className="flex max-md:items-center flex-col gap-4">
               <h2 className="text-4xl  title-font font-bold">5000+</h2>
-              <p className="text-lg">Premium houses</p>
+              <p className="text-lg">Successful projects</p>
             </div>
           </div>
         </motion.div>
@@ -122,7 +122,7 @@ const AboutPage = () => {
               What we offer
             </h1>
             <p className="text-xl mt-5">
-              We are real estate agency that has been established since 1995
+              We are an engineering consultancy firm that has been established since 1995
               with many advantages over our competitors. We have more than 10000
               happy customers and have worked with more than 200 distributors
             </p>
@@ -329,7 +329,7 @@ const AboutPage = () => {
                   8
                 </h2>
                 <p className="text-xl">
-                  Years of seccessful experience in real estate
+                  Years of seccessful experience in engineering
                 </p>
               </div>
               <div className="flex flex-col max-lg:justify-center max-lg:items-center">
@@ -337,7 +337,7 @@ const AboutPage = () => {
                   8
                 </h2>
                 <p className="text-xl">
-                  Years of seccessful experience in real estate
+                  Years of seccessful experience in  engineering
                 </p>
               </div>
               <div className="flex flex-col max-lg:justify-center max-lg:items-center">
@@ -345,7 +345,7 @@ const AboutPage = () => {
                   8
                 </h2>
                 <p className="text-xl">
-                  Years of seccessful experience in real estate
+                  Years of seccessful experience in engineering
                 </p>
               </div>
               <div className="flex flex-col max-lg:justify-center max-lg:items-center">
@@ -353,7 +353,7 @@ const AboutPage = () => {
                   8
                 </h2>
                 <p className="text-xl">
-                  Years of seccessful experience in real estate
+                  Years of seccessful experience in engineering
                 </p>
               </div>
             </motion.div>
@@ -441,7 +441,7 @@ const AboutPage = () => {
             className="w-2/4 max-md:w-full max-md:text-center flex flex-col gap-8"
           >
             <h1 className="text-5xl max-md:text-4xl font-semibold">
-              Why do people love homyz
+              Why do people love Gent consulting engineering?
             </h1>
             <div>
               <Carousel />

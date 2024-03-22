@@ -54,14 +54,13 @@ const HomePage = () => {
             variants={animationVariants.fadeLeft}
             className="text-6xl max-lg:mx-auto font-semibold max-sm:text-4xl max-w-lg "
           >
-            Discover Most Suitable Property
+            The Future of Sustainable Engineering.
           </motion.h1>
           <motion.p
             variants={animationVariants.fadeLeft}
             className="text-xl max-lg:mx-auto max-w-md  "
           >
-            Our mission is to engage in issues that are of concern to
-            individuals
+             The number one civil & structural engineering consultant in Africa.
           </motion.p>
           <motion.div
             variants={animationVariants.fadeLeft}
@@ -97,25 +96,25 @@ const HomePage = () => {
             <div className="flex gap-12">
               <div className="flex flex-col gap-4">
                 <h2 className="text-4xl title-font font-bold">19K+</h2>
-                <p className="text-lg">Premium houses</p>
+                <p className="text-lg">Satisfied clients</p>
               </div>
               <div className="flex flex-col gap-4">
                 <h2 className="text-4xl title-font font-bold">5000+</h2>
-                <p className="text-lg">Premium houses</p>
+                <p className="text-lg">Successful projects</p>
               </div>
             </div>
             <div className="flex gap-12 max-sm:flex-wrap  justify-center">
               <div className="flex justify-start items-center gap-2">
                 <img className="w-9" src="/grafton.png" alt="img" />
-                <h2 className="text-2xl">Grafton</h2>
+                <h2 className="text-2xl">Reliable</h2>
               </div>
               <div className="flex justify-start items-center gap-2">
                 <img className="w-9" src="/lighthouse.png" alt="img" />
-                <h2 className="text-2xl">Lighthouse</h2>
+                <h2 className="text-2xl">Trustworthy</h2>
               </div>
               <div className="flex justify-start items-center gap-2">
                 <img className="w-9" src="/tundratown.png" alt="img" />
-                <h2 className="text-2xl">Tundratown</h2>
+                <h2 className="text-2xl">Competent</h2>
               </div>
             </div>
           </motion.div>
@@ -137,8 +136,8 @@ const HomePage = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 className="text-5xl max-md:text-4xl font-bold title-font">
-                We build quality real estate projects
-                <span className=" text-red-500 title-font "> since 1998</span>
+                We provide civil engineering consultation services
+                <span className=" text-red-500 title-font "> & infrastructure development solutions </span>
               </h2>
             </motion.div>
           </div>
@@ -150,11 +149,10 @@ const HomePage = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <p className="text-xl">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
-                itaque nesciunt similique dolore illum eaque repellat eligendi
-                nemo odit fugit in, impedit ad excepturi architecto dolores
-                quaerat accusantium! Sapiente, repellendus!
-              </p>
+                Founded by Mr. Alvins and his philosophy, “to help customer to succeed”, and achieve never ending improvement. 
+                Gent Consulting Engineers aims to provide value to all our clients while assuring high standards of quality on every project we work on.
+                Our notable achievements includes popular projects in Kenya such as IKEA Tampines, Court Tampines & MDIS Queensway Road.
+                </p>
               <Link onClick={scrollToTop} to={"/about"}>
                 <Button
                   content={"About Us"}
@@ -184,9 +182,14 @@ const HomePage = () => {
               What we do
             </h2>
             <p className="text-xl">
-              Lorem ipsum dolor sit amet consectetur. Malesuada vehicula netus
-              urna in elit amet blandit enim lacinia. Tellus leo felis et vel
-              eget maecenas.
+              Gent consulting engineers provides a one-stop solution for civil and structural engineering services. 
+                Consisting a team of experienced design engineers and drafters, 
+                Gent offers various services comprising of technical support to clients and contractors for engineering design.
+                Gent is well-experienced in design for excavation (ERSS), 
+                structural design for building, temporary works design, 
+                ECM design, periodical building inspection, architectural design (A & A and reconstruction and new building) 
+                and alternative design for tendering.
+
             </p>
             <Link onClick={scrollToTop} to={"/about"}>
               <button
@@ -216,8 +219,16 @@ const HomePage = () => {
               />
               <WhatWeDoCard
                 iconSrc={"/icons/communication.png"}
-                iconAlt={"communication"}
-                title={"communication"}
+                iconAlt={"Dependable"}
+                title={"Dependable"}
+                desc={
+                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam distinctio, nemo libero deleniti quibusdam quia!"
+                }
+              />
+              <WhatWeDoCard
+                iconSrc={"/icons/communication.png"}
+                iconAlt={"Perfection"}
+                title={"Perfection"}
                 desc={
                   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam distinctio, nemo libero deleniti quibusdam quia!"
                 }
@@ -251,7 +262,7 @@ const HomePage = () => {
             viewport={{ once: true, amount: 0.2 }}
             className="text-5xl max-md:text-4xl font-semibold text-center"
           >
-            Exclusive Properties
+            Projects Done
           </motion.h2>
           <div className="flex flex-col gap-5 mt-10 max-sm:mt-8">
             <div className=" flex gap-5 max-lg:flex-col">
@@ -336,7 +347,7 @@ const HomePage = () => {
               variants={animationVariants.fadeLeft}
               className="text-5xl max-md:text-4xl font-semibold"
             >
-              We use Real Estate to show our appreciation of the world.
+              We use Engineering & innovation to show our appreciation of the world.
             </motion.h1>
             <motion.p
               variants={animationVariants.fadeLeft}
@@ -351,34 +362,34 @@ const HomePage = () => {
             >
               <div className="flex flex-col max-lg:justify-center max-lg:items-center">
                 <h2 className="title-font text-red-500 text-5xl max-md:text-4xl font-semibold">
-                  8
+                  Mission
                 </h2>
                 <p className="text-xl">
-                  Years of seccessful experience in real estate
+                  Years of seccessful experience in engineering 
                 </p>
               </div>
               <div className="flex flex-col max-lg:justify-center max-lg:items-center">
                 <h2 className="title-font text-red-500 text-5xl max-md:text-4xl font-semibold">
-                  8
+                  Motor
                 </h2>
                 <p className="text-xl">
-                  Years of seccessful experience in real estate
+                  ...Where probity flairs & diligence meet... 
                 </p>
               </div>
               <div className="flex flex-col max-lg:justify-center max-lg:items-center">
                 <h2 className="title-font text-red-500 text-5xl max-md:text-4xl font-semibold">
-                  8
+                  over10
                 </h2>
                 <p className="text-xl">
-                  Years of seccessful experience in real estate
+                  Years of successful experience in engineering 
                 </p>
               </div>
               <div className="flex flex-col max-lg:justify-center max-lg:items-center">
                 <h2 className="title-font text-red-500 text-5xl max-md:text-4xl font-semibold">
-                  8
+                  Vision
                 </h2>
                 <p className="text-xl">
-                  Years of seccessful experience in real estate
+                  Years of seccessful experience in engineering
                 </p>
               </div>
             </motion.div>
@@ -500,7 +511,7 @@ const HomePage = () => {
             className="w-2/4 max-md:w-full max-md:text-center flex flex-col gap-8"
           >
             <h1 className="text-5xl max-md:text-4xl font-semibold">
-              Why do people love homyz
+              Why do people love Gents consulting engineers
             </h1>
             <div>
               <Carousel />

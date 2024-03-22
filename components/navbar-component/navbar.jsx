@@ -240,7 +240,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
             <img
               src={navBar2 ? "/Homyz-logo2.png" : logo}
               className="w-44 max-lg:w-36"
-              alt="Homyz-logo"
+              alt="Gent-logo"
             />
           </Link>
           <ul
