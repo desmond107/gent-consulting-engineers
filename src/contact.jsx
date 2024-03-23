@@ -3,7 +3,7 @@ import ContactPage from "../components/contact-page-component/contact-page";
 
 const Contact = () => {
   useEffect(() => {
-    document.title = "Contact Us - Gent Consulting Engineers";
+    document.title = "Contact Us - gent-consulting-engineers";
   }, []);
   return (
     <div className="overflow-hidden">

@@ -203,19 +203,19 @@ const ServicePage = ({ id, title, breif, descr, imageSrc }) => {
             <div>
               <FaEnvelope className="text-red-500" />
             </div>
-            <p>Office # 420 DHA Phase 90, Karachi, PK</p>
+            <p>Office # Nairobi, Kenya</p>
           </div>
           <div className="flex  gap-3 text-xl items-center">
             <div>
               <FaPhone className="rotate-90 text-red-500" />
             </div>
-            <p>+92 39283848238</p>
+            <p>+254718484254</p>
           </div>
           <div className="flex  gap-3 text-xl items-center">
             <div>
               <FaMapMarkerAlt className="text-red-500" />
             </div>
-            <p>information@office.com</p>
+            <p>information@gce.com</p>
           </div>
           <Link
             to="/contact"

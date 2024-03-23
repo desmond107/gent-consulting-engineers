@@ -60,7 +60,7 @@ const HomePage = () => {
             variants={animationVariants.fadeLeft}
             className="text-xl max-lg:mx-auto max-w-md  "
           >
-             The number one civil & structural engineering consultant in Africa.
+             The number one civil & structural engineering consultant in East Africa.
           </motion.p>
           <motion.div
             variants={animationVariants.fadeLeft}
@@ -95,11 +95,11 @@ const HomePage = () => {
           >
             <div className="flex gap-12">
               <div className="flex flex-col gap-4">
-                <h2 className="text-4xl title-font font-bold">19K+</h2>
+                <h2 className="text-4xl title-font font-bold">100+</h2>
                 <p className="text-lg">Satisfied clients</p>
               </div>
               <div className="flex flex-col gap-4">
-                <h2 className="text-4xl title-font font-bold">5000+</h2>
+                <h2 className="text-4xl title-font font-bold">500+</h2>
                 <p className="text-lg">Successful projects</p>
               </div>
             </div>
@@ -435,7 +435,7 @@ const HomePage = () => {
             viewport={{ once: true, amount: 0.2 }}
             className="text-5xl max-md:text-4xl font-semibold text-center  px-2"
           >
-            Destinations We Love The Most
+            Blogs & Reference
           </motion.h1>
           <div className="grid grid-cols-4 grid-rows-1 max-lg:grid-cols-2 max-lg:grid-rows-2 max-sm:grid-cols-1 max-sm:grid-rows-4 gap-4 relative mt-10 max-sm:mt-8">
             <img
@@ -478,8 +478,8 @@ const HomePage = () => {
             >
               <ReviewCard
                 imgSrc={"/reviews/jane-cooper.jpg"}
-                title={"Jane Cooper"}
-                from={"Real Estate"}
+                title={"John Kamau"}
+                from={"Civil engineer"}
               />
             </motion.div>
             <motion.div
@@ -488,7 +488,7 @@ const HomePage = () => {
             >
               <ReviewCard
                 imgSrc={"/reviews/robert-fox.jpg"}
-                title={"Robert Fox"}
+                title={"Sam Athiambo"}
                 from={"Creative Director"}
               />
             </motion.div>
@@ -498,8 +498,8 @@ const HomePage = () => {
             >
               <ReviewCard
                 imgSrc={"/reviews/marvin-mckinney.jpg"}
-                title={"Marvin Mckinney"}
-                from={"CEO of Bimetrix"}
+                title={"Eng Alvince Korero"}
+                from={"CEO of GCE"}
               />
             </motion.div>
           </motion.div>

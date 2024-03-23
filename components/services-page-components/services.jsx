@@ -18,18 +18,17 @@ const ServicesComponent = () => {
           <div className="text-white flex flex-col gap-8 max-md:items-center max-md:text-center">
             <h1 className="text-5xl font-bold">Our Services</h1>
             <p className="text-xl max-w-md">
-              Our mission is to engage in issues that are of concern to
-              individuals
+              Our mission is to provide solutions that matter to individuals
             </p>
           </div>
           <div className="flex gap-12 text-white max-md:text-center">
             <div className="flex max-md:items-center  flex-col gap-4">
-              <h2 className="text-4xl title-font font-bold">19K+</h2>
-              <p className="text-lg">Premium houses</p>
+              <h2 className="text-4xl title-font font-bold">100+</h2>
+              <p className="text-lg">Sutisfied clients</p>
             </div>
             <div className="flex max-md:items-center flex-col gap-4">
-              <h2 className="text-4xl  title-font font-bold">5000+</h2>
-              <p className="text-lg">Premium houses</p>
+              <h2 className="text-4xl  title-font font-bold">500+</h2>
+              <p className="text-lg">Successful projects</p>
             </div>
           </div>
         </motion.div>
