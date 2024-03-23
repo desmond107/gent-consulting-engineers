@@ -9,9 +9,8 @@ export const rentHouses = [
       "/Rent-houses/House-1/home1-4.jpg",
       "/Rent-houses/House-1/home1-5.jpg",
     ],
-    name: "Lahore",
-    address: "DHA 9 City, Lahore, Pakistan",
-    price: 130000,
+    name: "Nairobi",
+    address: "Nairobi,kenya",
     details: [
       "4 Bedrooms",
       "3 attached Bathrooms",
@@ -20,7 +19,7 @@ export const rentHouses = [
       "Beautifully designed structure",
       "Unfurnished",
       "Best Location",
-      "Area: 10 marla",
+      "Area: Limuru road",
     ],
     description:
       "DHA 9 Housing Scheme A block 10 Marla New brand house available for sale Good location house near by hospital and market and masjid and LGS school and other facilities",
@@ -35,9 +34,8 @@ export const rentHouses = [
       "/Rent-houses/House-2/home2-4.jpg",
       "/Rent-houses/House-2/home2-5.jpg",
     ],
-    name: "Karachi",
-    address: "Bahria Town, Karachi, Pakistan",
-    price: 100000,
+    name: "Tigoni",
+    address: "Limuru, Tigoni",
     details: [
       "4 Bedrooms",
       "1 big launge",
@@ -46,14 +44,14 @@ export const rentHouses = [
       "2 Kitchens",
       "Beautiful garden with parking",
       "Half-furnished",
-      "Area: 20 marla",
+      "Area: tigoni",
     ],
     description:
-      "Bahria Town 20 Marla New brand house available for sale Good location house near by hospital and market and masjid and school, park and other facilities in fully future developed society",
+      "Tigoni Town 20 Marla New brand house available for sale Good location house near by hospital and market and masjid and school, park and other facilities in fully future developed society",
   },
   {
     id: 3,
-    type: "popular",
+    type: "Featured",
     mainImage: "/Rent-houses/House-3/home3-1.jpg",
     moreImages: [
       "/Rent-houses/House-3/home3-2.jpg",
@@ -61,12 +59,11 @@ export const rentHouses = [
       "/Rent-houses/House-3/home3-4.jpg",
       "/Rent-houses/House-3/home3-5.jpg",
     ],
-    name: "Karachi",
-    address: "Gulistan-e-Johar, Karachi, Pakistan",
-    price: 50000,
+    name: "Eldoret",
+    address: "Eldoret",
     details: [
-      "Gulistan-e-Johar Block 7",
-      "MAHAM PLAZA",
+      " Block 7",
+      "Kule PLAZA",
       "2 Bedrooms",
       "2 Bathrooms",
       "American design kitchen",
@@ -79,7 +76,7 @@ export const rentHouses = [
   },
   {
     id: 4,
-    type: "popular",
+    type: "Featured",
     mainImage: "/Rent-houses/House-4/home4-1.jpg",
     moreImages: [
       "/Rent-houses/House-4/home4-2.jpg",
@@ -87,11 +84,10 @@ export const rentHouses = [
       "/Rent-houses/House-4/home4-4.jpg",
       "/Rent-houses/House-4/home4-5.jpg",
     ],
-    name: "Islamabad",
+    name: "Machakos",
     address: "Blue Area, F-3, Islamabad, Pakistan",
-    price: 135000,
     details: [
-      "Location: Isra Tower",
+      "Location: Machakos",
       "2 Bedrooms",
       "Drawing Room",
       "2 Bathrooms",
@@ -105,7 +101,7 @@ export const rentHouses = [
   },
   {
     id: 5,
-    type: "popular",
+    type: "Featured",
     mainImage: "/Rent-houses/House-5/home5-1.jpg",
     moreImages: [
       "/Rent-houses/House-5/home5-2.jpg",
@@ -113,11 +109,10 @@ export const rentHouses = [
       "/Rent-houses/House-5/home5-4.jpg",
       "/Rent-houses/House-5/home5-5.jpg",
     ],
-    name: "Faisalabad",
-    address: "Saadi Town, Faisalabad, Pakistan",
-    price: 95000,
+    name: "Thika",
+    address: "Thika",
     details: [
-      "Bunglow at saadi town scheme",
+      "Bunglow at thika town scheme",
       "4 Bedrooms",
       "A big drawing Room",
       "5 Bathrooms",
@@ -127,7 +122,7 @@ export const rentHouses = [
       "Area: 120 sqr.yards",
     ],
     description:
-      "Saadi Town Brand New Project Banglow Double Story 120 Sq Yards Bedrooms with attach baths Drawing Lounge open American Kitchen Washing area Huge Terrace Tiles Flooring Fancy lights Complete Boundary wall project Daily Sweet line Water No Load Shedding gas Security Guards Masjid Park Pure Family Environment Main Road approach Ideal Location",
+      "Thika town Brand New Project Banglow Double Story 120 Sq Yards Bedrooms with attach baths Drawing Lounge open American Kitchen Washing area Huge Terrace Tiles Flooring Fancy lights Complete Boundary wall project Daily Sweet line Water No Load Shedding gas Security Guards Masjid Park Pure Family Environment Main Road approach Ideal Location",
   },
   {
     id: 6,
@@ -139,11 +134,10 @@ export const rentHouses = [
       "/Rent-houses/House-6/home6-4.jpg",
       "/Rent-houses/House-6/home6-5.jpg",
     ],
-    name: "Karachi",
-    address: "Bahria Town, Karachi, Pakistan",
-    price: 120000,
+    name: "Kitengela",
+    address: "Kitengela",
     details: [
-      "Bahria Villas, Bahria Town, Karachi",
+      "Kitengela",
       "5 Bedrooms",
       "Big drawing Room Lounge",
       "6 Bathrooms",
