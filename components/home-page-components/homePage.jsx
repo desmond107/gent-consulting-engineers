@@ -60,7 +60,7 @@ const HomePage = () => {
             variants={animationVariants.fadeLeft}
             className="text-xl max-lg:mx-auto max-w-md  "
           >
-             The number one civil & structural engineering consultant in East Africa.
+          The number one Civil, Structural and Construction Engineering and management consultants in Kenya & East Africa. 
           </motion.p>
           <motion.div
             variants={animationVariants.fadeLeft}
@@ -106,16 +106,18 @@ const HomePage = () => {
             <div className="flex gap-12 max-sm:flex-wrap  justify-center">
               <div className="flex justify-start items-center gap-2">
                 <img className="w-9" src="/grafton.png" alt="img" />
-                <h2 className="text-2xl">Reliable</h2>
+                <h2 className="text-2xl">Reliability</h2>
               </div>
               <div className="flex justify-start items-center gap-2">
                 <img className="w-9" src="/lighthouse.png" alt="img" />
-                <h2 className="text-2xl">Trustworthy</h2>
+                <h2 className="text-2xl">Trust</h2>
               </div>
               <div className="flex justify-start items-center gap-2">
                 <img className="w-9" src="/tundratown.png" alt="img" />
-                <h2 className="text-2xl">Competent</h2>
+                <h2 className="text-2xl">Competency</h2>
               </div>
+              
+              
             </div>
           </motion.div>
         </motion.div>
@@ -136,8 +138,9 @@ const HomePage = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 className="text-5xl max-md:text-4xl font-bold title-font">
-                We provide civil engineering consultation services
-                <span className=" text-red-500 title-font "> & infrastructure development solutions </span>
+                We provide Innovative, Intelligent 
+
+                <span className=" text-red-500 title-font "> & Integrated Sustainable Engineering Solutions. </span>
               </h2>
             </motion.div>
           </div>
@@ -149,9 +152,10 @@ const HomePage = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <p className="text-xl">
-                Founded by Mr. Alvins and his philosophy, “to help customer to succeed”, and achieve never ending improvement. 
-                Gent Consulting Engineers aims to provide value to all our clients while assuring high standards of quality on every project we work on.
-                Our notable achievements includes popular projects in Kenya such as IKEA Tampines, Court Tampines & MDIS Queensway Road.
+                GCE was founded by Eng. Alvince O. Korero, PE in 2015 and joined by CPA. Angeline N.M. Omondi in 2016.  
+                Together, they have over 15 years of structural engineering design, construction and project management experience.  
+                Gent leads a collaborative environment with a mission to provide functional, sound, economical and sustainable engineering & construction solutions that achieve our client’s vision.
+
                 </p>
               <Link onClick={scrollToTop} to={"/about"}>
                 <Button
@@ -182,13 +186,9 @@ const HomePage = () => {
               What we do
             </h2>
             <p className="text-xl">
-              Gent consulting engineers provides a one-stop solution for civil and structural engineering services. 
-                Consisting a team of experienced design engineers and drafters, 
-                Gent offers various services comprising of technical support to clients and contractors for engineering design.
-                Gent is well-experienced in design for excavation (ERSS), 
-                structural design for building, temporary works design, 
-                ECM design, periodical building inspection, architectural design (A & A and reconstruction and new building) 
-                and alternative design for tendering.
+             Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.  
+             GCE has earned a reputation for delivering creative, innovative and sustainable design and cost-effective construction solutions in Kenya and East Africa at large.
+
 
             </p>
             <Link onClick={scrollToTop} to={"/about"}>
@@ -214,7 +214,7 @@ const HomePage = () => {
                 iconAlt={"reliability"}
                 title={"Reliability"}
                 desc={
-                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam distinctio, nemo libero deleniti quibusdam quia!"
+                  " Bla Bla Bla Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam distinctio, nemo libero deleniti quibusdam quia!"
                 }
               />
               <WhatWeDoCard
@@ -347,25 +347,28 @@ const HomePage = () => {
               variants={animationVariants.fadeLeft}
               className="text-5xl max-md:text-4xl font-semibold"
             >
-              We use Engineering & innovation to show our appreciation of the world.
+              We use Value Engineering and Sustainable Innovations to showcase our appreciation of the world. 
+
             </motion.h1>
             <motion.p
               variants={animationVariants.fadeLeft}
               className="text-2xl"
             >
-              We provide equity and debt capital globally to back projects that
-              make an impact.
+              We provide Innovative, Intelligent and Integrated Sustainable Engineering Solutions.
+
             </motion.p>
             <motion.div
               variants={animationVariants.fadeLeft}
-              className="grid grid-cols-2 grid-rows-2 gap-10"
+              className="grid grid-cols-2 grid-rows gap-10"
             >
               <div className="flex flex-col max-lg:justify-center max-lg:items-center">
                 <h2 className="title-font text-red-500 text-5xl max-md:text-4xl font-semibold">
                   Mission
                 </h2>
                 <p className="text-xl">
-                  Years of seccessful experience in engineering 
+                  Gent Consulting Engineers is committed to providing innovative, intelligent and integrated sustainable engineering design solutions and quality services to enhance our customers’ satisfaction. 
+                  Our cost-effective approaches combines both exceptional design and proven performance.
+
                 </p>
               </div>
               <div className="flex flex-col max-lg:justify-center max-lg:items-center">
@@ -373,15 +376,20 @@ const HomePage = () => {
                   Motor
                 </h2>
                 <p className="text-xl">
-                  ...Where probity flairs & diligence meet... 
+                 …where probity flairs and diligence meet…
+
                 </p>
               </div>
-              <div className="flex flex-col max-lg:justify-center max-lg:items-center">
+              <div className=" flex-col max-lg:justify-center max-lg:items-center">
                 <h2 className="title-font text-red-500 text-5xl max-md:text-4xl font-semibold">
-                  over10
+                  Values
                 </h2>
                 <p className="text-xl">
-                  Years of successful experience in engineering 
+                  Clients – Our goal is to develop enduring business relationships that are built on competency, reliability, trust, integrity, effective communication, and delivering quality services on time and within budget.
+                  Employees – Our employees are the fabric of our organization. They determine our reputation, capability, and ultimately, our success. We provide a work environment that encourages self-improvement, teamwork, innovation, growth and career advancement.
+                  Quality of Work – Our reputation is built on a tradition of providing services with a high level of technical competence and attention to detail. We continually train and educate our staff to provide quality work that meet international standards requirements
+
+
                 </p>
               </div>
               <div className="flex flex-col max-lg:justify-center max-lg:items-center">
@@ -389,7 +397,8 @@ const HomePage = () => {
                   Vision
                 </h2>
                 <p className="text-xl">
-                  Years of seccessful experience in engineering
+                  Our vision is to evolve from a firm that is locally service focused to one that is internationally market focused, while increasing the customer base in the East Africa and being our clients’ first choice for sustainable and value engineering services. We strive to honor our company values and maintain the financial discipline and stability of Gent.
+
                 </p>
               </div>
             </motion.div>
@@ -476,11 +485,7 @@ const HomePage = () => {
               className="w-full ml-6"
               variants={animationVariants.zoomIn}
             >
-              <ReviewCard
-                imgSrc={"/reviews/jane-cooper.jpg"}
-                title={"John Kamau"}
-                from={"Civil engineer"}
-              />
+              
             </motion.div>
             <motion.div
               className="w-full mr-6"
@@ -488,8 +493,8 @@ const HomePage = () => {
             >
               <ReviewCard
                 imgSrc={"/reviews/robert-fox.jpg"}
-                title={"Sam Athiambo"}
-                from={"Creative Director"}
+                title={"Eng Alvince Korero"}
+                from={"Technical Director and CEO"}
               />
             </motion.div>
             <motion.div
@@ -498,8 +503,8 @@ const HomePage = () => {
             >
               <ReviewCard
                 imgSrc={"/reviews/marvin-mckinney.jpg"}
-                title={"Eng Alvince Korero"}
-                from={"CEO of GCE"}
+                title={"MD, Director Finance and Adm."}
+                from={"CPA. Omondi Angeline N.M."}
               />
             </motion.div>
           </motion.div>
@@ -511,7 +516,8 @@ const HomePage = () => {
             className="w-2/4 max-md:w-full max-md:text-center flex flex-col gap-8"
           >
             <h1 className="text-5xl max-md:text-4xl font-semibold">
-              Why do people love Gents consulting engineers
+              Why Gent Consulting Engineers
+
             </h1>
             <div>
               <Carousel />

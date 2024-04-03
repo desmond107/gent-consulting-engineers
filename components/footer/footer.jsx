@@ -139,10 +139,10 @@ const Footer = () => {
               <img src="/Homyz-logo.png" className="w-36" alt="Gents-logo" />
             </a>
             <p style={{ color: "#696969" }}>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam,
-              pariatur. Fugit dignissimos aut tempora ullam similique minima
-              culpa quod fuga, doloribus expedita, cupiditate sint, nulla
-              distinctio soluta. Aut, sequi quia.
+              Gent leads a collaborative environment with a mission to providing functional, sound, economical, quality and sustainable 
+              engineering & construction solutions that achieve our customer’s requirements.
+              Founded in 2015, Gent has over 10 years of value engineering design, construction and project management experience.  
+
             </p>
             <div className="flex text-xl justify-start items-center gap-10 text-red-500">
               <Link target="_blank" to={"https://facebook.com"}>
@@ -188,7 +188,7 @@ const Footer = () => {
           </div>
           <p style={{ color: "#696969" }}>© Gent Consulting Engineers. All Rights Reserved 2024.</p>
         </div>
-
+        
         <div
           id="contact"
           className="w-2/4 max-lg:w-full flex flex-col h-auto justify-between items-start gap-10 "
@@ -290,9 +290,13 @@ const Footer = () => {
             Submit
           </Button>
         </div>
+  
       </footer>
+      
     </div>
+    
   );
+  
 };
 
 export default Footer;

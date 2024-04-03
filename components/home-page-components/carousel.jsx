@@ -29,22 +29,20 @@ export default function Carousel() {
         className="mySwiper text-xl"
       >
         <SwiperSlide>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit neque
-          natus asperiores unde, nulla sequi, nobis saepe dicta aut maiores quia
-          quos sapiente dolores consequuntur perspiciatis repellendus quis
-          necessitatibus quas.
+          Gent Consulting Engineers is committed to providing innovative, 
+          intelligent and integrated sustainable engineering design solutions and quality services to enhance our customers’ satisfaction. 
         </SwiperSlide>
         <SwiperSlide>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit neque
-          natus asperiores unde, nulla sequi, nobis saepe dicta aut maiores quia
-          quos sapiente dolores consequuntur perspiciatis repellendus quis
-          necessitatibus quas.
+          Our sustainable and cost-effective approaches that combine exceptional design, 
+          problem solving to most complex engineering challenges, attention to detail and proven performance in Kenya and across East Africa forms the ingredient and main recipe
         </SwiperSlide>
         <SwiperSlide>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit neque
-          natus asperiores unde, nulla sequi, nobis saepe dicta aut maiores quia
-          quos sapiente dolores consequuntur perspiciatis repellendus quis
-          necessitatibus quas.
+          Our experts are some of the most highly qualified and sought professionals in the fields of civil,
+           structural, water and sanitation, infrastructure, geotechnical, marine, transport, dam and airport engineering, 
+           solid waste management as well as building solutions and litigation.
+           Most of our engineers and staffs are locally registered Professionals whose focus is to minimize the environmental impact of our clients’ 
+           daily operations while meeting project goals, quality and within budget.
+
         </SwiperSlide>
 
         <div className="slider-controler flex max-md:justify-center  gap-3  mt-16">
