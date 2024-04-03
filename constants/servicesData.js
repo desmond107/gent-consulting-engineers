@@ -2,64 +2,84 @@ export const servicesData = [
   {
     id: 1,
     image: "/Services/images/it-consultancy.jpg",
-    title: "IT Consultancy",
+    title: "Building Evaluation & Rehabilitation",
     icon: "/Services/icons/it-consultancy-icon.png",
     shortDescription:
-      "We believe that technology design are revolutionizing brand experiences.",
-    heading: "Tuning in to what really matters",
+      "We believe that engineering technology design are revolutionizing brand experiences.",
+    heading: "Tuning in to the future of engineering",
     mainDescription:
-      "We believe that technology and human-centered design are revolutionizing brand experiences. Remarkable innovations are allowing products to become more sentient and connected, enabling greater connection between people. Our role is to ensure that each product experience is attuned to people’s needs and relevant to the rhythm and habits of their daily lives. Through first and secondary research, we identify what will really matter to users and we never let go of the vision that inspires great products.",
+      "At Gent we employ new technologies to perform building evaluation monitoring performance to discover and solve problems, predict effects and develop robust results aimed at helping designers and managers make more informed decisions to improve the building structural health and design life.",
   },
   {
     id: 2,
     image: "/Services/images/cloud-migration.jpg",
-    title: "Cloud Migration",
+    title: "Civil & Infrastructure Design",
     icon: "/Services/icons/cloud-migration-icon.png",
     shortDescription:
-      "Process of designing, creating, deploying and maintaining software.",
-    heading: "Tuning in to what really matters",
+      "Process of designing, creating,and maintaining infrastructure.",
+    heading: "Tuning in to future of engineering",
     mainDescription:
-      "We believe that technology and human-centered design are revolutionizing brand experiences. Remarkable innovations are allowing products to become more sentient and connected, enabling greater connection between people. Our role is to ensure that each product experience is attuned to people’s needs and relevant to the rhythm and habits of their daily lives. Through first and secondary research, we identify what will really matter to users and we never let go of the vision that inspires great products.",
+      "Designing an efficient and robust network infrastructure is a structured process encompassing several key factors, from initial planning to post-implementation monitoring and analysis. This is Gent’s heart beat as it strives by incorporating network and infrastructure integrations and current design softwares to design for buildability, performance, usability, sustainability and safety.",
   },
   {
     id: 3,
     image: "/Services/images/poc-development.jpg",
-    title: "PoC Development",
+    title: "Bridge Design",
     icon: "/Services/icons/poc-development-icon.png",
     shortDescription:
-      "Protect networks, devices and data from attacks or unauthorized access.",
-    heading: "Tuning in to what really matters",
+      "Designing stoic bridge for future development",
+    heading: "Tuning in to future of engineering",
     mainDescription:
-      "We believe that technology and human-centered design are revolutionizing brand experiences. Remarkable innovations are allowing products to become more sentient and connected, enabling greater connection between people. Our role is to ensure that each product experience is attuned to people’s needs and relevant to the rhythm and habits of their daily lives. Through first and secondary research, we identify what will really matter to users and we never let go of the vision that inspires great products.",
+      "Gent’s main focus is to designs bridges that withstand gravity, wind, earthquakes, or other external influences and minimizes the risk of structural failure or collapse in accordance with the relevant codes and safety standards.",
   },
   {
     id: 4,
     image: "/Services/images/smart-team.jpg",
-    title: "Smart Team",
+    title: "Geotechnical Engineering and Design",
     icon: "/Services/icons/smart-team-icon.png",
-    shortDescription: "See to the integrity and security of your records.",
-    heading: "Tuning in to what really matters",
+    shortDescription: "See to the integrity and quality of geo-engineering technology.",
+    heading: "Tuning in to future of engineering with GCE",
     mainDescription:
-      "We believe that technology and human-centered design are revolutionizing brand experiences. Remarkable innovations are allowing products to become more sentient and connected, enabling greater connection between people. Our role is to ensure that each product experience is attuned to people’s needs and relevant to the rhythm and habits of their daily lives. Through first and secondary research, we identify what will really matter to users and we never let go of the vision that inspires great products.",
+      "Site investigation is a critical aspect of geotechnical engineering, providing important information about the geological and geotechnical properties of a site, groundwater conditions, and other factors that may affect the design and construction of a project. Gent considers site investigation as an important part of the design and construction process, as it helps our engineers and designers to understand the site conditions and develop appropriate foundation designs and construction methods that are safe, economical, and sustainable.",
   },
   {
     id: 5,
     image: "/Services/images/quality-assurance.jpg",
-    title: "Quality Assurance",
+    title: "Airport Engineering and Pavement Design",
     icon: "/Services/icons/quality-assurance-icon.png",
-    shortDescription: "See to the integrity and security of your records.",
-    heading: "Tuning in to what really matters",
+    shortDescription: "We design Gloabal standard Airports and aeronotic landing spaces.",
+    heading: "Tuning in to future of engineering with GCE",
     mainDescription:
-      "We believe that technology and human-centered design are revolutionizing brand experiences. Remarkable innovations are allowing products to become more sentient and connected, enabling greater connection between people. Our role is to ensure that each product experience is attuned to people’s needs and relevant to the rhythm and habits of their daily lives. Through first and secondary research, we identify what will really matter to users and we never let go of the vision that inspires great products.",
+      "Airport airfield pavement design is an integrative exercise involving expertise including topo surveying, geotechnical investigations, material engineering, hydrological and drainage design, pavement design and structural design. Gent has vast experience in: Airport topographical surveying, geotechnical/soil investigations, Engineering material testing, geometric & pavement design, hydrology and drainage design and preparation of construction drawings.",
   },
   {
     id: 6,
     image: "/Services/images/product-design.jpg",
-    title: "Product Design",
+    title: "Construction and Project Management",
     icon: "/Services/icons/product-design-icon.png",
-    shortDescription: "See to the integrity and security of your records.",
-    heading: "Tuning in to what really matters",
+    shortDescription: "We oversee the start and progress of a project to the end.",
+    heading: "Tuning in to future of engineering with GCE",
     mainDescription:
-      "We believe that technology and human-centered design are revolutionizing brand experiences. Remarkable innovations are allowing products to become more sentient and connected, enabling greater connection between people. Our role is to ensure that each product experience is attuned to people’s needs and relevant to the rhythm and habits of their daily lives. Through first and secondary research, we identify what will really matter to users and we never let go of the vision that inspires great products.",
+      "Our project management team utilizes the current technological  knowledge, tools, skills, deliverables, and techniques to successfully guide a project from conception to completion, while ensuring that all project goals are met at the specified time and within the given budget constraints.",
+  },
+  {
+    id: 7,
+    image: "/Services/images/product-design.jpg",
+    title: "Project Quality Assurance and Control",
+    icon: "/Services/icons/product-design-icon.png",
+    shortDescription: "Engineering and structural quality assurance is our specialty .",
+    heading: "Tuning in to future of engineering with GCE",
+    mainDescription:
+      "The ultimate aim of Gent’s quality assurance engineers (QAs) is to ensure that the company delivers an error-free and high-quality structures that provides the best possible customer experience. Our quality control (QC) team comprises of highly skilled engineers perform testing on materials and work for compliance with project requirements and to enhance team collaboration, shortens development time, and reduces costs.",
+  },
+  {
+    id: 8,
+    image: "/Services/images/product-design.jpg",
+    title: "Project site Supervision and Monitoring",
+    icon: "/Services/icons/product-design-icon.png",
+    shortDescription: "Project diligence and accomplishment is our top priority",
+    heading: "Tuning in to future of engineering with GCE",
+    mainDescription:
+      "Gent has van array of specialization in planning and organizing construction activities, supervising and coordinating the work of construction workers, monitoring project progress and ensuring it stays on schedule, managing and maintaining construction equipment and inspecting construction sites to ensure compliance with contract conditions and regulations.",
   },
 ];

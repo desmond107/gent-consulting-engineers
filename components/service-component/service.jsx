@@ -51,52 +51,40 @@ const ServicePage = ({ id, title, breif, descr, imageSrc }) => {
           className="w-2/3 max-lg:w-full flex flex-col gap-5"
         >
           <h1 className="text-[46px] leading-none max-md:text-4xl font-semibold">
-            Tuning in to what really matters
+            Tuning in to future of engineering with GCE
           </h1>
           <div className="text-xl flex flex-col gap-3">
             <p>
-              We believe that technology and human-centered design are
-              revolutionizing brand experiences. Remarkable innovations are
-              allowing products to become more sentient and connected, enabling
-              greater connection between people. Our role is to ensure that each
-              product experience is attuned to people’s needs and relevant to
-              the rhythm and habits of their daily lives. Through first and
-              secondary research, we identify what will really matter to users
-              and we never let go of the vision that inspires great products.
+              At Gent we employ new technologies to perform building evaluation monitoring performance to discover and solve problems, 
+              predict effects and develop robust results aimed at helping designers and managers make more informed decisions to improve the building structural health and design life.
+
             </p>
             <p>
-              Test your ideas with minimal risk. Test even the most complex
-              ideas, involving emerging technologies – like blockchain – with
-              the help of our expert Outsourceo team. We’ll help you with
-              predictions, roadmapping and post-PoC Development analysis, to
-              identify the best-fit solution with minimal financial risk.
+              Designing an efficient and robust network infrastructure is a structured process encompassing several key factors, 
+              from initial planning to post-implementation monitoring and analysis. This is Gent’s heart beat as it strives by incorporating 
+              network and infrastructure integrations and current design softwares to design for buildability, performance, usability, sustainability and safety.  
             </p>
             <p>
-              We help companies assess their skills and choose a new direction
-              which utilizes the talents of the team and resources most
-              productively.
+              Gent’s main focus is to designs bridges that withstand gravity, wind, earthquakes, 
+              or other external influences and minimizes the risk of structural failure or collapse in accordance with the relevant codes and safety standards.
             </p>
             <p>
-              As consumers have more and more product choices, the role of
-              design to bring clarity and relevance has never been more
-              necessary. Design will continue to be the significant difference
-              maker and the reason for choosing one product or experience over
-              another. On every product we look through the eyes of the user,
-              studying the experience critically and empathetically. Our
-              creative response combines strategy with execution to deliver
-              beautiful, innovative and differentiated design.
+              Site investigation is a critical aspect of geotechnical engineering, providing important information about the geological and
+               geotechnical properties of a site, groundwater conditions, and other factors that may affect the design and construction of a project. 
+               Gent considers site investigation as an important part of the design and construction process, as it helps our engineers and designers to 
+               understand the site conditions and develop appropriate foundation designs and construction methods that are safe, economical, and sustainable.
+
             </p>
             <p>
-              Our team of software experts will provide a comprehensive project
-              evaluation, allowing you to develop your roadmap for success that
-              maximises the efficiency of your future projects.
+              Airport airfield pavement design is an integrative exercise involving expertise including topo surveying, geotechnical investigations,
+              material engineering, hydrological and drainage design, pavement design and structural design. Gent has vast experience in: Airport
+              topographical surveying, geotechnical/soil investigations, 
+              Engineering material testing, geometric & pavement design, hydrology and drainage design and preparation of construction drawings.
+
             </p>
             <p>
-              When it comes to encapsulating technical innovation in a form that
-              chimes with an end user, our early involvement, often before the
-              science leaves the bench, can help to ensure that the human
-              factors as well as the production design issues are considered at
-              the optimum stage in the process.
+              Our project management team utilizes the current technological  knowledge, tools, skills, deliverables, 
+              and techniques to successfully guide 
             </p>
           </div>
           <div className="mt-10">
@@ -112,16 +100,17 @@ const ServicePage = ({ id, title, breif, descr, imageSrc }) => {
                     _expanded={{ color: "#ef4444" }}
                   >
                     <Box as="span" flex="1" textAlign="left">
-                      How does SAASworld make money?
+                      Architectural engineering design services
+
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Many people has the notion that enlightenment is one state.
-                  Many also believe that when it is attained, a person is
-                  forever in that state.For your necessary discernment. Thank
-                  you for reading.
+                  Architectural engineering services offered at GCE include:
+                  Building design and supervision of low and high rise building (e.g. feasibility, design, procurement, installation supervision, and close-out).
+                  Local authority’s approvals on client request. This service shall be fully sponsored by the client.
+
                 </AccordionPanel>
               </AccordionItem>
 
@@ -133,16 +122,18 @@ const ServicePage = ({ id, title, breif, descr, imageSrc }) => {
                     _expanded={{ color: "#ef4444" }}
                   >
                     <Box as="span" flex="1" textAlign="left">
-                      What is the Top Rated program?
+                      Mechanical engineering design services
+
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Many people has the notion that enlightenment is one state.
-                  Many also believe that when it is attained, a person is
-                  forever in that state.For your necessary discernment. Thank
-                  you for reading.
+                  Mechanical services offered at GCE include:
+                 Building Services (feasibility, design, procurement, installation supervision, and close-out) Heating, Ventilation and Air-conditioning,
+                  Refrigeration, Hot Water Generation (Boilers, Clarifiers etc.) and steam reticulation systems, Central Heating Systems, Fire Prevention and Fire Fighting,
+                 Industrial Laundry & Kitchen equipment, Medical Gas, Other Mechanical services.
+
                 </AccordionPanel>
               </AccordionItem>
               <AccordionItem className="border-none box-shadow p-6">
@@ -153,17 +144,19 @@ const ServicePage = ({ id, title, breif, descr, imageSrc }) => {
                     _expanded={{ color: "#ef4444" }}
                   >
                     <Box as="span" flex="1" textAlign="left">
-                      What’s the difference between finding clients online,
-                      versus locally?
+                      Electrical engineering design services
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Many people has the notion that enlightenment is one state.
-                  Many also believe that when it is attained, a person is
-                  forever in that state.For your necessary discernment. Thank
-                  you for reading.
+                  Township establishment infrastructure
+                  Bulk Power Designs- building Services reticulation, Data Capturing and Management, 
+                  Network Audits, Substation Refurbishment and Upgrade, Power Station Management, 
+                  technical performance and efficiency of Main and Auxiliary Equipment for Power Stations, Energy Management. 
+                  Lighting- General Lighting, Township Lighting (High masts & Street Lighting), Security Lighting, Specialized Lighting
+                 Security Systems- Access Control, CCTV monitoring Systems, Building Management
+
                 </AccordionPanel>
               </AccordionItem>
               <AccordionItem className="border-none box-shadow p-6">
@@ -174,16 +167,41 @@ const ServicePage = ({ id, title, breif, descr, imageSrc }) => {
                     _expanded={{ color: "#ef4444" }}
                   >
                     <Box as="span" flex="1" textAlign="left">
-                      How does SAASworld make money?
+                       Alternative Energy Solutions
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Many people has the notion that enlightenment is one state.
-                  Many also believe that when it is attained, a person is
-                  forever in that state.For your necessary discernment. Thank
-                  you for reading.
+                  Energy audits, plant optimization, installation, and project management in the following are offered:
+                  Solar systems, Heat pumps, Energy saving Lighting systems, Energy efficient Motors and VSD’s, Industrial Compressed air systems,
+                  HVAC, Shower heads and water flow regulators, Power Factor Correction, Plant optimization systems, and Metering Systems
+
+                </AccordionPanel>
+              </AccordionItem>
+              <AccordionItem className="border-none box-shadow p-6">
+                <h2>
+                  <AccordionButton
+                    fontSize={"2xl"}
+                    _hover={{ backgroundColor: "transparent" }}
+                    _expanded={{ color: "#ef4444" }}
+                  >
+                    <Box as="span" flex="1" textAlign="left">
+                       Plans Blue-Printing Services
+
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  Architectural and Engineering Plans Blue-Printing
+                  Gent consulting engineers offer a vast professionalism and cost-effective plan printing for all architectural, engineering and geo-surveys as show below:
+                  A1 blue-printing
+                  A2 blue-printing
+                  A3 blue-printing
+                  Contact us for plan printing pricing.
+
+
                 </AccordionPanel>
               </AccordionItem>
             </Accordion>

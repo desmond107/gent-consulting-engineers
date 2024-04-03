@@ -13,7 +13,7 @@ const FreeTrial = () => {
     >
       <h1 className=" text-5xl max-sm:text-4xl font-semibold">
         {" "}
-        IMPROVE YOUR BUSINESS AND MAKE YOUR WORK EASY
+        ...GCE THE FUTURE OF ENGINEERING...
       </h1>
       <Link onClick={scrollToTop} to="/contact">
         <Button

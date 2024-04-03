@@ -18,7 +18,7 @@ const ServicesComponent = () => {
           <div className="text-white flex flex-col gap-8 max-md:items-center max-md:text-center">
             <h1 className="text-5xl font-bold">Our Services</h1>
             <p className="text-xl max-w-md">
-              Our mission is to provide solutions that matter to individuals
+              …where probity flairs and diligence meet…
             </p>
           </div>
           <div className="flex gap-12 text-white max-md:text-center">
@@ -58,7 +58,7 @@ export default ServicesComponent;
 {
   /* <div className="it-content text-xl  gap-2 justify-center items-center flex-col max-w-md text-center hidden overflow-hidden scale-y-0  transition-all  ">
     <p>
-    We believe that technology design are revolutionizing brand
+    We believe that engineering technology design are revolutionizing brand
     experiences.
     </p>
     <a className="font-bold" href="">
