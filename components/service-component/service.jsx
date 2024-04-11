@@ -92,6 +92,7 @@ const ServicePage = ({ id, title, breif, descr, imageSrc }) => {
               className="text-xl flex flex-col gap-5 "
               allowToggle={true}
             >
+            <div className="text-2xl max-md:text-1xl max-sm:text-2xl font-semibold z-2  "><p> OTHER SERVICES </p></div>
               <AccordionItem className="border-none box-shadow p-6">
                 <h2>
                   <AccordionButton
