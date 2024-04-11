@@ -78,29 +78,29 @@ const AboutPage = () => {
           <div className="what-we-do-cards mt-14 gap-8 max-md:grid-cols-1 max-md:grid-rows-3 grid grid-cols-3 grid-rows-1">
             <div>
               <h2 className="text-2xl text-red-500 font-semibold">
-                Get an instant free valuation
+                Get an instant free consultation
               </h2>
               <p className="text-xl mt-2">
-                Lorem ipsum dolor sit amet consectetur. Malesuada vehicula netus
-                urna in elit amet.
+                Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.  GCE has earned a reputation for delivering creative, innovative and sustainable design and cost-effective construction solutions in Kenya and East Africa at large.
+
               </p>
             </div>
             <div>
               <h2 className="text-2xl text-red-500 font-semibold">
-                Get your property ready
+                Get quality engineering service
               </h2>
               <p className="text-xl mt-2">
-                Lorem ipsum dolor sit amet consectetur. Malesuada vehicula netus
-                urna in elit amet.
+                Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.  GCE has earned a reputation for delivering creative, innovative and sustainable design and cost-effective construction solutions in Kenya and East Africa at large.
+
               </p>
             </div>
             <div>
               <h2 className="text-2xl text-red-500 font-semibold">
-                Offer acceptance
+                Receive infrastructure Q&A services.
               </h2>
               <p className="text-xl mt-2">
-                Lorem ipsum dolor sit amet consectetur. Malesuada vehicula netus
-                urna in elit amet.
+                Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.  GCE has earned a reputation for delivering creative, innovative and sustainable design and cost-effective construction solutions in Kenya and East Africa at large.
+
               </p>
             </div>
           </div>
@@ -172,7 +172,7 @@ const AboutPage = () => {
             <div className=" w-1/2 text-5xl max-lg:text-4xl max-md:w-full ">
               <h1 className="font-semibold ">We focus on all</h1>
               <h1 className="font-semibold  text-red-500">
-                Real Estate Class Saaets
+                Engineering & structural development
               </h1>
             </div>
           </motion.div>
@@ -186,11 +186,11 @@ const AboutPage = () => {
             >
               <h2 className="title-font font-semibold">-01</h2>
               <h2 className="title-font mt-7  font-medium text-red-500">
-                Residential
+                Quality
               </h2>
               <p className="mt-2">
-                Lorem ipsum dolor sit amet consectetur. Malesuada vehicula netus
-                urna in elit amet.
+                Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.  GCE has earned a reputation for delivering creative, innovative and sustainable design and cost-effective construction solutions in Kenya and East Africa at large.
+
               </p>
             </motion.div>
             <motion.div
@@ -202,11 +202,11 @@ const AboutPage = () => {
             >
               <h2 className="title-font font-semibold">-01</h2>
               <h2 className="title-font mt-7  font-medium text-red-500">
-                Residential
+                Assurance
               </h2>
               <p className="mt-2">
-                Lorem ipsum dolor sit amet consectetur. Malesuada vehicula netus
-                urna in elit amet.
+                Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.  GCE has earned a reputation for delivering creative, innovative and sustainable design and cost-effective construction solutions in Kenya and East Africa at large.
+
               </p>
             </motion.div>
             <motion.div
@@ -218,11 +218,11 @@ const AboutPage = () => {
             >
               <h2 className="title-font font-semibold">-01</h2>
               <h2 className="title-font mt-7  font-medium text-red-500">
-                Residential
+                Durability
               </h2>
               <p className="mt-2">
-                Lorem ipsum dolor sit amet consectetur. Malesuada vehicula netus
-                urna in elit amet.
+                Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.  GCE has earned a reputation for delivering creative, innovative and sustainable design and cost-effective construction solutions in Kenya and East Africa at large.
+
               </p>
             </motion.div>
           </div>
@@ -246,41 +246,14 @@ const AboutPage = () => {
           >
             <h1 className="text-5xl ">
               We seek to create value for investors across the
-              <span className="text-red-500"> real estate spectrum</span>
+              <span className="text-red-500"> Engineering & development spectrum</span>
             </h1>
-            <div className="flex flex-col gap-5 mt-7">
+            <div className="flex flex-col gap-3 mt-7">
+              
+              
+              
               <div className="flex justify-between items-center border-b-2 border-black/30 pb-5 text-2xl">
-                <h2>Investmennt Management</h2>
-                <Link
-                  to={"/services"}
-                  onClick={scrollToTop}
-                  className="text-red-500"
-                >
-                  <FaArrowRight className="rotate-45" />
-                </Link>
-              </div>
-              <div className="flex justify-between items-center border-b-2 border-black/30 pb-5 text-2xl">
-                <h2>Investmennt Management</h2>
-                <Link
-                  to={"/services"}
-                  onClick={scrollToTop}
-                  className="text-red-500"
-                >
-                  <FaArrowRight className="rotate-45" />
-                </Link>
-              </div>
-              <div className="flex justify-between items-center border-b-2 border-black/30 pb-5 text-2xl">
-                <h2>Investmennt Management</h2>
-                <Link
-                  to={"/services"}
-                  onClick={scrollToTop}
-                  className="text-red-500"
-                >
-                  <FaArrowRight className="rotate-45" />
-                </Link>
-              </div>
-              <div className="flex justify-between items-center border-b-2 border-black/30 pb-5 text-2xl">
-                <h2>Investmennt Management</h2>
+                <h2>Investment Management</h2>
                 <Link
                   to={"/services"}
                   onClick={scrollToTop}
@@ -311,7 +284,7 @@ const AboutPage = () => {
               variants={animationVariants.fadeLeft}
               className="text-5xl max-md:text-4xl font-semibold"
             >
-              We use Real Estate to show our appreciation of the world.
+              We use value engineering & sustainable innovation to showcase our appreciation of the world.
             </motion.h1>
             <motion.p
               variants={animationVariants.fadeLeft}
@@ -326,7 +299,7 @@ const AboutPage = () => {
             >
               <div className="flex flex-col max-lg:justify-center max-lg:items-center">
                 <h2 className="title-font text-red-500 text-5xl max-md:text-4xl font-semibold">
-                  8
+                  10
                 </h2>
                 <p className="text-xl">
                   Years of seccessful experience in engineering
@@ -334,7 +307,7 @@ const AboutPage = () => {
               </div>
               <div className="flex flex-col max-lg:justify-center max-lg:items-center">
                 <h2 className="title-font text-red-500 text-5xl max-md:text-4xl font-semibold">
-                  8
+                  10
                 </h2>
                 <p className="text-xl">
                   Years of seccessful experience in  engineering
@@ -342,7 +315,7 @@ const AboutPage = () => {
               </div>
               <div className="flex flex-col max-lg:justify-center max-lg:items-center">
                 <h2 className="title-font text-red-500 text-5xl max-md:text-4xl font-semibold">
-                  8
+                  10
                 </h2>
                 <p className="text-xl">
                   Years of seccessful experience in engineering
@@ -350,7 +323,7 @@ const AboutPage = () => {
               </div>
               <div className="flex flex-col max-lg:justify-center max-lg:items-center">
                 <h2 className="title-font text-red-500 text-5xl max-md:text-4xl font-semibold">
-                  8
+                  10
                 </h2>
                 <p className="text-xl">
                   Years of seccessful experience in engineering
@@ -402,24 +375,15 @@ const AboutPage = () => {
             transition={{ staggerChildren: 0.1 }}
             className="w-2/4 max-md:w-full max-md:px-3 items-center flex flex-col gap-5"
           >
-            <motion.div
-              className="w-full ml-6"
-              variants={animationVariants.zoomIn}
-            >
-              <ReviewCard
-                imgSrc={"/reviews/jane-cooper.jpg"}
-                title={"Jane Cooper"}
-                from={"Real Estate"}
-              />
-            </motion.div>
+            
             <motion.div
               className="w-full mr-6"
               variants={animationVariants.zoomIn}
             >
               <ReviewCard
                 imgSrc={"/reviews/robert-fox.jpg"}
-                title={"Robert Fox"}
-                from={"Creative Director"}
+                title={"CPA. Omondi Angeline N.A"}
+                from={"MD, Director Finance & Adm"}
               />
             </motion.div>
             <motion.div
@@ -428,8 +392,8 @@ const AboutPage = () => {
             >
               <ReviewCard
                 imgSrc={"/reviews/marvin-mckinney.jpg"}
-                title={"Marvin Mckinney"}
-                from={"CEO of Bimetrix"}
+                title={"ENG Alvince Korero"}
+                from={"Technical director & CEO"}
               />
             </motion.div>
           </motion.div>

@@ -1,11 +1,11 @@
 export const showCase = [
   {
     id: 1,
-    city: "Karachi",
+    city: "AIA-Terminal Building",
     shortDescription:
-      "Karachi 'The City of Lights', the vibrant metropolis on the shores of the Arabian Sea, is a melting pot of diverse cultures, bustling with energy.",
+      "Put comment",
     description:
-      "Karachi: Karachi is the largest and most populous city in Pakistan, located on the southern coast of the country. It is known as the financial and economic hub of Pakistan, with a bustling metropolitan atmosphere. Karachi is home to a diverse population, vibrant markets, and a lively food scene. It also boasts beautiful beaches along the Arabian Sea, historical landmarks, and a thriving arts and entertainment scene.",
+      "Township establishment infrastructure Bulk Power Designs- building Services reticulation, Data Capturing and Management, Network Audits, Substation Refurbishment and Upgrade, Power Station Management, technical performance and efficiency of Main and Auxiliary Equipment for Power Stations, Energy Management. Lighting- General Lighting, Township Lighting (High masts & Street Lighting), Security Lighting, Specialized LightingSecurity Systems- Access Control, CCTV monitoring Systems, Building Management",
     coverImage: "/Project-showcase/Karachi/Dolmen-bahria-towers.jpg",
     moreImages: [
       "/Project-showcase/Karachi/Street-view.jpg",
@@ -18,11 +18,11 @@ export const showCase = [
   },
   {
     id: 2,
-    city: "Islamabad",
+    city: "AIA –Building steel elements",
     shortDescription:
-      "Islamabad, the serene capital of Pakistan, is nestled among picturesque hills, renowned for its well-planned infrastructure and green spaces.",
+      "Put comment",
     description:
-      "Islamabad: Islamabad is the capital city of Pakistan, nestled in the Margalla Hills in the northern part of the country. It is a modern and planned city, known for its wide, tree-lined avenues, spacious parks, and serene beauty. Islamabad is home to the country's government institutions, diplomatic enclaves, and a growing technology and business sector. The city also offers a range of recreational activities, including hiking trails, golf courses, and cultural festivals.",
+      "Put decription",
     coverImage: "/Project-showcase/Islamabad/Faisal-mosque.jpg",
     moreImages: [
       "/Project-showcase/Islamabad/Fatima-Jinnah-Park.jpg",
@@ -35,11 +35,11 @@ export const showCase = [
   },
   {
     id: 3,
-    city: "Lahore",
+    city: "Residential construction ",
     shortDescription:
-      "Lahore, the cultural heart of Pakistan, captivates visitors with its grand Mughal architecture, making it a city that embraces history, art, and a vibrant zest for life.",
+      "put comment",
     description:
-      "Lahore: Lahore is the cultural capital of Pakistan, situated in the eastern province of Punjab. It is renowned for its rich history, Mughal-era architecture, and vibrant traditions. Lahore is home to many historical sites, including the iconic Badshahi Mosque and Lahore Fort. The city is also known for its love of arts, literature, and music, with numerous festivals and cultural events taking place throughout the year.",
+      "put description",
     coverImage: "/Project-showcase/Lahore/Badshahi-mosque.jpg",
     moreImages: [
       "/Project-showcase/Lahore/Minar-e-pakistan.jpg",
@@ -52,11 +52,11 @@ export const showCase = [
   },
   {
     id: 4,
-    city: "Quetta",
+    city: "Building completed frame structure",
     shortDescription:
-      "Quetta, the captivating city nestled in the rugged mountains of Balochistan, enchants with its breathtaking natural beauty and landscapes.",
+      "put comment",
     description:
-      "Quetta: Quetta is the provincial capital of Balochistan, located in southwestern Pakistan. It is surrounded by rugged mountains and serves as a gateway to the famous Bolan Pass. Quetta has a distinctive culture influenced by its proximity to Afghanistan and Iran. The city is known for its dry, arid climate and serves as a trading center for fruits, particularly apples. Quetta is also a starting point for exploring the scenic beauty of the province, including the Ziarat Valley and Hanna Lake.",
+      "put description",
     coverImage: "/Project-showcase/Quetta/Quaid-e-azam-residency.jpg",
     moreImages: [
       "/Project-showcase/Quetta/Hanna-lake.jpg",
@@ -69,11 +69,11 @@ export const showCase = [
   },
   {
     id: 5,
-    city: "Peshawar",
+    city: "Apartment load bearing wall structure",
     shortDescription:
-      "Peshawar, the historic city in Khyber Pakhtunkhwa province, carries a rich cultural heritage with its bustling markets, ancient landmarks.",
+      "put comment",
     description:
-      "Peshawar: Peshawar is a city located in the Khyber Pakhtunkhwa province of Pakistan, close to the country's western border with Afghanistan. It is one of the oldest continuously inhabited cities in the world and has a unique blend of cultures and traditions. Peshawar is known for its bustling bazaars, where one can find traditional handicrafts, spices, and vibrant street food. The city is also a gateway to the scenic beauty of the Khyber Pass and the nearby tribal areas.",
+      "put description",
     coverImage: "/Project-showcase/Peshawar/Baab-e-khyber.jpg",
     moreImages: [
       "/Project-showcase/Peshawar/Islamia-college.jpg",
@@ -86,11 +86,11 @@ export const showCase = [
   },
   {
     id: 6,
-    city: "Murree",
+    city: "Apartment load bearing wall structure",
     shortDescription:
-      "Murree, the charming hill station in the foothills of the Himalayas, allures visitors with its cool climate, verdant forests, and panoramic views.",
+      "put comment",
     description:
-      "Murree: Murree is a hill station situated in the Pir Panjal Range of the Himalayas, just outside Islamabad. It is a popular tourist destination known for its cool climate, scenic beauty, and lush green hills. Murree offers breathtaking views, picturesque landscapes, and a pleasant escape from the summer heat of the plains. The town is dotted with colonial-era buildings, bustling markets, and charming guesthouses, making it a favored retreat for locals and tourists alike.",
+      "put description",
     coverImage: "/Project-showcase/Murree/Hills-view.jpg",
     moreImages: [
       "/Project-showcase/Murree/Attabad-lake.jpg",
