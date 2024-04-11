@@ -70,7 +70,7 @@ const AboutProject = ({ heroImageSrc, attachment }) => {
         >
           <div className="">
             <h2 className="text-xl mb-2 ">Client</h2>
-            <h3 className="text-xl opacity-80">Insight Studio</h3>
+            <h3 className="text-xl opacity-80">GTC group</h3>
           </div>
           <div className="">
             <h2 className="text-xl mb-2 ">Date</h2>
@@ -78,7 +78,7 @@ const AboutProject = ({ heroImageSrc, attachment }) => {
           </div>
           <div className="">
             <h2 className="text-xl mb-2 ">Services</h2>
-            <h3 className="text-xl opacity-80">Art Direction, Website</h3>
+            <h3 className="text-xl opacity-80">Airport construction</h3>
           </div>
           <div className="">
             <h2 className="text-xl mb-2 ">Share on</h2>
@@ -123,7 +123,7 @@ const AboutProject = ({ heroImageSrc, attachment }) => {
         </p>
         <div className="p-5 px-10 max-sm:px-4">
           <h2 className="text-2xl text-center font-semibold p-5 max-sm:p-3 border-l-4 border-red-500">
-            Recognised and awarded on multiple occasions for producing
+            Recognized and awarded on multiple occasions for producing
             consistently outstanding products
           </h2>
         </div>

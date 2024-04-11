@@ -69,7 +69,7 @@ const ContactPage = () => {
     if (errors === false) {
       setBtnLoader(true);
       axios
-        .post("https://homyz-server.vercel.app/contact", formData)
+        .post("link needed", formData)
         .then((response) => {
           showToast();
           setFormData({
@@ -175,7 +175,7 @@ const ContactPage = () => {
                 </div>
                 <h2 className="title-font font-semibold ">Services</h2>
               </div>
-              <p>Neque porro quisquam est, qui dolorem ipsum.</p>
+              <p>Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.</p>
             </motion.div>
             <motion.div
               variants={animationVariants.fadeUp}
@@ -187,7 +187,7 @@ const ContactPage = () => {
                 </div>
                 <h2 className="title-font font-semibold ">Pricing</h2>
               </div>
-              <p>Neque porro quisquam est, qui dolorem ipsum.</p>
+              <p>Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.</p>
             </motion.div>
             <motion.div
               variants={animationVariants.fadeUp}
@@ -199,7 +199,7 @@ const ContactPage = () => {
                 </div>
                 <h2 className="title-font font-semibold ">Support</h2>
               </div>
-              <p>Neque porro quisquam est, qui dolorem ipsum.</p>
+              <p>Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.</p>
             </motion.div>
           </motion.div>
         </div>
@@ -338,28 +338,26 @@ const ContactPage = () => {
             </h1>
           </div>
           <p className="text-xl">
-            Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-            impedit quo minus id quod maxime placeat facere possimus, omnis
-            voluptas assumenda est, omnis dolor repellendus.
+           Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide. 
           </p>
           <div className="flex flex-col gap-3">
             <div className="flex  gap-3 text-xl items-center">
               <div>
                 <FaEnvelope className="text-red-500" />
               </div>
-              <p>Office # 420 DHA Phase 90, Karachi, PK</p>
+              <p>Nairobi, Kenya</p>
             </div>
             <div className="flex  gap-3 text-xl items-center">
               <div>
                 <FaPhone className="rotate-90 text-red-500" />
               </div>
-              <p>+92 39283848238</p>
+              <p>+254718484254</p>
             </div>
             <div className="flex  gap-3 text-xl items-center">
               <div>
                 <FaMapMarkerAlt className="text-red-500" />
               </div>
-              <p>information@office.com</p>
+              <p>info@gtc.com</p>
             </div>
           </div>
         </motion.div>
@@ -386,8 +384,9 @@ const ContactPage = () => {
                 className="max-w-xl max-lg:max-w-lg max-sm:w-full text-center"
               >
                 <h1 className="text-[46px] max-lg:text-4xl max-sm:text-[34px] max-[500px]:text-3xl leading-tight font-semibold">
-                  Whatever you are, you
-                  <br /> will definitely get a place
+                  We provide Innovative, Intelligent and .
+
+                  <br /> Integrated Sustainable Engineering Solutions.
                 </h1>
                 <p className="text-xl mt-3">
                   We provide equity and debt capital globally to back projects
@@ -452,9 +451,9 @@ const ContactPage = () => {
               What we do
             </h2>
             <p className="text-xl">
-              Lorem ipsum dolor sit amet consectetur. Malesuada vehicula netus
-              urna in elit amet blandit enim lacinia. Tellus leo felis et vel
-              eget maecenas.
+              Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.  GCE has earned a reputation for delivering creative, innovative and sustainable design and cost-effective construction solutions in Kenya and East Africa at large.
+
+
             </p>
             <Link to="/about" onClick={scrollToTop}>
               <button
@@ -488,7 +487,7 @@ const ContactPage = () => {
                 iconAlt={"reliability"}
                 title={"Reliability"}
                 desc={
-                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam distinctio, nemo libero deleniti quibusdam quia!"
+                  "We provide Innovative, Intelligent and Integrated Sustainable Engineering Solutions."
                 }
               />
               <WhatWeDoCard
@@ -496,7 +495,7 @@ const ContactPage = () => {
                 iconAlt={"communication"}
                 title={"communication"}
                 desc={
-                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam distinctio, nemo libero deleniti quibusdam quia!"
+                  "We provide Innovative, Intelligent and Integrated Sustainable Engineering Solutions."
                 }
               />
             </div>
@@ -510,7 +509,7 @@ const ContactPage = () => {
                 iconAlt={"quality-first"}
                 title={"Quality First"}
                 desc={
-                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam distinctio, nemo libero deleniti quibusdam quia!"
+                  "We provide Innovative, Intelligent and Integrated Sustainable Engineering Solutions."
                 }
               />
               <div
@@ -634,8 +633,7 @@ const ContactPage = () => {
                     _expanded={{ color: "#ef4444" }}
                   >
                     <Box as="span" flex="1" textAlign="left">
-                      Can I choose the type of bed I want, request a smoking or
-                      non-smoking room?
+                      Can I choose the type of engineering I want, request for a specific engineer?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
@@ -696,7 +694,7 @@ const ContactPage = () => {
                     _expanded={{ color: "#ef4444" }}
                   >
                     <Box as="span" flex="1" textAlign="left">
-                      If I have booked accommodation, how can I check my
+                      If I have booked a project view, how can I check my
                       cancellation policy?
                     </Box>
                     <AccordionIcon />

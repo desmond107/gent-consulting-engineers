@@ -178,7 +178,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
                             <div className="flex justify-between">
                               <h2>Total</h2>
                               <p>
-                                PKR {formatCompactNumber(e.quantity * e.price)}
+                                Ksh {formatCompactNumber(e.quantity * e.price)}
                               </p>
                             </div>
                           </div>
@@ -192,7 +192,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
                   <div className="flex justify-between items-center">
                     <h2>Subtotal</h2>
                     <p className="total text-red-500">
-                      PKR {formatCompactNumber(subTotal)}
+                      Ksh {formatCompactNumber(subTotal)}
                     </p>
                   </div>
                   <Button
@@ -283,7 +283,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
                       className="hover:text-red-500 transition-all"
                       to="/showcases/showcase1"
                     >
-                      Show Case 1
+                      Project Show Case 1
                     </Link>
                   </li>
                   <li className="listItem flex items-center gap-2">
@@ -296,7 +296,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
                       className="hover:text-red-500 transition-all"
                       to="/showcases/showcase2"
                     >
-                      Show Case 2
+                      Project Show Case 2
                     </Link>
                   </li>
                 </ul>
@@ -458,7 +458,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
                 className="hover:text-red-500 transition-all"
                 to={"/showcases/showcase1"}
               >
-                Show Cases 1
+                Project Show Cases 1
               </Link>
               <Link
                 onClick={() => {
@@ -468,7 +468,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
                 to={"/showcases/showcase2"}
                 className="hover:text-red-500 transition-all"
               >
-                Show Cases 2
+                Project Show Cases 2
               </Link>
             </ul>
             <div
