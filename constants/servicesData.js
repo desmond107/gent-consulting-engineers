@@ -64,7 +64,7 @@ export const servicesData = [
   },
   {
     id: 7,
-    image: "/Services/images/product-design.jpg",
+    image: "/Services/images/q&a.jpg",
     title: "Project Quality Assurance and Control",
     icon: "/Services/icons/product-design-icon.png",
     shortDescription: "Engineering and structural quality assurance is our specialty .",
@@ -74,7 +74,7 @@ export const servicesData = [
   },
   {
     id: 8,
-    image: "/Services/images/product-design.jpg",
+    image: "/Services/images/supervision.jpg",
     title: "Project site Supervision and Monitoring",
     icon: "/Services/icons/product-design-icon.png",
     shortDescription: "Project diligence and accomplishment is our top priority",
