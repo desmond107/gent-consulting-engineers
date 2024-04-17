@@ -72,7 +72,7 @@ export const rentHouses = [
       "Area: 950 sqr.feet",
     ],
     description:
-      "Apartment in installment (View phone number) Sqfeet VIP location near to park and masjid Gulistan-e-Johar karachi. You can find a Flat on the lower or upper levels, as suiting to your requirement. Buying property is a one-time life decision and we can help you with it. 950 Square Feet sized residential or commercial property is best for investment purposes. All your queries concerned with this property are welcome, so please contact us.",
+      "Apartment in installment (View phone number) Sqfeet VIP location near to park nairobi. You can find a Flat on the lower or upper levels, as suiting to your requirement. Buying property is a one-time life decision and we can help you with it. 950 Square Feet sized residential or commercial property is best for investment purposes. All your queries concerned with this property are welcome, so please contact us.",
   },
   {
     id: 4,
@@ -85,7 +85,7 @@ export const rentHouses = [
       "/Rent-houses/House-4/home4-5.jpg",
     ],
     name: "Machakos",
-    address: "Blue Area, F-3, Islamabad, Pakistan",
+    address: "Blue Area, F-3, nairobi",
     details: [
       "Location: Machakos",
       "2 Bedrooms",
@@ -147,6 +147,6 @@ export const rentHouses = [
       "Area: 120 sqr.yards",
     ],
     description:
-      "The Best Design As Per Your Desire And Your Dream House a Well Designed House In A Posh Location Is All You Need To Live Your Best Life. Right Now Is The Time To Buy This Property. This Property In Bahria Town is an Opportunity For The Investors And Buyers Alike, So Make The Most Out Of It. Bahria Town S Unique Features Bahria Town Is A Secure Community 24 7 Electricity Available Under Ground Electricity WiringGrand Jamia Masjid Petrol Pump Feel Free To Contact For Further Details",
+      "The Best Design As Per Your Desire And Your Dream House a WiringGrandPump Feel Free To Contact For Further Details",
   },
 ];
