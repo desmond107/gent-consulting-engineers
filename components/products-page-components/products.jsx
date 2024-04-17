@@ -107,49 +107,18 @@ const Product = ({
             <h1 className="text-5xl font-semibold">House in {title}</h1>
             <p className="details text-2xl">{descr}</p>
             <div>
-              <h2 className="text-xl text-red-500 font-semibold">Price:</h2>
+              <h2 className="text-xl text-red-500 font-semibold">GCE</h2>
               <h2 className="text-2xl mt-2 font-semibold">
-                Ksh {formatCompactNumber(price)}/Month
+                Projects & developments
               </h2>
             </div>
             <div className="flex flex-col gap-2">
-              <h2 className="text-xl text-red-500 font-semibold">Quantity</h2>
+              <h2 className="text-xl text-red-500 font-semibold">Civil Engineering & construction</h2>
 
-              <NumberInput
-                borderColor={"#696969"}
-                focusBorderColor="#a7a7a7"
-                _placeholder={{ color: "#696969" }}
-                variant={"flushed"}
-                min={1}
-                id="inp"
-                size={"lg"}
-                className="mt-4 max-lg:w-72 max-sm:w-full"
-                value={inpt}
-                onChange={(e) => {
-                  setInpt(Number(e));
-                }}
-              >
-                <NumberInputField fontSize={"xl"} paddingX={"2"} />
-                <NumberInputStepper>
-                  <NumberIncrementStepper />
-                  <NumberDecrementStepper />
-                </NumberInputStepper>
-              </NumberInput>
-              <Button
-                // _hover={{ borderColor: "#d5515e" }}
-                _hover={{ backgroundColor: "white", color: "#d5515e" }}
-                backgroundColor={"#d5515e"}
-                color={"white"}
-                borderColor={"#d5515e"}
-                variant={"outline"}
-                size={"lg"}
-                isLoading={btnLoader}
-                loadingText={"Adding to Cart"}
-                onClick={handleAddToCart}
-                className="mt-4 max-lg:w-72 max-sm:w-full"
-              >
-                Add to Cart
-              </Button>
+              
+                
+              
+              
             </div>
             <div className="flex text-xl flex-col gap-2">
               <h2 className=" text-red-500 font-semibold">Details</h2>

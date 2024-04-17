@@ -26,17 +26,16 @@ const AboutPage = () => {
           <div className="text-white flex flex-col gap-8 max-md:items-center max-md:text-center">
             <h1 className="text-5xl font-bold">Who We Are</h1>
             <p className="text-xl max-w-md">
-              Our mission is to engage in issues that are of concern to
-              individuals
+              ...Where probity flairs & diligence meet...
             </p>
           </div>
           <div className="flex gap-12 max-sm:text-center text-white">
             <div className="flex max-md:items-center flex-col gap-4">
-              <h2 className="text-4xl title-font font-bold">19K+</h2>
+              <h2 className="text-4xl title-font font-bold">100+</h2>
               <p className="text-lg">Satisfied clients</p>
             </div>
             <div className="flex max-md:items-center flex-col gap-4">
-              <h2 className="text-4xl  title-font font-bold">5000+</h2>
+              <h2 className="text-4xl  title-font font-bold">500+</h2>
               <p className="text-lg">Successful projects</p>
             </div>
           </div>
