@@ -1,26 +1,19 @@
 export const partnerBrands = [
   {
-    title: "Grafton",
+    title: "",
     src: "grafton",
   },
   {
-    title: "Lighthouse",
+    title: "",
     src: "lighthouse",
   },
   {
-    title: "Tundratown",
+    title: "",
     src: "tundratown",
   },
   {
-    title: "Synero",
+    title: "",
     src: "synero",
   },
-  {
-    title: "Tectus",
-    src: "tectus",
-  },
-  {
-    title: "Aeternus",
-    src: "aeternus",
-  },
+  
 ];
