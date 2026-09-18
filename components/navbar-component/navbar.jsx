@@ -47,7 +47,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
           <Link
             onClick={scrollToTop}
             to="/"
-            aria-label="Gents Consulting Engineers home"
+            aria-label="Gent Consulting Engineers home"
             className="shrink-0"
           >
             <Logo

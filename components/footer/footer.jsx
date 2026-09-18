@@ -177,7 +177,7 @@ const Footer = () => {
             <Logo tone="light" size="lg" />
           </Link>
           <p className="text-white/60 text-base leading-relaxed max-w-md">
-            Gents leads a collaborative environment with a mission to provide
+            Gent leads a collaborative environment with a mission to provide
             functional, sound, economical, quality and sustainable engineering
             &amp; construction solutions that achieve our clients’ requirements.
           </p>
@@ -312,7 +312,7 @@ const Footer = () => {
       <div className="container-x relative">
         <div className="flex justify-between items-center gap-6 flex-wrap border-t border-white/10 py-8 text-sm text-white/50">
           <p>
-            © {new Date().getFullYear()} Gents Consulting Engineers. All rights
+            © {new Date().getFullYear()} Gent Consulting Engineers. All rights
             reserved.
           </p>
           <ul className="flex flex-wrap gap-x-7 gap-y-2">

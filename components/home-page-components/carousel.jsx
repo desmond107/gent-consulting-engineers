@@ -31,7 +31,7 @@ export default function Carousel() {
         className="mySwiper w-full max-w-full text-lg leading-relaxed text-ink-soft"
       >
         <SwiperSlide>
-          Gents Consulting Engineers is committed to providing innovative, 
+          Gent Consulting Engineers is committed to providing innovative, 
           intelligent and integrated sustainable engineering design solutions and quality services to enhance our customers’ satisfaction. 
         </SwiperSlide>
         <SwiperSlide>

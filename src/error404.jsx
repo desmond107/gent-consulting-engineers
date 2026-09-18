@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 const Error404 = () => {
   useEffect(() => {
-    document.title = "Page Not Found | Gents Consulting Engineers";
+    document.title = "Page Not Found | Gent Consulting Engineers";
   }, []);
   return (
     <>

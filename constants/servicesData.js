@@ -8,7 +8,7 @@ export const servicesData = [
       "Structural assessments that diagnose problems in existing buildings and extend their safe design life.",
     heading: "Know exactly how your building is performing",
     mainDescription:
-      "At Gents we use modern technologies to evaluate and monitor building performance, discover and solve structural problems, and predict future effects. Our findings give owners, designers and managers the evidence they need to make informed decisions that improve a building’s structural health and extend its design life.",
+      "At Gent we use modern technologies to evaluate and monitor building performance, discover and solve structural problems, and predict future effects. Our findings give owners, designers and managers the evidence they need to make informed decisions that improve a building’s structural health and extend its design life.",
     includes: [
       "Structural condition assessments",
       "Performance monitoring and testing",
@@ -25,7 +25,7 @@ export const servicesData = [
       "Planning and design of efficient, robust civil infrastructure built for performance and safety.",
     heading: "Infrastructure designed for buildability and safety",
     mainDescription:
-      "Designing efficient and robust infrastructure is a structured process, from initial planning through to post-implementation monitoring and analysis. It is at the heart of what Gents does: we integrate infrastructure systems and use current design software to design for buildability, performance, usability, sustainability and safety.",
+      "Designing efficient and robust infrastructure is a structured process, from initial planning through to post-implementation monitoring and analysis. It is at the heart of what Gent does: we integrate infrastructure systems and use current design software to design for buildability, performance, usability, sustainability and safety.",
     includes: [
       "Infrastructure planning and feasibility",
       "Civil engineering design",
@@ -42,7 +42,7 @@ export const servicesData = [
       "Bridges designed to withstand gravity, wind and seismic loads in line with relevant codes.",
     heading: "Bridges engineered to last",
     mainDescription:
-      "Gents designs bridges that withstand gravity, wind, earthquakes and other external influences, minimising the risk of structural failure or collapse in accordance with the relevant codes and safety standards.",
+      "Gent designs bridges that withstand gravity, wind, earthquakes and other external influences, minimising the risk of structural failure or collapse in accordance with the relevant codes and safety standards.",
     includes: [
       "Structural analysis for gravity, wind and seismic loads",
       "Code-compliant bridge design",
@@ -59,7 +59,7 @@ export const servicesData = [
       "Site investigation and foundation design grounded in a clear understanding of site conditions.",
     heading: "Build on a clear understanding of the ground",
     mainDescription:
-      "Site investigation is a critical part of geotechnical engineering. It reveals the geological and geotechnical properties of a site, groundwater conditions and other factors that affect the design and construction of a project. Gents treats site investigation as an essential step, helping our engineers understand site conditions and develop foundation designs and construction methods that are safe, economical and sustainable.",
+      "Site investigation is a critical part of geotechnical engineering. It reveals the geological and geotechnical properties of a site, groundwater conditions and other factors that affect the design and construction of a project. Gent treats site investigation as an essential step, helping our engineers understand site conditions and develop foundation designs and construction methods that are safe, economical and sustainable.",
     includes: [
       "Site and soil investigations",
       "Groundwater assessment",
@@ -76,7 +76,7 @@ export const servicesData = [
       "Airfield pavement design, from surveying and soil investigation to construction drawings.",
     heading: "Integrated airfield and pavement engineering",
     mainDescription:
-      "Airfield pavement design is an integrated exercise that draws on topographical surveying, geotechnical investigation, materials engineering, hydrological and drainage design, pavement design and structural design. Gents brings experience across each of these disciplines through to the preparation of construction drawings.",
+      "Airfield pavement design is an integrated exercise that draws on topographical surveying, geotechnical investigation, materials engineering, hydrological and drainage design, pavement design and structural design. Gent brings experience across each of these disciplines through to the preparation of construction drawings.",
     includes: [
       "Airport topographical surveying",
       "Geotechnical and soil investigations",
@@ -112,7 +112,7 @@ export const servicesData = [
       "Materials testing and compliance checks that keep construction defect-free and to specification.",
     heading: "Quality you can verify",
     mainDescription:
-      "Gents’ quality assurance engineers make sure every structure we deliver is high-quality and free of errors. Our quality control team of highly skilled engineers tests materials and workmanship for compliance with project requirements, improving collaboration, shortening delivery time and reducing costs.",
+      "Gent’s quality assurance engineers make sure every structure we deliver is high-quality and free of errors. Our quality control team of highly skilled engineers tests materials and workmanship for compliance with project requirements, improving collaboration, shortening delivery time and reducing costs.",
     includes: [
       "Quality assurance planning",
       "Materials testing",
@@ -129,7 +129,7 @@ export const servicesData = [
       "Day-to-day site supervision that keeps work on schedule and compliant with the contract.",
     heading: "Eyes on site, every step of the way",
     mainDescription:
-      "Gents has wide-ranging expertise in planning and organising construction activities, supervising and coordinating construction teams, monitoring progress to keep the project on schedule, managing construction equipment, and inspecting sites to ensure compliance with contract conditions and regulations.",
+      "Gent has wide-ranging expertise in planning and organising construction activities, supervising and coordinating construction teams, monitoring progress to keep the project on schedule, managing construction equipment, and inspecting sites to ensure compliance with contract conditions and regulations.",
     includes: [
       "Planning and organising construction activities",
       "Supervising and coordinating site teams",

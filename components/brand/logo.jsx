@@ -40,7 +40,7 @@ export const LogoMark = ({ size = 44, className = "" }) => {
   );
 };
 
-// Full logo: emblem + "GENTS / CONSULTING ENGINEERS" wordmark.
+// Full logo: emblem + "GENT / CONSULTING ENGINEERS" wordmark.
 // tone="light" for dark backgrounds, "dark" for light backgrounds.
 const Logo = ({ tone = "dark", size = "md", className = "" }) => {
   const s = {
@@ -51,7 +51,7 @@ const Logo = ({ tone = "dark", size = "md", className = "" }) => {
   return (
     <span
       className={`inline-flex items-center ${s.gap} ${className}`}
-      aria-label="Gents Consulting Engineers"
+      aria-label="Gent Consulting Engineers"
     >
       <LogoMark size={s.mark} className="shrink-0 drop-shadow-sm" />
       <span className="flex flex-col leading-none" aria-hidden="true">
@@ -60,7 +60,7 @@ const Logo = ({ tone = "dark", size = "md", className = "" }) => {
             tone === "light" ? "text-white" : "text-ink"
           }`}
         >
-          GENTS
+          GENT
         </span>
         <span
           className={`mt-1 font-semibold uppercase tracking-[0.26em] whitespace-nowrap ${

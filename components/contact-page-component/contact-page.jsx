@@ -270,7 +270,7 @@ const ContactPage = () => {
             <span className="text-brand-600">about what you’re building.</span>
           </h2>
           <p className="text-lg text-ink-soft leading-relaxed">
-            Gents Consulting Engineers is a civil, structural and construction
+            Gent Consulting Engineers is a civil, structural and construction
             engineering and management firm based in Nairobi, serving the
             commercial construction community across Kenya and East Africa.
           </p>
