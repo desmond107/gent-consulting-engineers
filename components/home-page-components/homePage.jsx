@@ -27,7 +27,8 @@ import "./homePage.css";
 import { Link } from "react-router-dom";
 import { scrollToTop } from "../../constants/scrollToTop";
 import { partnerBrands } from "../../constants/partnerBrands";
-import { useEffect } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import HeroVideo from "./heroVideo";
 
 const stats = [
   { value: "100+", label: "Satisfied clients" },
@@ -74,7 +75,35 @@ const values = [
   },
 ];
 
+const heroClips = [
+  {
+    src: "/videos/gce1.mp4",
+    mobileSrc: "/videos/gce1-480.mp4",
+    poster: "/videos/gce1-poster.jpg",
+    duration: 15,
+    label: "Our engineers on site",
+  },
+  {
+    src: "/videos/gce2.mp4",
+    mobileSrc: "/videos/gce2-480.mp4",
+    poster: "/videos/gce2-poster.jpg",
+    duration: 5,
+    label: "Building the skyline",
+  },
+];
+
 const HomePage = () => {
+  const heroVideoControl = useRef(null);
+  const clipBars = useRef([]);
+  const [activeClip, setActiveClip] = useState(0);
+  // Called every animation frame: write straight to the DOM instead of state.
+  const onClipProgress = useCallback((index, progress) => {
+    setActiveClip(index);
+    clipBars.current.forEach((bar, i) => {
+      if (bar)
+        bar.style.transform = `scaleX(${i === index ? progress : 0})`;
+    });
+  }, []);
   useEffect(() => {
     document.title =
       "Gents Consulting Engineers | Civil & Structural Engineering, Kenya";
@@ -83,12 +112,13 @@ const HomePage = () => {
     <div className="w-full overflow-hidden">
       {/* hero section */}
       <section className="relative isolate min-h-[100svh] flex items-end bg-ink">
-        <img
-          src="/hero-bg-image.jpg"
-          alt=""
-          className="absolute inset-0 -z-10 w-full h-full object-cover object-top"
+        <HeroVideo
+          clips={heroClips}
+          onProgress={onClipProgress}
+          controlRef={heroVideoControl}
         />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/90 via-ink/60 to-ink/10 max-lg:bg-ink/60"></div>
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/90 via-ink/55 to-ink/10 max-lg:bg-ink/50"></div>
+        <div className="absolute inset-x-0 top-0 h-40 -z-10 bg-gradient-to-b from-ink/60 to-transparent"></div>
         <div className="absolute inset-x-0 bottom-0 h-1/2 -z-10 bg-gradient-to-t from-ink/90 to-transparent"></div>
 
         <motion.div
@@ -145,9 +175,48 @@ const HomePage = () => {
             </Link>
           </motion.div>
 
+          {/* clip indicator */}
           <motion.div
             variants={animationVariants.fadeUp}
-            className="w-full mt-10 max-md:mt-6 grid grid-cols-4 max-md:grid-cols-2 rounded-xl border border-white/15 bg-white/5 backdrop-blur-md overflow-hidden"
+            className="w-full mt-6 max-md:mt-2 flex justify-end max-lg:justify-center gap-6 max-sm:gap-4"
+          >
+            {heroClips.map((clip, i) => (
+              <button
+                key={clip.src}
+                type="button"
+                onClick={() => heroVideoControl.current?.goTo(i)}
+                aria-label={`Play clip ${i + 1}: ${clip.label}`}
+                aria-current={activeClip === i}
+                className="group w-44 max-sm:w-20 text-left"
+              >
+                <span
+                  className={`flex items-baseline gap-2 text-xs font-semibold uppercase tracking-[0.18em] transition-colors ${
+                    activeClip === i
+                      ? "text-white"
+                      : "text-white/45 group-hover:text-white/80"
+                  }`}
+                >
+                  <span className="font-display">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="truncate normal-case tracking-normal font-medium text-[13px] max-sm:hidden">
+                    {clip.label}
+                  </span>
+                </span>
+                <span className="mt-2 block h-[2px] w-full bg-white/20 overflow-hidden rounded-full">
+                  <span
+                    ref={(el) => (clipBars.current[i] = el)}
+                    className="block h-full w-full origin-left bg-brand-300"
+                    style={{ transform: "scaleX(0)" }}
+                  ></span>
+                </span>
+              </button>
+            ))}
+          </motion.div>
+
+          <motion.div
+            variants={animationVariants.fadeUp}
+            className="w-full mt-4 grid grid-cols-4 max-md:grid-cols-2 rounded-xl border border-white/15 bg-white/5 backdrop-blur-md overflow-hidden"
           >
             {stats.map((s, i) => (
               <div
