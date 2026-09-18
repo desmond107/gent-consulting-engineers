@@ -1,34 +1,20 @@
 import { useEffect } from "react";
-import { useNavigate, useParams } from "react-router";
+import { Navigate, useParams } from "react-router-dom";
 import ServicePage from "../components/service-component/service";
 import { servicesData } from "../constants/servicesData";
 
 const Service = () => {
-  const navigate = useNavigate();
   const params = useParams();
-  const serviceData = servicesData[params.id - 1];
+  const service = servicesData.find((e) => String(e.id) === String(params.id));
 
   useEffect(() => {
-    const serviceData = servicesData.findIndex((e, i) => {
-      return e.id == params.id;
-    });
-    console.log(serviceData);
-    if (serviceData === -1) {
-      navigate("/*");
+    if (service) {
+      document.title = `${service.title} | Gent Consulting Engineers`;
     }
-  }, []);
-  useEffect(() => {
-    document.title = `${serviceData.title} | Gent Consulting Engineers`;
-  }, []);
-  return (
-    <ServicePage
-      id={serviceData.id}
-      title={serviceData.title}
-      breif={serviceData.shortDescription}
-      descr={serviceData.mainDescription}
-      imageSrc={serviceData.image}
-    />
-  );
+  }, [service]);
+
+  if (!service) return <Navigate to="/services" replace />;
+  return <ServicePage service={service} />;
 };
 
 export default Service;

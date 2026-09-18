@@ -7,6 +7,7 @@ import {
   FaLeaf,
   FaUsers,
   FaCheckCircle,
+  FaFilePdf,
 } from "react-icons/fa";
 import WhatWeDoCard from "./whatwedocard";
 import Button from "../buttons-component/solidbutton";
@@ -14,6 +15,10 @@ import ProjectCard from "./projectCard";
 import Carousel from "./carousel";
 import ReviewCard from "./reviewCard";
 import PartnerBrandCard from "./partnerBrandCard";
+import Process from "./process";
+import Testimonials from "./testimonials";
+import Credentials from "./credentials";
+import { site } from "../../constants/site";
 import { motion } from "framer-motion";
 import { animationVariants } from "../../constants/animationVariants";
 import { showCase } from "../../constants/showcase";
@@ -22,6 +27,7 @@ import "./homePage.css";
 import { Link } from "react-router-dom";
 import { scrollToTop } from "../../constants/scrollToTop";
 import { partnerBrands } from "../../constants/partnerBrands";
+import { useEffect } from "react";
 
 const stats = [
   { value: "100+", label: "Satisfied clients" },
@@ -69,6 +75,10 @@ const values = [
 ];
 
 const HomePage = () => {
+  useEffect(() => {
+    document.title =
+      "Gent Consulting Engineers | Civil & Structural Engineering, Kenya";
+  }, []);
   return (
     <div className="w-full overflow-hidden">
       {/* hero section */}
@@ -206,18 +216,33 @@ const HomePage = () => {
               </li>
             ))}
           </ul>
-          <Link onClick={scrollToTop} to={"/about"} className="self-start mt-2">
-            <Button
-              content={
-                <>
-                  More about us <FaArrowRight className="text-sm" />
-                </>
-              }
-              fontSize={"text-base"}
-              padding={"px-6 py-3"}
-              variant="outline"
-            />
-          </Link>
+          <Credentials />
+          <div className="flex flex-wrap items-center gap-4 mt-2">
+            <Link onClick={scrollToTop} to={"/about"}>
+              <Button
+                content={
+                  <>
+                    More about us <FaArrowRight className="text-sm" />
+                  </>
+                }
+                fontSize={"text-base"}
+                padding={"px-6 py-3"}
+                variant="outline"
+              />
+            </Link>
+            {site.companyProfilePdf ? (
+              <a
+                href={site.companyProfilePdf}
+                download
+                className="inline-flex items-center gap-2 font-semibold text-ink-soft hover:text-brand-700"
+              >
+                <FaFilePdf className="text-brand-600" /> Download company
+                profile
+              </a>
+            ) : (
+              ""
+            )}
+          </div>
         </motion.div>
       </section>
 
@@ -326,6 +351,8 @@ const HomePage = () => {
           ))}
         </motion.div>
       </section>
+
+      <Process />
 
       {/* mission, vision & values section */}
       <section className="relative bg-ink text-white overflow-hidden">
@@ -483,6 +510,8 @@ const HomePage = () => {
         </div>
       </section>
 
+      <Testimonials />
+
       {/* leadership & why us section */}
       <section className="bg-surface">
         <div className="container-x grid grid-cols-2 max-lg:grid-cols-1 gap-20 max-lg:gap-14 py-28 max-md:py-20 items-center">
@@ -496,20 +525,21 @@ const HomePage = () => {
             <motion.span variants={animationVariants.fadeUp} className="eyebrow">
               <FaUsers /> Leadership
             </motion.span>
-            <motion.div variants={animationVariants.fadeUp}>
-              <ReviewCard
-                initials={"AK"}
-                title={"Eng. Alvince O. Korero, PE"}
-                from={"Technical Director & CEO"}
-              />
-            </motion.div>
-            <motion.div variants={animationVariants.fadeUp} className="lg:ml-12">
-              <ReviewCard
-                initials={"AO"}
-                title={"CPA Angeline N.M. Omondi"}
-                from={"MD, Director Finance & Administration"}
-              />
-            </motion.div>
+            {site.team.map((m, i) => (
+              <motion.div
+                key={m.name}
+                variants={animationVariants.fadeUp}
+                className={i % 2 ? "lg:ml-12" : ""}
+              >
+                <ReviewCard
+                  initials={m.initials}
+                  imgSrc={m.photo}
+                  title={m.name}
+                  from={m.role}
+                  bio={m.bio}
+                />
+              </motion.div>
+            ))}
           </motion.div>
           <motion.div
             initial="initial"

@@ -1,28 +1,13 @@
-import { FaAngleDown, FaBars, FaShoppingCart } from "react-icons/fa";
+import { FaAngleDown, FaBars } from "react-icons/fa";
 import "./navbar.css";
 import Button from "../buttons-component/solidbutton";
 import { Link, NavLink } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
-import { CartContext } from "../../context/cartContext";
-import {
-  NumberInput,
-  NumberInputField,
-  NumberInputStepper,
-  NumberIncrementStepper,
-  NumberDecrementStepper,
-} from "@chakra-ui/react";
-import { formatCompactNumber } from "../../constants/formatNumber";
+import { useEffect, useState } from "react";
 import { scrollToTop } from "../../constants/scrollToTop";
 const NavBar = ({ navBar2, showCase1Page }) => {
-  const [totalQty, setTotalQty] = useState(0);
-  const [subTotal, setSubTotal] = useState(0);
-  const [check, setCheck] = useState(false);
-  const { cartItems, setCartItems, addToCart, modal, setModal } =
-    useContext(CartContext);
   const [scrolled, setScrolled] = useState(false);
   const [showcaseDropDown, setShowcaseDropDown] = useState(false);
   const [viewSideNav, setViewSideNav] = useState(false);
-  const [checkOut, setCheckOut] = useState(false);
   const hideNav = () => {
     setViewSideNav(false);
   };
@@ -41,184 +26,8 @@ const NavBar = ({ navBar2, showCase1Page }) => {
       isActive ? "after:w-full" : "after:w-0"
     } ${solid ? "hover:text-brand-600" : "hover:text-white"}`;
 
-  useEffect(() => {
-    let totalQuantity = cartItems.reduce(
-      (acc, product) => acc + product.quantity,
-      0
-    );
-    setTotalQty(totalQuantity);
-    let total = cartItems.map((e, i) => {
-      return e.quantity * e.price;
-    });
-    let totalPrice = total.reduce((acc, product) => acc + product, 0);
-    setSubTotal(totalPrice);
-    setCheckOut(false);
-  }, [cartItems]);
-  useEffect(() => {
-    const body = document.getElementsByTagName("body").item(0);
-    if (modal) {
-      body.style.overflowY = "hidden";
-    } else {
-      body.style.overflowY = "auto";
-    }
-  }, [modal]);
   return (
     <>
-      {modal ? (
-        <div
-          style={{ zIndex: 101 }}
-          className="modal   fixed top-0 overflow-y-auto  flex flex-col  items-center left-0 bottom-0 right-0 bg-black/70 max-sm:bg-white"
-        >
-          <div className="w-[500px]  max-sm:w-full    max-sm:my-0  bg-white">
-            <div
-              style={{ borderBottomWidth: 1 }}
-              className="modal-header text-2xl font-semibold px-6 py-4 border-gray-400/90 flex justify-between items-center"
-            >
-              <h1 className="title">Your Cart</h1>
-
-              <div
-                onClick={() => {
-                  setModal(false);
-                }}
-                className="cancel cursor-pointer w-7 h-7"
-                id="close-modal"
-              >
-                <div style={{ width: 3 }} className="relative mx-auto h-full">
-                  <div
-                    style={{ width: 2 }}
-                    className="absolute h-full bg-gray-800 transition-all hover:bg-gray-600 max-sm:hover:bg-gray-800 rotate-45"
-                  ></div>
-                  <div
-                    style={{ width: 2 }}
-                    className="absolute h-full bg-gray-800 transition-all hover:bg-gray-600 max-sm:hover:bg-gray-800 -rotate-45"
-                  ></div>
-                </div>
-              </div>
-            </div>
-            {totalQty > 0 ? (
-              <div>
-                <div
-                  className={`p-6 ${
-                    checkOut ? "max-sm:pb-48" : "max-sm:pb-36"
-                  } flex flex-col gap-5`}
-                >
-                  {cartItems.map((e, i) => {
-                    if (e.quantity > 0) {
-                      return (
-                        <div key={i}>
-                          <div className="flex flex-col gap-4">
-                            <div className="flex justify-between">
-                              <div className="flex gap-4">
-                                <Link
-                                  onClick={() => {
-                                    setModal(false);
-                                    scrollToTop();
-                                  }}
-                                  to={`/products/${e.id}`}
-                                  className="flex gap-4"
-                                >
-                                  <img
-                                    className="min-w-[65px] w-20 h-full max-sm:h-[85px] object-cover"
-                                    src={e.image}
-                                    alt={e.image}
-                                  />
-                                </Link>
-                                <div>
-                                  <Link
-                                    onClick={() => {
-                                      setModal(false);
-                                      scrollToTop();
-                                    }}
-                                    to={`/products/${e.id}`}
-                                  >
-                                    <h2 className="title-font text-xl">
-                                      House in {e.name}
-                                    </h2>
-                                  </Link>
-                                  <h3>
-                                    PKR {formatCompactNumber(e.price)}/Month
-                                  </h3>
-                                  <p
-                                    onClick={(event) => {
-                                      let arr = cartItems;
-                                      arr.splice(i, 1);
-                                      setCartItems([...arr]);
-                                    }}
-                                    className="text-lg w-fit hover:text-black transition-all duration-300 cursor-pointer text-brand-600 hover mt-3"
-                                  >
-                                    remove
-                                  </p>
-                                </div>
-                              </div>
-                              <div>
-                                <NumberInput
-                                  value={e.quantity}
-                                  min={1}
-                                  className="w-20"
-                                  size={"md"}
-                                  onChange={(event) => {
-                                    if (Number(event) > 0) {
-                                      let arr = cartItems;
-                                      arr[i].quantity = Number(event);
-                                      setCartItems([...arr]);
-                                    }
-                                  }}
-                                >
-                                  <NumberInputField readOnly={true} />
-                                  <NumberInputStepper>
-                                    <NumberIncrementStepper />
-                                    <NumberDecrementStepper />
-                                  </NumberInputStepper>
-                                </NumberInput>
-                              </div>
-                            </div>
-                            <div className="flex justify-between">
-                              <h2>Total</h2>
-                              <p>
-                                Ksh {formatCompactNumber(e.quantity * e.price)}
-                              </p>
-                            </div>
-                          </div>
-                          <hr />
-                        </div>
-                      );
-                    }
-                  })}
-                </div>
-                <div className="p-6 pt-0 bg-white max-sm:pt-6 flex max-sm:fixed bottom-0 left-0 right-0 flex-col gap-5">
-                  <div className="flex justify-between items-center">
-                    <h2>Subtotal</h2>
-                    <p className="total text-brand-600">
-                      Ksh {formatCompactNumber(subTotal)}
-                    </p>
-                  </div>
-                  <Button
-                    onClick={() => {
-                      setCheckOut(true);
-                    }}
-                    content={"Continue to Checkout"}
-                    padding={"py-2"}
-                  />
-                  {checkOut ? (
-                    <p className="text-brand-600">
-                      Checkout is disabled on this site.
-                    </p>
-                  ) : (
-                    ""
-                  )}
-                </div>
-              </div>
-            ) : (
-              <div className="p-20 flex justify-center items-center">
-                <p className="text-xl">No items found.</p>
-              </div>
-            )}
-          </div>
-        </div>
-      ) : (
-        ""
-      )}
-
       <header
         style={{ zIndex: 98 }}
         className={`${
@@ -282,22 +91,6 @@ const NavBar = ({ navBar2, showCase1Page }) => {
             <NavLink onClick={scrollToTop} className={linkClass} to="/about">
               About
             </NavLink>
-            {totalQty > 0 ? (
-              <button
-                aria-label="Open cart"
-                className="relative text-lg"
-                onClick={() => {
-                  setModal(true);
-                }}
-              >
-                <span className="absolute -right-2.5 -top-2.5 bg-brand-600 text-white rounded-full h-[18px] min-w-[18px] px-1 text-[11px] leading-[18px] font-semibold text-center">
-                  {totalQty}
-                </span>
-                <FaShoppingCart />
-              </button>
-            ) : (
-              ""
-            )}
             <Link onClick={scrollToTop} to="/contact">
               <Button
                 content={"Get a Quote"}
@@ -312,22 +105,6 @@ const NavBar = ({ navBar2, showCase1Page }) => {
               solid ? "text-ink" : "text-white"
             } text-xl hidden max-lg:flex items-center gap-6`}
           >
-            {totalQty > 0 ? (
-              <button
-                aria-label="Open cart"
-                className="relative"
-                onClick={() => {
-                  setModal(true);
-                }}
-              >
-                <span className="absolute -right-2.5 -top-2.5 bg-brand-600 text-white rounded-full h-[18px] min-w-[18px] px-1 text-[11px] leading-[18px] font-semibold text-center">
-                  {totalQty}
-                </span>
-                <FaShoppingCart />
-              </button>
-            ) : (
-              ""
-            )}
             <button
               aria-label="Open menu"
               onClick={() => {

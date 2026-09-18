@@ -6,8 +6,17 @@ import {
   FaTwitter,
   FaPhoneAlt,
   FaMapMarkerAlt,
+  FaEnvelope,
+  FaWhatsapp,
+  FaLinkedinIn,
+  FaFilePdf,
 } from "react-icons/fa";
-import axios from "axios";
+import Credentials from "../home-page-components/credentials";
+import { site, whatsappLink } from "../../constants/site";
+import {
+  submitEnquiry,
+  enquiryErrorMessage,
+} from "../../constants/submitEnquiry";
 import { Link } from "react-router-dom";
 import { scrollToTop } from "../../constants/scrollToTop";
 
@@ -17,9 +26,10 @@ const Footer = () => {
 
   const showToast = () => {
     toast({
-      title: "Message Sent",
+      title: "Thanks! Your message has been sent.",
+      description: "Our team will be in touch soon.",
       status: "success",
-      duration: 2000,
+      duration: 4000,
       isClosable: true,
       position: "top",
       containerStyle: {
@@ -31,7 +41,7 @@ const Footer = () => {
     toast({
       title: res,
       status: status,
-      duration: 2000,
+      duration: 6000,
       isClosable: true,
       position: "top",
       containerStyle: {
@@ -57,9 +67,8 @@ const Footer = () => {
 
     if (errors === false) {
       setBtnLoader(true);
-      axios
-        .post("https://homyz-server.vercel.app/contact", formData)
-        .then((response) => {
+      submitEnquiry(formData, "Footer")
+        .then(() => {
           showToast();
           setFormData({
             firstName: "",
@@ -72,7 +81,7 @@ const Footer = () => {
         })
         .catch((error) => {
           setBtnLoader(false);
-          errorToast(error.message, "error");
+          errorToast(enquiryErrorMessage, "error");
           console.error("Error submitting form:", error);
         });
     }
@@ -141,6 +150,13 @@ const Footer = () => {
     autoComplete: "off",
   };
 
+  const socialLinks = [
+    [site.socials.linkedin, <FaLinkedinIn key="l" />, "LinkedIn"],
+    [site.socials.facebook, <FaFacebookF key="f" />, "Facebook"],
+    [site.socials.instagram, <FaInstagram key="i" />, "Instagram"],
+    [site.socials.twitter, <FaTwitter key="t" />, "Twitter"],
+  ].filter(([href]) => href);
+
   const footerLinks = [
     ["/", "Home"],
     ["/services", "Services"],
@@ -169,43 +185,62 @@ const Footer = () => {
             &amp; construction solutions that achieve our clients’ requirements.
           </p>
           <div className="flex flex-col gap-3 text-white/80">
-            <a
-              href="tel:+254718484254"
-              className="flex items-center gap-3 hover:text-white transition-colors"
-            >
-              <span className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-300">
-                <FaPhoneAlt className="text-sm" />
-              </span>
-              +254 718 484 254
-            </a>
-            <span className="flex items-center gap-3">
-              <span className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-300">
-                <FaMapMarkerAlt className="text-sm" />
-              </span>
-              Nairobi, Kenya
-            </span>
-          </div>
-          <div className="flex items-center gap-3">
             {[
-              ["https://facebook.com", <FaFacebookF key="f" />, "Facebook"],
-              ["https://instagram.com", <FaInstagram key="i" />, "Instagram"],
-              ["https://twitter.com", <FaTwitter key="t" />, "Twitter"],
-            ].map(([href, icon, label]) => (
-              <a
-                key={label}
-                aria-label={label}
-                target="_blank"
-                rel="noreferrer"
-                href={href}
-                className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/70 hover:bg-brand-500 hover:border-brand-500 hover:text-white transition-all"
-              >
-                {icon}
-              </a>
-            ))}
+              [site.phoneHref, <FaPhoneAlt key="p" />, site.phone],
+              [`mailto:${site.email}`, <FaEnvelope key="e" />, site.email],
+              [whatsappLink(), <FaWhatsapp key="w" />, "Chat on WhatsApp"],
+              ["", <FaMapMarkerAlt key="m" />, site.location],
+            ].map(([href, icon, label]) => {
+              const Tag = href ? "a" : "span";
+              return (
+                <Tag
+                  key={label}
+                  href={href || undefined}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noreferrer" : undefined}
+                  className="flex items-center gap-3 hover:text-white transition-colors"
+                >
+                  <span className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-300 text-sm">
+                    {icon}
+                  </span>
+                  {label}
+                </Tag>
+              );
+            })}
           </div>
+          {socialLinks.length ? (
+            <div className="flex items-center gap-3">
+              {socialLinks.map(([href, icon, label]) => (
+                <a
+                  key={label}
+                  aria-label={label}
+                  target="_blank"
+                  rel="noreferrer"
+                  href={href}
+                  className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/70 hover:bg-brand-500 hover:border-brand-500 hover:text-white transition-all"
+                >
+                  {icon}
+                </a>
+              ))}
+            </div>
+          ) : (
+            ""
+          )}
+          <Credentials dark />
+          {site.companyProfilePdf ? (
+            <a
+              href={site.companyProfilePdf}
+              download
+              className="inline-flex items-center gap-2 text-sm font-semibold text-brand-300 hover:text-white"
+            >
+              <FaFilePdf /> Download company profile (PDF)
+            </a>
+          ) : (
+            ""
+          )}
         </div>
 
-        <div id="contact" className="flex flex-col gap-8">
+        <div id="footer-contact" className="flex flex-col gap-8">
           <div>
             <span className="eyebrow eyebrow-light">Start a project</span>
             <h2 className="text-3xl font-bold mt-3">Get in touch</h2>

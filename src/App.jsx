@@ -6,14 +6,12 @@ import ShowCase2 from "./showcase2";
 import Error404 from "./error404";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AboutProject from "../components/project-page-components/aboutProject";
-import Products from "./products";
 import About from "./about";
 import Service from "./service";
 import HomePage from "../components/home-page-components/homePage";
-import Featured from "../components/featured-&-popluar-page-component/featrued";
-import Popular from "../components/featured-&-popluar-page-component/popluar";
 import Contact from "./contact";
-import Results from "./results";
+import WhatsAppButton from "../components/whatsapp-button/whatsappButton";
+import { Analytics } from "@vercel/analytics/react";
 
 const router = createBrowserRouter([
   {
@@ -32,16 +30,6 @@ const router = createBrowserRouter([
       <>
         <NavBar />
         <Services />
-        <Footer />
-      </>
-    ),
-  },
-  {
-    path: "/search",
-    element: (
-      <>
-        <NavBar navBar2={true} />
-        <Results />
         <Footer />
       </>
     ),
@@ -73,36 +61,6 @@ const router = createBrowserRouter([
       <>
         <NavBar />
         <ShowCase2 />
-        <Footer />
-      </>
-    ),
-  },
-  {
-    path: "/featured",
-    element: (
-      <>
-        <NavBar />
-        <Featured />
-        <Footer />
-      </>
-    ),
-  },
-  {
-    path: "/popular",
-    element: (
-      <>
-        <NavBar />
-        <Popular />
-        <Footer />
-      </>
-    ),
-  },
-  {
-    path: "/products/:id",
-    element: (
-      <>
-        <NavBar navBar2={true} />
-        <Products />
         <Footer />
       </>
     ),
@@ -144,7 +102,13 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />
+      <WhatsAppButton />
+      <Analytics />
+    </>
+  );
 }
 
 export default App;

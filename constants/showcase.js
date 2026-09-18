@@ -4,6 +4,14 @@ export const showCase = [
     city: "AIA-Terminal Building",
     shortDescription:
       "A Gent Consulting Engineers project.",
+    // Case-study details. Empty fields are hidden on the project page.
+    client: "",
+    location: "",
+    year: "",
+    role: [], // e.g. ["Structural design", "Site supervision"]
+    challenge: "",
+    solution: "",
+    outcome: "",
     description:
       "Township establishment infrastructure Bulk Power Designs- building Services reticulation, Data Capturing and Management, Network Audits, Substation Refurbishment and Upgrade, Power Station Management, technical performance and efficiency of Main and Auxiliary Equipment for Power Stations, Energy Management. Lighting- General Lighting, Township Lighting (High masts & Street Lighting), Security Lighting, Specialized LightingSecurity Systems- Access Control, CCTV monitoring Systems, Building Management",
     coverImage: "/Project-showcase/Karachi/Dolmen-bahria-towers.jpg",
@@ -21,8 +29,15 @@ export const showCase = [
     city: "AIA –Building steel elements",
     shortDescription:
       "A Gent Consulting Engineers project.",
-    description:
-      "Put decription",
+    // Case-study details. Empty fields are hidden on the project page.
+    client: "",
+    location: "",
+    year: "",
+    role: [], // e.g. ["Structural design", "Site supervision"]
+    challenge: "",
+    solution: "",
+    outcome: "",
+    description: "",
     coverImage: "/Project-showcase/Islamabad/Faisal-mosque.jpg",
     moreImages: [
       "/Project-showcase/Islamabad/Fatima-Jinnah-Park.jpg",
@@ -38,8 +53,15 @@ export const showCase = [
     city: "Residential construction ",
     shortDescription:
       "A Gent Consulting Engineers project.",
-    description:
-      "put description",
+    // Case-study details. Empty fields are hidden on the project page.
+    client: "",
+    location: "",
+    year: "",
+    role: [], // e.g. ["Structural design", "Site supervision"]
+    challenge: "",
+    solution: "",
+    outcome: "",
+    description: "",
     coverImage: "/Project-showcase/Lahore/Badshahi-mosque.jpg",
     moreImages: [
       "/Project-showcase/Lahore/Minar-e-pakistan.jpg",
@@ -55,8 +77,15 @@ export const showCase = [
     city: "Building completed frame structure",
     shortDescription:
       "A Gent Consulting Engineers project.",
-    description:
-      "put description",
+    // Case-study details. Empty fields are hidden on the project page.
+    client: "",
+    location: "",
+    year: "",
+    role: [], // e.g. ["Structural design", "Site supervision"]
+    challenge: "",
+    solution: "",
+    outcome: "",
+    description: "",
     coverImage: "/Project-showcase/Quetta/Quaid-e-azam-residency.jpg",
     moreImages: [
       "/Project-showcase/Quetta/Hanna-lake.jpg",
@@ -72,8 +101,15 @@ export const showCase = [
     city: "Apartment load bearing wall structure",
     shortDescription:
       "A Gent Consulting Engineers project.",
-    description:
-      "put description",
+    // Case-study details. Empty fields are hidden on the project page.
+    client: "",
+    location: "",
+    year: "",
+    role: [], // e.g. ["Structural design", "Site supervision"]
+    challenge: "",
+    solution: "",
+    outcome: "",
+    description: "",
     coverImage: "/Project-showcase/Peshawar/Baab-e-khyber.jpg",
     moreImages: [
       "/Project-showcase/Peshawar/Islamia-college.jpg",
@@ -89,8 +125,15 @@ export const showCase = [
     city: "Apartment load bearing wall structure",
     shortDescription:
       "A Gent Consulting Engineers project.",
-    description:
-      "put description",
+    // Case-study details. Empty fields are hidden on the project page.
+    client: "",
+    location: "",
+    year: "",
+    role: [], // e.g. ["Structural design", "Site supervision"]
+    challenge: "",
+    solution: "",
+    outcome: "",
+    description: "",
     coverImage: "/Project-showcase/Murree/Hills-view.jpg",
     moreImages: [
       "/Project-showcase/Murree/Attabad-lake.jpg",

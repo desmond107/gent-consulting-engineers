@@ -14,6 +14,9 @@ import ReviewCard from "../home-page-components/reviewCard";
 import Carousel from "../home-page-components/carousel";
 import PartnerBrandCard from "../home-page-components/partnerBrandCard";
 import PageHero, { HeroStats } from "../page-hero/pageHero";
+import Testimonials from "../home-page-components/testimonials";
+import Credentials from "../home-page-components/credentials";
+import { site } from "../../constants/site";
 import { partnerBrands } from "../../constants/partnerBrands";
 import "./about.css";
 
@@ -93,6 +96,7 @@ const AboutPage = () => {
                 padding={"px-6 py-3"}
               />
             </Link>
+            <Credentials />
           </div>
           <div className="col-span-7 max-lg:col-span-1 relative">
             <img
@@ -231,20 +235,21 @@ const AboutPage = () => {
             <motion.span variants={animationVariants.fadeUp} className="eyebrow">
               Leadership
             </motion.span>
-            <motion.div variants={animationVariants.fadeUp}>
-              <ReviewCard
-                initials={"AK"}
-                title={"Eng. Alvince O. Korero, PE"}
-                from={"Technical Director & CEO · Founded GCE in 2015"}
-              />
-            </motion.div>
-            <motion.div variants={animationVariants.fadeUp} className="lg:ml-12">
-              <ReviewCard
-                initials={"AO"}
-                title={"CPA Angeline N.M. Omondi"}
-                from={"MD, Director Finance & Administration · Joined 2016"}
-              />
-            </motion.div>
+            {site.team.map((m, i) => (
+              <motion.div
+                key={m.name}
+                variants={animationVariants.fadeUp}
+                className={i % 2 ? "lg:ml-12" : ""}
+              >
+                <ReviewCard
+                  initials={m.initials}
+                  imgSrc={m.photo}
+                  title={m.name}
+                  from={m.role}
+                  bio={m.bio}
+                />
+              </motion.div>
+            ))}
           </motion.div>
           <motion.div
             initial="initial"
@@ -261,6 +266,8 @@ const AboutPage = () => {
           </motion.div>
         </div>
       </section>
+
+      <Testimonials />
 
       {/* partner brand section */}
       <section className="border-y border-black/5">

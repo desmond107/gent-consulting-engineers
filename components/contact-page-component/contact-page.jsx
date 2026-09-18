@@ -4,7 +4,9 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
   FaPhoneAlt,
+  FaWhatsapp,
 } from "react-icons/fa";
+import { site, whatsappLink } from "../../constants/site";
 import {
   Accordion,
   AccordionItem,
@@ -17,7 +19,10 @@ import { motion } from "framer-motion";
 import { animationVariants } from "../../constants/animationVariants";
 import PageHero from "../page-hero/pageHero";
 import { Button, Input, Textarea, useToast } from "@chakra-ui/react";
-import axios from "axios";
+import {
+  submitEnquiry,
+  enquiryErrorMessage,
+} from "../../constants/submitEnquiry";
 
 const ContactPage = () => {
   const toast = useToast();
@@ -25,7 +30,8 @@ const ContactPage = () => {
 
   const showToast = () => {
     toast({
-      title: "Message Sent",
+      title: "Thanks! Your message has been sent.",
+      description: "Our team will be in touch soon.",
       status: "success",
       duration: 2000,
       isClosable: true,
@@ -39,7 +45,7 @@ const ContactPage = () => {
     toast({
       title: res,
       status: status,
-      duration: 2000,
+      duration: 6000,
       isClosable: true,
       position: "top",
       containerStyle: {
@@ -65,9 +71,8 @@ const ContactPage = () => {
 
     if (errors === false) {
       setBtnLoader(true);
-      axios
-        .post("link needed", formData)
-        .then((response) => {
+      submitEnquiry(formData, "Contact page")
+        .then(() => {
           showToast();
           setFormData({
             firstName: "",
@@ -80,7 +85,7 @@ const ContactPage = () => {
         })
         .catch((error) => {
           setBtnLoader(false);
-          errorToast(error.message, "error");
+          errorToast(enquiryErrorMessage, "error");
           console.error("Error submitting form:", error);
         });
     }
@@ -155,19 +160,26 @@ const ContactPage = () => {
     {
       icon: <FaPhoneAlt />,
       label: "Call us",
-      value: "+254 718 484 254",
-      href: "tel:+254718484254",
+      value: site.phone,
+      href: site.phoneHref,
+    },
+    {
+      icon: <FaWhatsapp />,
+      label: "WhatsApp",
+      value: "Chat with an engineer",
+      href: whatsappLink(),
+      external: true,
     },
     {
       icon: <FaEnvelope />,
       label: "Email us",
-      value: "info@gtc.com",
-      href: "mailto:info@gtc.com",
+      value: site.email,
+      href: `mailto:${site.email}`,
     },
     {
       icon: <FaMapMarkerAlt />,
       label: "Visit us",
-      value: "Nairobi, Kenya",
+      value: site.address || site.location,
     },
   ];
 
@@ -213,7 +225,7 @@ const ContactPage = () => {
           initial="initial"
           animate="animate"
           transition={{ staggerChildren: 0.1, delayChildren: 0.3 }}
-          className="grid grid-cols-3 max-md:grid-cols-1 gap-5"
+          className="grid grid-cols-4 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-5"
         >
           {contactItems.map((c) => {
             const Tag = c.href ? "a" : "div";
@@ -221,6 +233,8 @@ const ContactPage = () => {
               <motion.div key={c.label} variants={animationVariants.fadeUp}>
                 <Tag
                   href={c.href}
+                  target={c.external ? "_blank" : undefined}
+                  rel={c.external ? "noreferrer" : undefined}
                   className="group flex items-center gap-5 bg-white rounded-xl p-6 border border-black/5 shadow-lift transition-all hover:-translate-y-0.5"
                 >
                   <span className="w-12 h-12 shrink-0 rounded-lg bg-brand-50 text-brand-600 text-lg flex items-center justify-center transition-colors group-hover:bg-brand-600 group-hover:text-white">
@@ -230,7 +244,7 @@ const ContactPage = () => {
                     <span className="block text-sm text-ink-muted">
                       {c.label}
                     </span>
-                    <span className="block font-semibold text-lg">
+                    <span className="block font-semibold [overflow-wrap:anywhere]">
                       {c.value}
                     </span>
                   </span>

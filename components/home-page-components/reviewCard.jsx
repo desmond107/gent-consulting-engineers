@@ -1,5 +1,5 @@
 import "./reviewcard.css";
-const ReviewCard = ({ title, from, imgSrc, initials }) => {
+const ReviewCard = ({ title, from, imgSrc, initials, bio }) => {
   const monogram =
     initials ||
     (title || "")
@@ -11,10 +11,10 @@ const ReviewCard = ({ title, from, imgSrc, initials }) => {
       .join("")
       .toUpperCase();
   return (
-    <div className="w-full review-card flex items-center gap-5 p-5 rounded-xl border border-black/5">
+    <div className="w-full review-card flex items-start gap-5 p-6 rounded-xl border border-black/5">
       {imgSrc ? (
         <img
-          className="w-16 h-16 object-cover rounded-full"
+          className="w-16 h-16 shrink-0 object-cover rounded-full"
           src={imgSrc}
           alt={title}
         />
@@ -25,7 +25,12 @@ const ReviewCard = ({ title, from, imgSrc, initials }) => {
       )}
       <div>
         <h3 className="text-lg font-semibold leading-snug">{title}</h3>
-        <p className="text-ink-muted mt-0.5">{from}</p>
+        <p className="text-brand-700 text-sm font-medium mt-0.5">{from}</p>
+        {bio ? (
+          <p className="text-ink-soft text-sm leading-relaxed mt-2">{bio}</p>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

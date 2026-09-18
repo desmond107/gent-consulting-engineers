@@ -1,194 +1,270 @@
-import {
-  FaArrowLeft,
-  FaArrowRight,
-  FaFacebookF,
-  FaInstagram,
-  FaTwitter,
-  FaWindows,
-} from "react-icons/fa";
-import "./aboutProject.css";
+import { FaArrowLeft, FaArrowRight, FaThLarge, FaWhatsapp } from "react-icons/fa";
 import Button from "../buttons-component/solidbutton";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, Navigate } from "react-router-dom";
 import { showCase } from "../../constants/showcase";
 import { animationVariants } from "../../constants/animationVariants";
 import { motion } from "framer-motion";
 import { scrollToTop } from "../../constants/scrollToTop";
+import { whatsappLink } from "../../constants/site";
 import { useEffect } from "react";
-const AboutProject = ({ heroImageSrc, attachment }) => {
+
+// Case-study page. Every block is driven by constants/showcase.js and only
+// renders when its field has content.
+const AboutProject = () => {
   const param = useParams();
-  const project = showCase[param.id - 1];
+  const index = showCase.findIndex((p) => String(p.id) === String(param.id));
+  const project = showCase[index];
+
   useEffect(() => {
-    document.title = `${project.city} | Gent Consulting Engineers`;
-  }, [param]);
+    if (project) {
+      document.title = `${project.city.trim()} | Gent Consulting Engineers`;
+    }
+  }, [project]);
+
+  if (!project) return <Navigate to="/showcases/showcase1" replace />;
+
+  const prev = showCase[(index - 1 + showCase.length) % showCase.length];
+  const next = showCase[(index + 1) % showCase.length];
+
+  const facts = [
+    ["Client", project.client],
+    ["Location", project.location],
+    ["Year", project.year],
+    ["Our role", (project.role || []).join(", ")],
+  ].filter(([, v]) => v);
+
+  const story = [
+    ["The challenge", project.challenge],
+    ["Our solution", project.solution],
+    ["The outcome", project.outcome],
+  ].filter(([, v]) => v);
+
   return (
     <div className="overflow-hidden">
-      <div
-        className={`h-screen relative  ${heroImageSrc} ${attachment} bg-top bg-no-repeat bg-cover`}
-        style={{
-          backgroundImage: `url(${project.coverImage})`,
-        }}
-      >
-        <div className="absolute top-0 right-0 bottom-0 left-0 flex justify-center items-center bg-black/50">
-          <motion.h1
-            initial="initial"
-            whileInView="animate"
-            variants={animationVariants.zoomOut}
-            viewport={{ once: true, amount: 0.2 }}
-            className="text-8xl max-lg:text-6xl max-md:text-5xl  font-semibold text-white"
+      {/* hero */}
+      <section className="relative isolate min-h-[70svh] flex items-end bg-ink text-white">
+        <img
+          src={project.coverImage}
+          alt=""
+          className="absolute inset-0 -z-10 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/50 to-ink/20"></div>
+        <motion.div
+          initial="initial"
+          animate="animate"
+          transition={{ staggerChildren: 0.1 }}
+          className="container-x pt-40 pb-16 max-md:pb-12 flex flex-col gap-5"
+        >
+          <motion.nav
+            variants={animationVariants.fadeUp}
+            className="flex items-center gap-2 text-sm text-white/60"
           >
-            {project.city}
-          </motion.h1>
-        </div>
-      </div>
-      <div
-        style={{ maxWidth: 1200 }}
-        className="flex mx-auto p-10 max-sm:px-5 gap-16 max-sm:gap-14 max-md:flex-col"
-      >
-        <motion.div
-          initial="initial"
-          whileInView="animate"
-          variants={animationVariants.zoomOut}
-          viewport={{ once: true, amount: 0.2 }}
-          className="flex flex-col items-start gap-5"
-        >
-          <h1 className="text-5xl font-bold">{project.city}</h1>
-          <p className="text-xl">{project.shortDescription}</p>
-          <Link to={"/contact"} onClick={scrollToTop}>
-            <Button
-              content={"Contact Us"}
-              fontSize={"text-xl max-md:text-xl"}
-              padding={"px-4 py-2"}
-            />
-          </Link>
-        </motion.div>
-        <motion.div
-          initial="initial"
-          whileInView="animate"
-          variants={animationVariants.fadeRight}
-          viewport={{ once: true, amount: 0.2 }}
-          className="flex flex-col gap-4"
-        >
-          <div className="">
-            <h2 className="text-xl mb-2 ">Client</h2>
-            <h3 className="text-xl opacity-80">GTC group</h3>
-          </div>
-          <div className="">
-            <h2 className="text-xl mb-2 ">Date</h2>
-            <h3 className="text-xl opacity-80">December 7, 2022</h3>
-          </div>
-          <div className="">
-            <h2 className="text-xl mb-2 ">Services</h2>
-            <h3 className="text-xl opacity-80">Airport construction</h3>
-          </div>
-          <div className="">
-            <h2 className="text-xl mb-2 ">Share on</h2>
-            <div className="text-xl text-brand-600 flex gap-3">
-              <a
-                style={{ borderWidth: 1 }}
-                className="w-12 h-12  border-brand-600 rounded-full  flex justify-center  items-center"
-                href=""
-              >
-                <FaFacebookF />
-              </a>
-              <a
-                style={{ borderWidth: 1 }}
-                className="w-12 h-12  border-brand-600 rounded-full  flex justify-center  items-center"
-                href=""
-              >
-                <FaInstagram />
-              </a>
-              <a
-                style={{ borderWidth: 1 }}
-                className="w-12 h-12  border-brand-600 rounded-full  flex justify-center  items-center"
-                href=""
-              >
-                <FaTwitter />
-              </a>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-      {/* description */}
-      <motion.div
-        initial="initial"
-        whileInView="animate"
-        variants={animationVariants.fadeRight}
-        viewport={{ once: true, amount: 0.05 }}
-        style={{ maxWidth: 1200 }}
-        className="text-lg mx-auto p-10 max-sm:px-5 max-sm:pt-5  max-sm:mb-8 mb-20"
-      >
-        <p>
-         1.Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.  GCE has earned a reputation for delivering creative, innovative and sustainable design and cost-effective construction solutions in Kenya and East Africa at large.
-
-        </p>
-        <div className="p-5 px-10 max-sm:px-4">
-          <h2 className="text-2xl text-center font-semibold p-5 max-sm:p-3 border-l-4 border-brand-600">
-            Recognized and awarded on multiple occasions for producing
-            consistently outstanding products
-          </h2>
-        </div>
-        <p>
-        2.Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.  GCE has earned a reputation for delivering creative, innovative and sustainable design and cost-effective construction solutions in Kenya and East Africa at large.
-
-          </p>
-        <div className="flex flex-col gap-1 mt-4">
-          <h2 className="text-2xl font-semibold">
-            The path towards customer-centricity
-          </h2>
-          <p>
-            3.Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.  GCE has earned a reputation for delivering creative, innovative and sustainable design and cost-effective construction solutions in Kenya and East Africa at large.
-
-          </p>
-          <p>
-            4.Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.  GCE has earned a reputation for delivering creative, innovative and sustainable design and cost-effective construction solutions in Kenya and East Africa at large.
-
-          </p>
-        </div>
-      </motion.div>
-
-      <div className="grid grid-cols-2 max-md:grid-cols-1">
-        {project.moreImages.map((e, i) => {
-          return (
-            <motion.div
-              key={i}
-              initial="initial"
-              whileInView="animate"
-              variants={animationVariants.fadeUp}
-              viewport={{ once: true, amount: 0.2 }}
+            <Link onClick={scrollToTop} to="/" className="hover:text-white">
+              Home
+            </Link>
+            <span>/</span>
+            <Link
+              onClick={scrollToTop}
+              to="/showcases/showcase1"
+              className="hover:text-white"
             >
-              <img
-                className={"w-full object-cover"}
-                style={{ height: 420 }}
-                src={e}
-                alt="e"
+              Projects
+            </Link>
+          </motion.nav>
+          <motion.span
+            variants={animationVariants.fadeUp}
+            className="eyebrow eyebrow-light"
+          >
+            Case study {String(index + 1).padStart(2, "0")}
+          </motion.span>
+          <motion.h1
+            variants={animationVariants.fadeUp}
+            className="text-6xl max-md:text-4xl font-bold leading-[1.05] max-w-3xl"
+          >
+            {project.city.trim()}
+          </motion.h1>
+        </motion.div>
+      </section>
+
+      {/* overview + key facts */}
+      <section className="container-x py-20 max-md:py-14 grid grid-cols-12 max-lg:grid-cols-1 gap-14 max-lg:gap-10">
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          variants={animationVariants.fadeUp}
+          viewport={{ once: true, amount: 0.2 }}
+          className="col-span-8 max-lg:col-span-1 flex flex-col gap-6"
+        >
+          <span className="eyebrow">Project overview</span>
+          <p className="text-2xl max-md:text-xl font-display font-medium leading-snug">
+            {project.shortDescription}
+          </p>
+          {project.description ? (
+            <div>
+              <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-ink-muted">
+                Scope of work
+              </h2>
+              <p className="mt-3 text-lg text-ink-soft leading-relaxed">
+                {project.description}
+              </p>
+            </div>
+          ) : (
+            ""
+          )}
+        </motion.div>
+
+        <motion.aside
+          initial="initial"
+          whileInView="animate"
+          variants={animationVariants.fadeUp}
+          viewport={{ once: true, amount: 0.2 }}
+          className="col-span-4 max-lg:col-span-1"
+        >
+          <div className="bg-surface rounded-xl border border-black/5 p-7 flex flex-col gap-5">
+            {facts.length ? (
+              <dl className="flex flex-col gap-4">
+                {facts.map(([k, v]) => (
+                  <div key={k} className="border-b border-black/5 pb-4">
+                    <dt className="text-sm text-ink-muted">{k}</dt>
+                    <dd className="font-semibold mt-0.5">{v}</dd>
+                  </div>
+                ))}
+              </dl>
+            ) : (
+              ""
+            )}
+            <div>
+              <p className="font-display text-lg font-semibold">
+                Planning a similar project?
+              </p>
+              <p className="text-ink-soft text-sm mt-1">
+                Talk to the team that delivered this one.
+              </p>
+            </div>
+            <Link onClick={scrollToTop} to="/contact">
+              <Button
+                content={"Request a consultation"}
+                padding={"py-3"}
+                fontSize={"text-base"}
+                furtherClasses={"w-full"}
               />
-            </motion.div>
-          );
-        })}
-      </div>
-      <div className=" flex">
-        <Link
-          onClick={scrollToTop}
-          to={project.prevHref}
-          id="prev-btn"
-          className="w-2/5  hover:text-brand-600  py-7 flex justify-center items-center gap-3"
-        >
-          <FaArrowLeft className="prev-arrow transition-all" />
-          <p className="transition-all">Prev post</p>
-        </Link>
-        <div className="w-1/5 py-7 border-l-2 border-r-2 flex justify-center items-center">
-          <FaWindows />
+            </Link>
+            <a
+              href={whatsappLink(
+                `Hello, I saw the "${project.city.trim()}" project on your website and would like to discuss a similar project.`
+              )}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-ink-soft hover:text-brand-700"
+            >
+              <FaWhatsapp className="text-[#25D366] text-lg" /> Or chat on
+              WhatsApp
+            </a>
+          </div>
+        </motion.aside>
+      </section>
+
+      {/* challenge / solution / outcome */}
+      {story.length ? (
+        <section className="bg-ink text-white relative overflow-hidden">
+          <div className="blueprint absolute inset-0"></div>
+          <div
+            className={`container-x relative py-20 grid gap-10 ${
+              story.length === 3
+                ? "grid-cols-3"
+                : story.length === 2
+                ? "grid-cols-2"
+                : "grid-cols-1"
+            } max-md:grid-cols-1`}
+          >
+            {story.map(([k, v], i) => (
+              <div key={k} className="border-t border-white/15 pt-6">
+                <span className="font-display text-sm text-brand-300">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h2 className="text-2xl font-bold mt-2">{k}</h2>
+                <p className="text-white/70 leading-relaxed mt-3">{v}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : (
+        ""
+      )}
+
+      {/* gallery */}
+      <section className="container-x py-20 max-md:py-14">
+        <h2 className="section-title text-4xl max-md:text-3xl">Project gallery</h2>
+        <div className="grid grid-cols-3 max-md:grid-cols-1 gap-5 mt-10">
+          {project.moreImages.map((e, i) => {
+            return (
+              <motion.div
+                key={e}
+                initial="initial"
+                whileInView="animate"
+                variants={animationVariants.fadeUp}
+                viewport={{ once: true, amount: 0.2 }}
+                className={`overflow-hidden rounded-xl bg-surface ${
+                  i === 0 ? "md:col-span-3" : ""
+                }`}
+              >
+                <img
+                  className={`w-full object-cover transition-transform duration-700 hover:scale-105 ${
+                    i === 0 ? "h-[520px] max-md:h-72" : "h-64"
+                  }`}
+                  src={e}
+                  loading="lazy"
+                  alt={`${project.city.trim()} — photo ${i + 1}`}
+                />
+              </motion.div>
+            );
+          })}
         </div>
-        <Link
-          onClick={scrollToTop}
-          to={project.nextHref}
-          id="next-btn"
-          className="w-2/5  hover:text-brand-600  py-7 flex justify-center items-center gap-3"
-        >
-          <p className="transition-all">Next post</p>
-          <FaArrowRight className="next-arrow transition-all " />
-        </Link>
-      </div>
+      </section>
+
+      {/* prev / next */}
+      <nav className="border-t border-black/5">
+        <div className="container-x grid grid-cols-[1fr_auto_1fr] items-center gap-6 py-8">
+          <Link
+            onClick={scrollToTop}
+            to={`/projects/${prev.id}`}
+            className="group flex items-center gap-4 min-w-0"
+          >
+            <span className="w-11 h-11 shrink-0 rounded-full border border-ink/15 flex items-center justify-center transition-all group-hover:bg-brand-600 group-hover:border-brand-600 group-hover:text-white">
+              <FaArrowLeft className="text-sm" />
+            </span>
+            <span className="min-w-0 max-sm:hidden">
+              <span className="block text-sm text-ink-muted">Previous</span>
+              <span className="block font-semibold truncate">
+                {prev.city.trim()}
+              </span>
+            </span>
+          </Link>
+          <Link
+            onClick={scrollToTop}
+            to="/showcases/showcase1"
+            aria-label="All projects"
+            className="w-11 h-11 rounded-full bg-surface flex items-center justify-center text-ink-soft hover:text-brand-600"
+          >
+            <FaThLarge />
+          </Link>
+          <Link
+            onClick={scrollToTop}
+            to={`/projects/${next.id}`}
+            className="group flex items-center justify-end gap-4 text-right min-w-0"
+          >
+            <span className="min-w-0 max-sm:hidden">
+              <span className="block text-sm text-ink-muted">Next</span>
+              <span className="block font-semibold truncate">
+                {next.city.trim()}
+              </span>
+            </span>
+            <span className="w-11 h-11 shrink-0 rounded-full border border-ink/15 flex items-center justify-center transition-all group-hover:bg-brand-600 group-hover:border-brand-600 group-hover:text-white">
+              <FaArrowRight className="text-sm" />
+            </span>
+          </Link>
+        </div>
+      </nav>
     </div>
   );
 };
