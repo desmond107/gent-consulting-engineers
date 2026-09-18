@@ -1,3 +1,4 @@
+import Logo from "../brand/logo";
 import { FaAngleDown, FaBars } from "react-icons/fa";
 import "./navbar.css";
 import Button from "../buttons-component/solidbutton";
@@ -34,7 +35,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
           showCase1Page ? "absolute" : "fixed"
         } top-0 left-0 right-0 transition-all duration-300 ${
           solid
-            ? "bg-white/90 backdrop-blur-md shadow-[0_1px_0_rgba(11,27,43,.08),0_8px_24px_-12px_rgba(11,27,43,.18)]"
+            ? "bg-white/95 backdrop-blur-md shadow-[0_1px_0_rgba(11,27,43,.08),0_8px_24px_-12px_rgba(11,27,43,.18)]"
             : "bg-gradient-to-b from-black/40 to-transparent"
         }`}
       >
@@ -43,13 +44,16 @@ const NavBar = ({ navBar2, showCase1Page }) => {
             solid ? "py-3" : "py-6 max-md:py-4"
           }`}
         >
-          <Link onClick={scrollToTop} to="/" aria-label="Gent Consulting Engineers home">
-            <img
-              src={solid ? "/Homyz-logo2.png" : "/gce-logo-light.png"}
-              className={`transition-all duration-300 ${
-                solid ? "w-28" : "w-36 max-lg:w-28"
-              }`}
-              alt="Gent Consulting Engineers"
+          <Link
+            onClick={scrollToTop}
+            to="/"
+            aria-label="Gents Consulting Engineers home"
+            className="shrink-0"
+          >
+            <Logo
+              tone={solid ? "dark" : "light"}
+              size={solid ? "sm" : "md"}
+              className="transition-all duration-300"
             />
           </Link>
           <ul
@@ -135,7 +139,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
         } bg-white w-80 max-w-[85vw] p-6 transition-transform duration-300 ease-out shadow-2xl`}
       >
         <div className="flex justify-between items-center">
-          <img className="w-28" src="/Homyz-logo2.png" alt="Gent Consulting Engineers" />
+          <Logo tone="dark" size="sm" />
           <button
             aria-label="Close menu"
             onClick={() => {

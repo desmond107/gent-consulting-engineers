@@ -80,7 +80,7 @@ const AboutPage = () => {
               Engineering partners from first sketch to final handover.
             </h2>
             <p className="text-lg text-ink-soft leading-relaxed">
-              Gent Consulting Engineers is a civil, structural and construction
+              Gents Consulting Engineers is a civil, structural and construction
               engineering and management firm serving the commercial
               construction community nationwide, with a reputation for
               creative, innovative and sustainable design.
@@ -260,7 +260,7 @@ const AboutPage = () => {
           >
             <span className="eyebrow">Why choose us</span>
             <h2 className="section-title">
-              Why clients choose Gent Consulting Engineers
+              Why clients choose Gents Consulting Engineers
             </h2>
             <Carousel />
           </motion.div>

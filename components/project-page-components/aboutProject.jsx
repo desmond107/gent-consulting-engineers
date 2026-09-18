@@ -17,7 +17,7 @@ const AboutProject = () => {
 
   useEffect(() => {
     if (project) {
-      document.title = `${project.city.trim()} | Gent Consulting Engineers`;
+      document.title = `${project.city.trim()} | Gents Consulting Engineers`;
     }
   }, [project]);
 

@@ -3,7 +3,7 @@
 // as the information becomes available.
 
 export const site = {
-  name: "Gent Consulting Engineers",
+  name: "Gents Consulting Engineers",
   shortName: "GCE",
   url: "https://gceafrica.co.ke",
   email: "gentconsult@gmail.com",
@@ -17,7 +17,7 @@ export const site = {
     // International format, digits only.
     number: "254718484254",
     message:
-      "Hello Gent Consulting Engineers, I'd like to discuss a project.",
+      "Hello Gents Consulting Engineers, I'd like to discuss a project.",
   },
 
   // Enquiries from both contact forms are emailed here via FormSubmit.

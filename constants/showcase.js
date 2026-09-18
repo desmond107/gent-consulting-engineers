@@ -3,7 +3,7 @@ export const showCase = [
     id: 1,
     city: "AIA-Terminal Building",
     shortDescription:
-      "A Gent Consulting Engineers project.",
+      "A Gents Consulting Engineers project.",
     // Case-study details. Empty fields are hidden on the project page.
     client: "",
     location: "",
@@ -28,7 +28,7 @@ export const showCase = [
     id: 2,
     city: "AIA –Building steel elements",
     shortDescription:
-      "A Gent Consulting Engineers project.",
+      "A Gents Consulting Engineers project.",
     // Case-study details. Empty fields are hidden on the project page.
     client: "",
     location: "",
@@ -52,7 +52,7 @@ export const showCase = [
     id: 3,
     city: "Residential construction ",
     shortDescription:
-      "A Gent Consulting Engineers project.",
+      "A Gents Consulting Engineers project.",
     // Case-study details. Empty fields are hidden on the project page.
     client: "",
     location: "",
@@ -76,7 +76,7 @@ export const showCase = [
     id: 4,
     city: "Building completed frame structure",
     shortDescription:
-      "A Gent Consulting Engineers project.",
+      "A Gents Consulting Engineers project.",
     // Case-study details. Empty fields are hidden on the project page.
     client: "",
     location: "",
@@ -100,7 +100,7 @@ export const showCase = [
     id: 5,
     city: "Apartment load bearing wall structure",
     shortDescription:
-      "A Gent Consulting Engineers project.",
+      "A Gents Consulting Engineers project.",
     // Case-study details. Empty fields are hidden on the project page.
     client: "",
     location: "",
@@ -124,7 +124,7 @@ export const showCase = [
     id: 6,
     city: "Apartment load bearing wall structure",
     shortDescription:
-      "A Gent Consulting Engineers project.",
+      "A Gents Consulting Engineers project.",
     // Case-study details. Empty fields are hidden on the project page.
     client: "",
     location: "",

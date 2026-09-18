@@ -1,15 +1,18 @@
+import Logo from "../components/brand/logo";
 import { Link } from "react-router-dom";
 import Button from "../components/buttons-component/solidbutton";
 import { useEffect } from "react";
 
 const Error404 = () => {
   useEffect(() => {
-    document.title = "Page Not Found | Gent Consulting Engineers";
+    document.title = "Page Not Found | Gents Consulting Engineers";
   }, []);
   return (
     <>
       <nav className="fixed bg-white top-0 py-8 left-0 right-0 flex justify-center items-center">
-        <img src="/Homyz-logo2.png" alt="Gent-logo" />
+        <Link to="/">
+          <Logo tone="dark" size="md" />
+        </Link>
       </nav>
       <div className="flex justify-center items-center min-h-screen text-center">
         <div className="error-container px-5 text-2xl flex flex-col justify-center items-center gap-5">

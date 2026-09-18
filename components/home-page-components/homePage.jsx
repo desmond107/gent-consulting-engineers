@@ -77,7 +77,7 @@ const values = [
 const HomePage = () => {
   useEffect(() => {
     document.title =
-      "Gent Consulting Engineers | Civil & Structural Engineering, Kenya";
+      "Gents Consulting Engineers | Civil & Structural Engineering, Kenya";
   }, []);
   return (
     <div className="w-full overflow-hidden">
@@ -199,7 +199,7 @@ const HomePage = () => {
             management experience.
           </p>
           <p className="text-lg text-ink-soft leading-relaxed">
-            Gent leads a collaborative environment with a mission to provide
+            Gents leads a collaborative environment with a mission to provide
             functional, sound, economical and sustainable engineering &amp;
             construction solutions that achieve our clients’ vision.
           </p>
@@ -549,7 +549,7 @@ const HomePage = () => {
             className="flex flex-col gap-6 min-w-0"
           >
             <span className="eyebrow">Why choose us</span>
-            <h2 className="section-title">Why Gent Consulting Engineers</h2>
+            <h2 className="section-title">Why Gents Consulting Engineers</h2>
             <Carousel />
           </motion.div>
         </div>

@@ -3,7 +3,7 @@ import Section from "../components/showcase1-components/section";
 import { showCase } from "../constants/showcase";
 const showcase1 = () => {
   useEffect(() => {
-    document.title = "Projects | Gent Consulting Engineers";
+    document.title = "Projects | Gents Consulting Engineers";
   }, []);
   return (
     <div className="overflow-hidden">

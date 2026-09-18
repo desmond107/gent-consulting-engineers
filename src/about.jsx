@@ -3,7 +3,7 @@ import AboutPage from "../components/about-page-componenets/about";
 
 const About = () => {
   useEffect(() => {
-    document.title = "About Us | Gent Consulting Engineers";
+    document.title = "About Us | Gents Consulting Engineers";
   }, []);
   return (
     <div className="overflow-hidden">

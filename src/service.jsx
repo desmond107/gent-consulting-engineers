@@ -9,7 +9,7 @@ const Service = () => {
 
   useEffect(() => {
     if (service) {
-      document.title = `${service.title} | Gent Consulting Engineers`;
+      document.title = `${service.title} | Gents Consulting Engineers`;
     }
   }, [service]);
 
