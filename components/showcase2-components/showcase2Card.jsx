@@ -13,7 +13,7 @@ const Showcase2Card = ({ src, href, title }) => {
       style={{ height: 380 }}
       className="relative w-full"
     >
-      <div className="z-40 w-full h-full top-4 opacity-0 hover:opacity-100 transition-all duration-500 max-sm:top-2 max-sm:right-2 right-4 absolute pt-72 pl-10 bg-red-500">
+      <div className="z-40 w-full h-full top-4 opacity-0 hover:opacity-100 transition-all duration-500 max-sm:top-2 max-sm:right-2 right-4 absolute pt-72 pl-10 bg-brand-600">
         <Link
           onClick={scrollToTop}
           to={href}

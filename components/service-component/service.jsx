@@ -98,7 +98,7 @@ const ServicePage = ({ id, title, breif, descr, imageSrc }) => {
                   <AccordionButton
                     fontSize={"2xl"}
                     _hover={{ backgroundColor: "transparent" }}
-                    _expanded={{ color: "#ef4444" }}
+                    _expanded={{ color: "#0f74a6" }}
                   >
                     <Box as="span" flex="1" textAlign="left">
                       Architectural engineering design services
@@ -120,7 +120,7 @@ const ServicePage = ({ id, title, breif, descr, imageSrc }) => {
                   <AccordionButton
                     fontSize={"2xl"}
                     _hover={{ backgroundColor: "transparent" }}
-                    _expanded={{ color: "#ef4444" }}
+                    _expanded={{ color: "#0f74a6" }}
                   >
                     <Box as="span" flex="1" textAlign="left">
                       Mechanical engineering design services
@@ -142,7 +142,7 @@ const ServicePage = ({ id, title, breif, descr, imageSrc }) => {
                   <AccordionButton
                     fontSize={"2xl"}
                     _hover={{ backgroundColor: "transparent" }}
-                    _expanded={{ color: "#ef4444" }}
+                    _expanded={{ color: "#0f74a6" }}
                   >
                     <Box as="span" flex="1" textAlign="left">
                       Electrical engineering design services
@@ -165,7 +165,7 @@ const ServicePage = ({ id, title, breif, descr, imageSrc }) => {
                   <AccordionButton
                     fontSize={"2xl"}
                     _hover={{ backgroundColor: "transparent" }}
-                    _expanded={{ color: "#ef4444" }}
+                    _expanded={{ color: "#0f74a6" }}
                   >
                     <Box as="span" flex="1" textAlign="left">
                        Alternative Energy Solutions
@@ -185,7 +185,7 @@ const ServicePage = ({ id, title, breif, descr, imageSrc }) => {
                   <AccordionButton
                     fontSize={"2xl"}
                     _hover={{ backgroundColor: "transparent" }}
-                    _expanded={{ color: "#ef4444" }}
+                    _expanded={{ color: "#0f74a6" }}
                   >
                     <Box as="span" flex="1" textAlign="left">
                        Plans Blue-Printing Services
@@ -220,26 +220,26 @@ const ServicePage = ({ id, title, breif, descr, imageSrc }) => {
           </h1>
           <div className="flex mt-2  gap-3 text-xl items-center">
             <div>
-              <FaEnvelope className="text-red-500" />
+              <FaEnvelope className="text-brand-600" />
             </div>
             <p>Office # Nairobi, Kenya</p>
           </div>
           <div className="flex  gap-3 text-xl items-center">
             <div>
-              <FaPhone className="rotate-90 text-red-500" />
+              <FaPhone className="rotate-90 text-brand-600" />
             </div>
             <p>+254718484254</p>
           </div>
           <div className="flex  gap-3 text-xl items-center">
             <div>
-              <FaMapMarkerAlt className="text-red-500" />
+              <FaMapMarkerAlt className="text-brand-600" />
             </div>
             <p>information@gce.com</p>
           </div>
           <Link
             to="/contact"
             onClick={scrollToTop}
-            className="text-red-500 hover:text-black transition-all duration-300"
+            className="text-brand-600 hover:text-black transition-all duration-300"
           >
             <div className="flex items-center gap-1">
               <p className="text-xl">Contact us</p>

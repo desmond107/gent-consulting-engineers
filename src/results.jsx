@@ -7,7 +7,7 @@ const Results = () => {
   let [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
-    document.title = "Search Result - gent consulting engineers";
+    document.title = "Search | Gent Consulting Engineers";
   }, []);
 
   return (

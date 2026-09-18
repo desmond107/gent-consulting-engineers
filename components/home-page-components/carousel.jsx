@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "./carousel.css";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
@@ -19,6 +20,7 @@ export default function Carousel() {
         slidesPerView={1}
         spaceBetween={30}
         loop={true}
+        autoHeight={true}
         // navigation={true}
         navigation={{
           nextEl: ".swiper-button-next",
@@ -26,7 +28,7 @@ export default function Carousel() {
           clickable: true,
         }}
         modules={[Pagination, Navigation]}
-        className="mySwiper text-xl"
+        className="mySwiper w-full max-w-full text-lg leading-relaxed text-ink-soft"
       >
         <SwiperSlide>
           Gent Consulting Engineers is committed to providing innovative, 
@@ -45,20 +47,19 @@ export default function Carousel() {
 
         </SwiperSlide>
 
-        <div className="slider-controler flex max-md:justify-center  gap-3  mt-16">
-          <div
-            style={{ borderWidth: 1.5, borderRadius: 4 }}
-            className={`swiper-button-prev static text-3xl font-semibold bg-red-500 border-2 border-red-500 px-5 py-0   duration-300 text-white hover:bg-white hover:text-red-500 transition-all `}
+        <div className="slider-controler flex max-md:justify-center gap-3 mt-10">
+          <button
+            aria-label="Previous"
+            className="swiper-button-prev static m-0 w-12 h-12 rounded-full border border-ink/15 text-ink bg-white flex items-center justify-center transition-all duration-300 hover:bg-brand-600 hover:border-brand-600 hover:text-white"
           >
-            {"<"}
-          </div>
-
-          <div
-            style={{ borderWidth: 1.5, borderRadius: 4 }}
-            className={`swiper-button-next static text-3xl font-semibold bg-red-500 border-2 border-red-500 px-5 py-0   duration-300 text-white hover:bg-white hover:text-red-500 transition-all `}
+            <FaArrowLeft className="text-sm" />
+          </button>
+          <button
+            aria-label="Next"
+            className="swiper-button-next static m-0 w-12 h-12 rounded-full border border-brand-600 bg-brand-600 text-white flex items-center justify-center transition-all duration-300 hover:bg-brand-700"
           >
-            {">"}
-          </div>
+            <FaArrowRight className="text-sm" />
+          </button>
         </div>
       </Swiper>
     </>

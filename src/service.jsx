@@ -18,7 +18,7 @@ const Service = () => {
     }
   }, []);
   useEffect(() => {
-    document.title = `Services - ${serviceData.title} `;
+    document.title = `${serviceData.title} | Gent Consulting Engineers`;
   }, []);
   return (
     <ServicePage

@@ -6,7 +6,7 @@ const Products = () => {
   const params = useParams();
   const product = rentHouses[params.id - 1];
   useEffect(() => {
-    document.title = `House in ${product.name} - gent-consulting-engineers `;
+    document.title = `${product.name} | Gent Consulting Engineers`;
   }, [params]);
   return (
     <Product

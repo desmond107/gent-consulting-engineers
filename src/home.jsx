@@ -2,7 +2,7 @@ import HomePage from "../components/home-page-components/homePage";
 
 const Home = () => {
   useEffect(() => {
-    document.title = "gents-consulting-engineers";
+    document.title = "Gent Consulting Engineers | Civil & Structural Engineering, Kenya";
   }, []);
   return <HomePage />;
 };

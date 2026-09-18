@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 const Error404 = () => {
   useEffect(() => {
-    document.title = "Not Found - gent-consulting-engineers";
+    document.title = "Page Not Found | Gent Consulting Engineers";
   }, []);
   return (
     <>
@@ -13,7 +13,7 @@ const Error404 = () => {
       </nav>
       <div className="flex justify-center items-center min-h-screen text-center">
         <div className="error-container px-5 text-2xl flex flex-col justify-center items-center gap-5">
-          <h1 className="text-9xl font-semibold text-red-500">404</h1>
+          <h1 className="text-9xl font-semibold text-brand-600">404</h1>
           <h2 className="title-font text-4xl font-medium">
             Something's not right.
           </h2>

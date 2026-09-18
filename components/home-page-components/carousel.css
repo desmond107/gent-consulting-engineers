@@ -2,3 +2,22 @@
 .swiper-button-next:after {
   display: none;
 }
+.slider-controler .swiper-button-prev,
+.slider-controler .swiper-button-next {
+  position: static;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+}
+.slider-controler .swiper-button-prev svg,
+.slider-controler .swiper-button-next svg {
+  width: 14px;
+  height: 14px;
+}
+.slider-controler .swiper-button-prev {
+  color: #0b1b2b;
+}
+.slider-controler .swiper-button-next,
+.slider-controler .swiper-button-prev:hover {
+  color: #ffffff;
+}

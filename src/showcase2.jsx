@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 const ShowCase2 = () => {
   useEffect(() => {
-    document.title = "Showcase 2 - gent consulting engineers";
+    document.title = "Projects | Gent Consulting Engineers";
   }, []);
   return (
     <div className="overflow-hidden">

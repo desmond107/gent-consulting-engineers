@@ -1,544 +1,537 @@
-import { FaPeriscope } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaShieldAlt,
+  FaHandshake,
+  FaDraftingCompass,
+  FaAward,
+  FaLeaf,
+  FaUsers,
+  FaCheckCircle,
+} from "react-icons/fa";
 import WhatWeDoCard from "./whatwedocard";
-import ExculusivePropertyCard from "./exculusivePropertyCard";
 import Button from "../buttons-component/solidbutton";
 import ProjectCard from "./projectCard";
 import Carousel from "./carousel";
 import ReviewCard from "./reviewCard";
 import PartnerBrandCard from "./partnerBrandCard";
-import { rentHouses } from "../../constants/data";
 import { motion } from "framer-motion";
 import { animationVariants } from "../../constants/animationVariants";
 import { showCase } from "../../constants/showcase";
+import { servicesData } from "../../constants/servicesData";
 import "./homePage.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { scrollToTop } from "../../constants/scrollToTop";
 import { partnerBrands } from "../../constants/partnerBrands";
-import { useToast } from "@chakra-ui/react";
+
+const stats = [
+  { value: "100+", label: "Satisfied clients" },
+  { value: "500+", label: "Successful projects" },
+  { value: "15+", label: "Years of experience" },
+  { value: "2015", label: "Established in Nairobi" },
+];
+
+const principles = [
+  {
+    icon: <FaShieldAlt />,
+    title: "Reliability",
+    desc: "Sound, code-compliant designs backed by rigorous analysis, so every structure performs as intended for its full design life.",
+  },
+  {
+    icon: <FaHandshake />,
+    title: "Dependable",
+    desc: "Clear communication and accountable project management that keep your build on schedule and within budget.",
+  },
+  {
+    icon: <FaDraftingCompass />,
+    title: "Precision",
+    desc: "Meticulous attention to detail from concept drawings to site supervision, eliminating costly surprises in the field.",
+  },
+  {
+    icon: <FaAward />,
+    title: "Quality First",
+    desc: "Registered professionals delivering work that meets international standards, with continuous training across our team.",
+  },
+];
+
+const values = [
+  {
+    title: "Clients",
+    desc: "Enduring relationships built on competency, reliability, trust, integrity and delivering on time and within budget.",
+  },
+  {
+    title: "Employees",
+    desc: "Our people are the fabric of our organisation. We foster teamwork, innovation, growth and career advancement.",
+  },
+  {
+    title: "Quality of Work",
+    desc: "A tradition of high technical competence and attention to detail that meets international standards.",
+  },
+];
 
 const HomePage = () => {
-  const navigate = useNavigate();
-  const toast = useToast();
-  const errorToast = (res, status) => {
-    toast({
-      title: res,
-      status: status,
-      duration: 2000,
-      isClosable: true,
-      position: "top",
-      containerStyle: {
-        zIndex: 9999,
-      },
-    });
-  };
-  const handleSearch = () => {
-    const searchInp = document.getElementById("searchInp");
-    if (searchInp.value && searchInp.value.trim()) {
-      navigate(`/search?query=${searchInp.value}`);
-    } else {
-      errorToast("Fill the first first!", "error");
-    }
-  };
   return (
-    <div className=" w-full overflow-hidden">
-      <div className="  flex bg-[url('/hero-bg-image.jpg')] pt-36 pb-20 bg-top bg-no-repeat bg-cover  ">
+    <div className="w-full overflow-hidden">
+      {/* hero section */}
+      <section className="relative isolate min-h-[100svh] flex items-end bg-ink">
+        <img
+          src="/hero-bg-image.jpg"
+          alt=""
+          className="absolute inset-0 -z-10 w-full h-full object-cover object-top"
+        />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/90 via-ink/60 to-ink/10 max-lg:bg-ink/60"></div>
+        <div className="absolute inset-x-0 bottom-0 h-1/2 -z-10 bg-gradient-to-t from-ink/90 to-transparent"></div>
+
         <motion.div
           initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ staggerChildren: 0.2 }}
-          style={{ maxWidth: 1200 }}
-          className="mx-auto w-full text-white px-10 max-sm:px-5 flex flex-col max-lg:items-center max-lg:text-center gap-12"
+          animate="animate"
+          transition={{ staggerChildren: 0.12, delayChildren: 0.1 }}
+          className="container-x text-white pt-40 pb-14 max-md:pt-32 flex flex-col gap-8 max-lg:items-center max-lg:text-center"
         >
-          <motion.h1
-            variants={animationVariants.fadeLeft}
-            className="text-6xl max-lg:mx-auto font-semibold max-sm:text-4xl max-w-lg "
+          <motion.span
+            variants={animationVariants.fadeUp}
+            className="eyebrow eyebrow-light max-lg:before:hidden"
           >
-            The Future of Sustainable Engineering.
+            Civil · Structural · Construction
+          </motion.span>
+          <motion.h1
+            variants={animationVariants.fadeUp}
+            className="text-7xl max-lg:text-6xl max-sm:text-[2.6rem] font-bold leading-[1.02] max-w-3xl"
+          >
+            The Future of{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-brand-500">
+              Sustainable
+            </span>{" "}
+            Engineering.
           </motion.h1>
           <motion.p
-            variants={animationVariants.fadeLeft}
-            className="text-xl max-lg:mx-auto max-w-md  "
+            variants={animationVariants.fadeUp}
+            className="text-xl max-sm:text-lg text-white/80 max-w-xl leading-relaxed"
           >
-          The number one Civil, Structural and Construction Engineering and management consultants in Kenya & East Africa. 
+            Leading civil, structural and construction engineering and
+            management consultants in Kenya &amp; East Africa.
           </motion.p>
           <motion.div
-            variants={animationVariants.fadeLeft}
-            id="search-inp"
-            className="max-w-xl max-lg:mx-auto max-lg:w-full relative"
+            variants={animationVariants.fadeUp}
+            className="flex flex-wrap gap-4 max-lg:justify-center"
           >
-            <FaPeriscope className="text-red-500 text-2xl absolute left-2 top-5 " />
-            <input
-              placeholder="Search..."
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  handleSearch();
+            <Link onClick={scrollToTop} to="/services">
+              <Button
+                content={
+                  <>
+                    Explore our services <FaArrowRight className="text-sm" />
+                  </>
                 }
-              }}
-              autoComplete="off"
-              id="searchInp"
-              className="w-full py-5 pl-10 pr-32 text-black rounded-md focus:outline-none"
-              type="text"
-            />
-            <Button
-              content={"Search"}
-              fontSize={"text-xl"}
-              padding={"px-5  py-2"}
-              furtherClasses={"absolute right-2"}
-              styles={{ top: 9.5 }}
-              onClick={handleSearch}
-            />
-          </motion.div>
-          <motion.div
-            variants={animationVariants.fadeLeft}
-            className="flex max-lg:flex-col max-lg:items-center gap-10 w-full justify-between items-end mt-4"
-          >
-            <div className="flex gap-12">
-              <div className="flex flex-col gap-4">
-                <h2 className="text-4xl title-font font-bold">100+</h2>
-                <p className="text-lg">Satisfied clients</p>
-              </div>
-              <div className="flex flex-col gap-4">
-                <h2 className="text-4xl title-font font-bold">500+</h2>
-                <p className="text-lg">Successful projects</p>
-              </div>
-            </div>
-            <div className="flex gap-12 max-sm:flex-wrap  justify-center">
-              <div className="flex justify-start items-center gap-2">
-                <img className="w-9" src="/grafton.png" alt="img" />
-                <h2 className="text-2xl">Reliability</h2>
-              </div>
-              <div className="flex justify-start items-center gap-2">
-                <img className="w-9" src="/lighthouse.png" alt="img" />
-                <h2 className="text-2xl">Trust</h2>
-              </div>
-              <div className="flex justify-start items-center gap-2">
-                <img className="w-9" src="/tundratown.png" alt="img" />
-                <h2 className="text-2xl">Competency</h2>
-              </div>
-              
-              
-            </div>
-          </motion.div>
-        </motion.div>
-
-        {/* </Reveal> */}
-      </div>
-      {/* about section */}
-      <div>
-        <div
-          style={{ maxWidth: 1200 }}
-          className="mx-auto flex justify-between items-start p-10 py-28 max-md:py-16 gap-5 max-md:px-5 max-md:flex-col max-md:items-center max-md:text-center"
-        >
-          <div className="w-2/4 max-md:w-full ">
-            <motion.div
-              initial="initial"
-              whileInView="animate"
-              variants={animationVariants.zoomOut}
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              <h2 className="text-5xl max-md:text-4xl font-bold title-font">
-                We provide Innovative, Intelligent 
-
-                <span className=" text-red-500 title-font "> & Integrated Sustainable Engineering Solutions. </span>
-              </h2>
-            </motion.div>
-          </div>
-          <div className="w-2/4 max-md:w-full">
-            <motion.div
-              initial="initial"
-              whileInView="animate"
-              variants={animationVariants.fadeRight}
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              <p className="text-xl">
-                GCE was founded by Eng. Alvince O. Korero, PE in 2015 and joined by CPA. Angeline N.M. Omondi in 2016.  
-                Together, they have over 15 years of structural engineering design, construction and project management experience.  
-                Gent leads a collaborative environment with a mission to provide functional, sound, economical and sustainable engineering & construction solutions that achieve our client’s vision.
-
-                </p>
-              <Link onClick={scrollToTop} to={"/about"}>
-                <Button
-                  content={"About Us"}
-                  fontSize={"text-xl"}
-                  padding={"px-5  py-2"}
-                  furtherClasses={"mt-8"}
-                />
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </div>
-      {/* what we do section start */}
-      <div className="bg-gray-100">
-        <div
-          style={{ maxWidth: 1200 }}
-          className=" mx-auto flex gap-5 justify-between items-start p-10 py-28 max-md:py-16 max-md:px-5 max-lg:flex-col max-lg:items-center  max-lg:gap-12"
-        >
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            variants={animationVariants.zoomOut}
-            viewport={{ once: true, amount: 0.2 }}
-            className="w-1/3 max-lg:w-full max-lg:text-center flex flex-col gap-2 items-start max-lg:items-center"
-          >
-            <h2 className="text-5xl max-md:text-4xl font-bold title-font">
-              What we do
-            </h2>
-            <p className="text-xl">
-             Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.  
-             GCE has earned a reputation for delivering creative, innovative and sustainable design and cost-effective construction solutions in Kenya and East Africa at large.
-
-
-            </p>
-            <Link onClick={scrollToTop} to={"/about"}>
-              <button
-                style={{ borderWidth: 1.5, borderRadius: 4 }}
-                className="bg-transparent  text-black border-red-500 text-xl px-5 py-2 duration-300 hover:bg-red-500 hover:text-white transition-all mt-5 max-md:mt-3"
-              >
-                About Us
-              </button>
+                fontSize={"text-base"}
+                padding={"px-7 py-3.5"}
+              />
+            </Link>
+            <Link onClick={scrollToTop} to="/contact">
+              <Button
+                content={"Talk to an engineer"}
+                fontSize={"text-base"}
+                padding={"px-7 py-3.5"}
+                variant="light"
+              />
             </Link>
           </motion.div>
 
           <motion.div
+            variants={animationVariants.fadeUp}
+            className="w-full mt-10 max-md:mt-6 grid grid-cols-4 max-md:grid-cols-2 rounded-xl border border-white/15 bg-white/5 backdrop-blur-md overflow-hidden"
+          >
+            {stats.map((s, i) => (
+              <div
+                key={s.label}
+                className={`px-7 py-6 max-sm:px-4 max-sm:py-5 text-left max-lg:text-center border-white/10 ${
+                  i > 0 ? "md:border-l" : ""
+                } ${i % 2 === 1 ? "max-md:border-l" : ""} ${
+                  i > 1 ? "max-md:border-t" : ""
+                }`}
+              >
+                <p className="font-display text-4xl max-sm:text-3xl font-bold">
+                  {s.value}
+                </p>
+                <p className="text-white/60 text-sm mt-1">{s.label}</p>
+              </div>
+            ))}
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* about section */}
+      <section className="container-x grid grid-cols-2 max-md:grid-cols-1 gap-16 max-md:gap-8 py-28 max-md:py-20 items-start">
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          variants={animationVariants.fadeUp}
+          viewport={{ once: true, amount: 0.3 }}
+          className="flex flex-col gap-5"
+        >
+          <span className="eyebrow">Who we are</span>
+          <h2 className="section-title">
+            Innovative, intelligent{" "}
+            <span className="text-brand-600">
+              &amp; integrated sustainable engineering.
+            </span>
+          </h2>
+        </motion.div>
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          variants={animationVariants.fadeUp}
+          viewport={{ once: true, amount: 0.3 }}
+          className="flex flex-col gap-6 md:pt-10"
+        >
+          <p className="text-lg text-ink-soft leading-relaxed">
+            GCE was founded by Eng. Alvince O. Korero, PE in 2015 and joined by
+            CPA Angeline N.M. Omondi in 2016. Together, they bring over 15 years
+            of structural engineering design, construction and project
+            management experience.
+          </p>
+          <p className="text-lg text-ink-soft leading-relaxed">
+            Gent leads a collaborative environment with a mission to provide
+            functional, sound, economical and sustainable engineering &amp;
+            construction solutions that achieve our clients’ vision.
+          </p>
+          <ul className="grid grid-cols-2 max-sm:grid-cols-1 gap-3 mt-2">
+            {[
+              "Registered professional engineers",
+              "Value engineering approach",
+              "Design through to supervision",
+              "Serving Kenya & East Africa",
+            ].map((t) => (
+              <li key={t} className="flex items-center gap-3 font-medium">
+                <FaCheckCircle className="text-brand-500 shrink-0" />
+                {t}
+              </li>
+            ))}
+          </ul>
+          <Link onClick={scrollToTop} to={"/about"} className="self-start mt-2">
+            <Button
+              content={
+                <>
+                  More about us <FaArrowRight className="text-sm" />
+                </>
+              }
+              fontSize={"text-base"}
+              padding={"px-6 py-3"}
+              variant="outline"
+            />
+          </Link>
+        </motion.div>
+      </section>
+
+      {/* principles section */}
+      <section className="bg-surface">
+        <div className="container-x py-28 max-md:py-20">
+          <motion.div
             initial="initial"
             whileInView="animate"
             variants={animationVariants.fadeUp}
-            viewport={{ once: true, amount: 0.2 }}
-            className="cards w-2/3 max-lg:w-full flex justify-center max-md:flex-col max-md:items-center gap-7"
+            viewport={{ once: true, amount: 0.3 }}
+            className="grid grid-cols-2 max-lg:grid-cols-1 gap-8 items-end"
           >
-            <div className="flex flex-col gap-7 ">
-              <WhatWeDoCard
-                iconSrc={"/icons/reliability.png"}
-                iconAlt={"reliability"}
-                title={"Reliability"}
-                desc={
-                  " Bla Bla Bla Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam distinctio, nemo libero deleniti quibusdam quia!"
-                }
-              />
-              <WhatWeDoCard
-                iconSrc={"/icons/communication.png"}
-                iconAlt={"Dependable"}
-                title={"Dependable"}
-                desc={
-                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam distinctio, nemo libero deleniti quibusdam quia!"
-                }
-              />
-              <WhatWeDoCard
-                iconSrc={"/icons/communication.png"}
-                iconAlt={"Perfection"}
-                title={"Perfection"}
-                desc={
-                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam distinctio, nemo libero deleniti quibusdam quia!"
-                }
-              />
+            <div className="flex flex-col gap-5">
+              <span className="eyebrow">What we do</span>
+              <h2 className="section-title">Engineering you can build on.</h2>
             </div>
-            <div className="flex flex-col gap-7">
-              <div
-                style={{ height: 130 }}
-                className="max-md:hidden rounded-lg w-80 bg-gradient-to-t from-white to-transparent"
-              ></div>
-              <WhatWeDoCard
-                iconSrc={"/icons/quality-first.png"}
-                iconAlt={"quality-first"}
-                title={"Quality First"}
-                desc={
-                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam distinctio, nemo libero deleniti quibusdam quia!"
-                }
-              />
-              <div
-                style={{ height: 130 }}
-                className="max-md:hidden rounded-lg w-80 h-36 bg-gradient-to-b from-white to-transparent"
-              ></div>
-            </div>
+            <p className="text-lg text-ink-soft leading-relaxed">
+              A Nairobi-based civil, structural and construction engineering and
+              management firm serving the commercial construction community,
+              with a reputation for creative, sustainable design and
+              cost-effective construction solutions.
+            </p>
           </motion.div>
-        </div>
-        <div style={{ maxWidth: 1200 }} className="p-10 max-md:px-5 mx-auto">
-          <motion.h2
-            initial="initial"
-            whileInView="animate"
-            variants={animationVariants.fadeIn}
-            viewport={{ once: true, amount: 0.2 }}
-            className="text-5xl max-md:text-4xl font-semibold text-center"
-          >
-            Projects Done
-          </motion.h2>
-          <div className="flex flex-col gap-5 mt-10 max-sm:mt-8">
-            <div className=" flex gap-5 max-lg:flex-col">
-              <div className="w-2/4 max-lg:w-full">
-                <ExculusivePropertyCard
-                  imgSrc={rentHouses[0].mainImage}
-                  titlePart1={"House in "}
-                  titlePart2={rentHouses[0].name}
-                  pricing={rentHouses[0].price}
-                  type={rentHouses[0].type}
-                  href={rentHouses[0].id}
-                />
-              </div>
-              <div className="w-2/4 gap-5 flex max-lg:w-full max-sm:flex-col">
-                <ExculusivePropertyCard
-                  imgSrc={rentHouses[1].mainImage}
-                  titlePart1={"House in "}
-                  titlePart2={rentHouses[1].name}
-                  pricing={rentHouses[1].price}
-                  type={rentHouses[1].type}
-                  href={rentHouses[1].id}
-                />
-                <ExculusivePropertyCard
-                  imgSrc={rentHouses[2].mainImage}
-                  titlePart1={"House in "}
-                  titlePart2={rentHouses[2].name}
-                  pricing={rentHouses[2].price}
-                  type={rentHouses[2].type}
-                  href={rentHouses[2].id}
-                />
-              </div>
-            </div>
-            <div className=" flex gap-5 max-lg:flex-col">
-              <div className="w-2/4 gap-5 flex max-lg:w-full max-sm:flex-col">
-                <ExculusivePropertyCard
-                  imgSrc={rentHouses[3].mainImage}
-                  titlePart1={"House in "}
-                  titlePart2={rentHouses[3].name}
-                  pricing={rentHouses[3].price}
-                  type={rentHouses[3].type}
-                  href={rentHouses[3].id}
-                />
-                <ExculusivePropertyCard
-                  imgSrc={rentHouses[4].mainImage}
-                  titlePart1={"House in "}
-                  titlePart2={rentHouses[4].name}
-                  pricing={rentHouses[4].price}
-                  type={rentHouses[4].type}
-                  href={rentHouses[4].id}
-                />
-              </div>
-              <div className="w-2/4 max-lg:w-full">
-                <ExculusivePropertyCard
-                  imgSrc={rentHouses[5].mainImage}
-                  titlePart1={"House in "}
-                  titlePart2={rentHouses[5].name}
-                  pricing={rentHouses[5].price}
-                  type={rentHouses[5].type}
-                  href={rentHouses[5].id}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* what we do section end */}
-
-      {/* appreciation section start */}
-      <div className="bg-white">
-        <div
-          style={{ maxWidth: 1200 }}
-          className="p-10 max-md:px-5 py-28 mx-auto grid grid-cols-2 grid-rows-1 gap-20 max-lg:grid-cols-1 max-lg:grid-rows-2 "
-        >
           <motion.div
             initial="initial"
             whileInView="animate"
             viewport={{ once: true, amount: 0.2 }}
             transition={{ staggerChildren: 0.1 }}
-            className="w-full max-lg:w-full flex flex-col  items-start max-lg:items-center max-lg:text-center gap-7"
+            className="grid grid-cols-4 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-6 mt-14"
           >
-            <motion.h1
-              variants={animationVariants.fadeLeft}
-              className="text-5xl max-md:text-4xl font-semibold"
-            >
-              We use Value Engineering and Sustainable Innovations to showcase our appreciation of the world. 
-
-            </motion.h1>
-            <motion.p
-              variants={animationVariants.fadeLeft}
-              className="text-2xl"
-            >
-              We provide Innovative, Intelligent and Integrated Sustainable Engineering Solutions.
-
-            </motion.p>
-            <motion.div
-              variants={animationVariants.fadeLeft}
-              className="grid grid-cols-2 grid-rows gap-10"
-            >
-              <div className="flex flex-col max-lg:justify-center max-lg:items-center">
-                <h2 className="title-font text-red-500 text-5xl max-md:text-4xl font-semibold">
-                  Mission
-                </h2>
-                <p className="text-xl">
-                  Gent Consulting Engineers is committed to providing innovative, intelligent and integrated sustainable engineering design solutions and quality services to enhance our customers’ satisfaction. 
-                  Our cost-effective approaches combines both exceptional design and proven performance.
-
-                </p>
-              </div>
-              <div className="flex flex-col max-lg:justify-center max-lg:items-center">
-                <h2 className="title-font text-red-500 text-5xl max-md:text-4xl font-semibold">
-                  Motor
-                </h2>
-                <p className="text-xl">
-                 …where probity flairs and diligence meet…
-
-                </p>
-              </div>
-              <div className=" flex-col max-lg:justify-center max-lg:items-center">
-                <h2 className="title-font text-red-500 text-5xl max-md:text-4xl font-semibold">
-                  Values
-                </h2>
-                <p className="text-xl">
-                  Clients – Our goal is to develop enduring business relationships that are built on competency, reliability, trust, integrity, effective communication, and delivering quality services on time and within budget.
-                  Employees – Our employees are the fabric of our organization. They determine our reputation, capability, and ultimately, our success. We provide a work environment that encourages self-improvement, teamwork, innovation, growth and career advancement.
-                  Quality of Work – Our reputation is built on a tradition of providing services with a high level of technical competence and attention to detail. We continually train and educate our staff to provide quality work that meet international standards requirements
-
-
-                </p>
-              </div>
-              <div className="flex flex-col max-lg:justify-center max-lg:items-center">
-                <h2 className="title-font text-red-500 text-5xl max-md:text-4xl font-semibold">
-                  Vision
-                </h2>
-                <p className="text-xl">
-                  Our vision is to evolve from a firm that is locally service focused to one that is internationally market focused, while increasing the customer base in the East Africa and being our clients’ first choice for sustainable and value engineering services. We strive to honor our company values and maintain the financial discipline and stability of Gent.
-
-                </p>
-              </div>
-            </motion.div>
-            <motion.div variants={animationVariants.fadeLeft}>
-              <Link onClick={scrollToTop} to={"/contact"}>
-                <Button
-                  content={"Get In Touch"}
-                  padding={"px-6 py-3"}
-                  fontSize={"text-xl"}
+            {principles.map((p, i) => (
+              <motion.div key={p.title} variants={animationVariants.fadeUp}>
+                <WhatWeDoCard
+                  icon={p.icon}
+                  index={i + 1}
+                  title={p.title}
+                  desc={p.desc}
                 />
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* services preview */}
+      <section className="container-x py-28 max-md:py-20">
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          variants={animationVariants.fadeUp}
+          viewport={{ once: true, amount: 0.3 }}
+          className="flex justify-between items-end gap-8 flex-wrap"
+        >
+          <div className="flex flex-col gap-5 max-w-2xl">
+            <span className="eyebrow">Our services</span>
+            <h2 className="section-title">
+              Expertise across the full project lifecycle.
+            </h2>
+          </div>
+          <Link onClick={scrollToTop} to="/services">
+            <Button
+              content={
+                <>
+                  All services <FaArrowRight className="text-sm" />
+                </>
+              }
+              fontSize={"text-base"}
+              padding={"px-6 py-3"}
+              variant="outline"
+            />
+          </Link>
+        </motion.div>
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ staggerChildren: 0.06 }}
+          className="grid grid-cols-4 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-5 mt-14"
+        >
+          {servicesData.map((s) => (
+            <motion.div key={s.id} variants={animationVariants.fadeUp}>
+              <Link
+                onClick={scrollToTop}
+                to={`/services/${s.id}`}
+                className="group relative block h-72 rounded-xl overflow-hidden bg-ink"
+              >
+                <img
+                  src={s.image}
+                  alt=""
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/5 transition-colors duration-500 group-hover:from-brand-900"></div>
+                <div className="absolute inset-0 p-6 flex flex-col justify-end text-white">
+                  <img src={s.icon} alt="" className="w-10 mb-4 opacity-90" />
+                  <h3 className="text-xl font-semibold leading-snug">
+                    {s.title}
+                  </h3>
+                  <span className="mt-3 flex items-center gap-2 text-sm font-medium text-brand-200 opacity-0 -translate-y-1 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                    Learn more <FaArrowRight className="text-xs" />
+                  </span>
+                </div>
               </Link>
             </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
+      {/* mission, vision & values section */}
+      <section className="relative bg-ink text-white overflow-hidden">
+        <div className="blueprint absolute inset-0"></div>
+        <div className="absolute -left-40 top-20 w-[520px] h-[520px] rounded-full bg-brand-500/20 blur-3xl"></div>
+        <div className="container-x relative py-28 max-md:py-20 grid grid-cols-12 max-lg:grid-cols-1 gap-14 max-lg:gap-12">
+          <motion.div
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ staggerChildren: 0.1 }}
+            className="col-span-7 max-lg:col-span-1 flex flex-col gap-10"
+          >
+            <motion.div
+              variants={animationVariants.fadeUp}
+              className="flex flex-col gap-5"
+            >
+              <span className="eyebrow eyebrow-light">Our purpose</span>
+              <h2 className="font-display text-5xl max-md:text-4xl font-bold leading-[1.08]">
+                Value engineering and sustainable innovation, in every
+                structure we touch.
+              </h2>
+            </motion.div>
+
+            <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-5">
+              <motion.div
+                variants={animationVariants.fadeUp}
+                className="rounded-xl border border-white/10 bg-white/[0.04] p-7"
+              >
+                <h3 className="text-brand-300 text-sm font-semibold uppercase tracking-[0.18em]">
+                  Mission
+                </h3>
+                <p className="mt-3 text-white/75 leading-relaxed">
+                  To provide innovative, intelligent and integrated sustainable
+                  engineering design solutions and quality services that
+                  enhance our customers’ satisfaction, combining exceptional
+                  design with proven performance.
+                </p>
+              </motion.div>
+              <motion.div
+                variants={animationVariants.fadeUp}
+                className="rounded-xl border border-white/10 bg-white/[0.04] p-7"
+              >
+                <h3 className="text-brand-300 text-sm font-semibold uppercase tracking-[0.18em]">
+                  Vision
+                </h3>
+                <p className="mt-3 text-white/75 leading-relaxed">
+                  To grow from a locally focused firm into an internationally
+                  market-focused one, and be our clients’ first choice for
+                  sustainable and value engineering services across East
+                  Africa.
+                </p>
+              </motion.div>
+            </div>
+
+            <motion.div variants={animationVariants.fadeUp}>
+              <h3 className="text-brand-300 text-sm font-semibold uppercase tracking-[0.18em]">
+                Values
+              </h3>
+              <div className="mt-5 grid grid-cols-3 max-md:grid-cols-1 gap-6">
+                {values.map((v) => (
+                  <div key={v.title} className="border-t border-white/15 pt-5">
+                    <h4 className="font-display text-lg font-semibold">
+                      {v.title}
+                    </h4>
+                    <p className="mt-2 text-sm text-white/60 leading-relaxed">
+                      {v.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
           </motion.div>
-          <div className="w-full max-lg:w-full h-full max-sm:max-h-[500px] ">
-            <div className=" h-full w-full relative overflow-hidden rounded-lg">
+
+          <div className="col-span-5 max-lg:col-span-1 flex flex-col gap-6">
+            <div className="relative flex-1 min-h-[420px] rounded-xl overflow-hidden">
               <img
                 src="/appriciation-section-image.jpg"
-                className="absolute w-full h-full object-cover object-center "
-                alt=""
+                className="absolute w-full h-full object-cover object-center"
+                alt="Construction site at dusk"
+                loading="lazy"
               />
-              <div className="absolute w-full h-full bg-black/50 "></div>
-
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent"></div>
               <motion.div
                 initial="initial"
                 whileInView="animate"
                 variants={animationVariants.toLeft}
                 viewport={{ once: true, amount: 0.2 }}
-                className="absolute w-full h-full bg-white origin-left z-20 "
-              >
-                <div className=""></div>
-              </motion.div>
+                className="absolute inset-0 bg-ink origin-left z-20"
+              ></motion.div>
+              <div className="absolute bottom-0 left-0 right-0 p-7">
+                <FaLeaf className="text-brand-300 text-xl" />
+                <p className="mt-3 text-sm uppercase tracking-[0.18em] text-white/60">
+                  Our motto
+                </p>
+                <p className="font-display text-2xl font-semibold mt-1">
+                  “…where probity flairs and diligence meet…”
+                </p>
+              </div>
             </div>
+            <Link onClick={scrollToTop} to={"/contact"}>
+              <Button
+                content={
+                  <>
+                    Get in touch <FaArrowRight className="text-sm" />
+                  </>
+                }
+                padding={"px-6 py-3.5"}
+                fontSize={"text-base"}
+                furtherClasses={"w-full"}
+              />
+            </Link>
           </div>
         </div>
-        <div
-          style={{ maxWidth: 1200 }}
-          className="mx-auto destination-section p-10 max-md:px-5  pb-28"
-        >
-          <motion.h1
-            initial="initial"
-            whileInView="animate"
-            variants={animationVariants.fadeIn}
-            viewport={{ once: true, amount: 0.2 }}
-            className="text-5xl max-md:text-4xl font-semibold text-center  px-2"
-          >
-            Blogs & Reference
-          </motion.h1>
-          <div className="grid grid-cols-4 grid-rows-1 max-lg:grid-cols-2 max-lg:grid-rows-2 max-sm:grid-cols-1 max-sm:grid-rows-4 gap-4 relative mt-10 max-sm:mt-8">
-            <img
-              src="/cards-corner.png"
-              className="absolute -left-10 -bottom-10 max-xl:hidden"
-              alt=""
-            />
-            {showCase.map((e, i) => {
-              if (e.id != 5 && e.id != 6) {
-                return (
-                  <ProjectCard
-                    key={i}
-                    src={e.coverImage}
-                    title={e.city}
-                    href={e.id}
-                  />
-                );
-              }
-            })}
-          </div>
-        </div>
-      </div>
-      {/* appreciation section end */}
-      {/* review section start */}
-      <div className="bg-gray-100">
-        <div
-          style={{ maxWidth: 1200 }}
-          className=" mx-auto flex max-md:flex-col justify-center items-center gap-16 p-10 max-md:px-5 py-28 "
-        >
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ staggerChildren: 0.1 }}
-            className="w-2/4 max-md:w-full max-md:px-3 items-center flex flex-col gap-5"
-          >
-            <motion.div
-              className="w-full ml-6"
-              variants={animationVariants.zoomIn}
-            >
-              
-            </motion.div>
-            <motion.div
-              className="w-full mr-6"
-              variants={animationVariants.zoomIn}
-            >
-              <ReviewCard
-                imgSrc={"/reviews/robert-fox.jpg"}
-                title={"Eng Alvince Korero"}
-                from={"Technical Director and CEO"}
-              />
-            </motion.div>
-            <motion.div
-              className="w-full ml-6"
-              variants={animationVariants.zoomIn}
-            >
-              <ReviewCard
-                imgSrc={"/reviews/marvin-mckinney.jpg"}
-                title={"MD, Director Finance and Adm."}
-                from={"CPA. Omondi Angeline N.M."}
-              />
-            </motion.div>
-          </motion.div>
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            variants={animationVariants.fadeRight}
-            viewport={{ once: true, amount: 0.2 }}
-            className="w-2/4 max-md:w-full max-md:text-center flex flex-col gap-8"
-          >
-            <h1 className="text-5xl max-md:text-4xl font-semibold">
-              Why Gent Consulting Engineers
+      </section>
 
-            </h1>
-            <div>
-              <Carousel />
-            </div>
-          </motion.div>
-        </div>
-      </div>
-      {/* review section end */}
-      {/* partner brand section start */}
-      <div className="bg-gray-100 border-t-2 border-black/30  border-dashed">
-        <div
-          style={{ maxWidth: 1200 }}
-          className=" mx-auto flex max-md:flex-col justify-center items-center gap-10 p-10 max-md:px-5  "
+      {/* featured projects section */}
+      <section className="container-x py-28 max-md:py-20">
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          variants={animationVariants.fadeUp}
+          viewport={{ once: true, amount: 0.3 }}
+          className="flex justify-between items-end gap-8 flex-wrap"
         >
+          <div className="flex flex-col gap-5 max-w-2xl">
+            <span className="eyebrow">Portfolio</span>
+            <h2 className="section-title">Featured projects</h2>
+          </div>
+          <Link onClick={scrollToTop} to="/showcases/showcase1">
+            <Button
+              content={
+                <>
+                  View all projects <FaArrowRight className="text-sm" />
+                </>
+              }
+              fontSize={"text-base"}
+              padding={"px-6 py-3"}
+              variant="outline"
+            />
+          </Link>
+        </motion.div>
+        <div className="grid grid-cols-4 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-5 mt-14">
+          {showCase
+            .filter((e) => e.id != 5 && e.id != 6)
+            .map((e, i) => (
+              <ProjectCard
+                key={e.id}
+                src={e.coverImage}
+                title={e.city}
+                href={e.id}
+                index={i + 1}
+              />
+            ))}
+        </div>
+      </section>
+
+      {/* leadership & why us section */}
+      <section className="bg-surface">
+        <div className="container-x grid grid-cols-2 max-lg:grid-cols-1 gap-20 max-lg:gap-14 py-28 max-md:py-20 items-center">
           <motion.div
             initial="initial"
             whileInView="animate"
-            variants={animationVariants.fadeIn}
-            viewport={{ once: true, amount: 0.1 }}
-            className="flex gap-8 flex-wrap justify-center items-center"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ staggerChildren: 0.12 }}
+            className="flex flex-col gap-5"
           >
+            <motion.span variants={animationVariants.fadeUp} className="eyebrow">
+              <FaUsers /> Leadership
+            </motion.span>
+            <motion.div variants={animationVariants.fadeUp}>
+              <ReviewCard
+                initials={"AK"}
+                title={"Eng. Alvince O. Korero, PE"}
+                from={"Technical Director & CEO"}
+              />
+            </motion.div>
+            <motion.div variants={animationVariants.fadeUp} className="lg:ml-12">
+              <ReviewCard
+                initials={"AO"}
+                title={"CPA Angeline N.M. Omondi"}
+                from={"MD, Director Finance & Administration"}
+              />
+            </motion.div>
+          </motion.div>
+          <motion.div
+            initial="initial"
+            whileInView="animate"
+            variants={animationVariants.fadeUp}
+            viewport={{ once: true, amount: 0.2 }}
+            className="flex flex-col gap-6 min-w-0"
+          >
+            <span className="eyebrow">Why choose us</span>
+            <h2 className="section-title">Why Gent Consulting Engineers</h2>
+            <Carousel />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* partner brand section */}
+      <section className="border-y border-black/5">
+        <div className="container-x py-12 flex max-md:flex-col items-center gap-10">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-ink-muted whitespace-nowrap">
+            Trusted by
+          </p>
+          <div className="flex-1 flex gap-12 max-sm:gap-8 flex-wrap justify-around items-center">
             {partnerBrands.map((e, i) => {
               return (
                 <PartnerBrandCard
@@ -549,10 +542,35 @@ const HomePage = () => {
                 />
               );
             })}
-          </motion.div>
+          </div>
         </div>
-      </div>
-      {/* partner brand section end */}
+      </section>
+
+      {/* call to action */}
+      <section className="container-x py-24 max-md:py-16">
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          variants={animationVariants.fadeUp}
+          viewport={{ once: true, amount: 0.3 }}
+          className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-600 to-brand-800 px-14 py-16 max-md:px-7 max-md:py-12 text-white flex max-lg:flex-col justify-between items-center gap-8 max-lg:text-center"
+        >
+          <div className="blueprint absolute inset-0"></div>
+          <div className="relative">
+            <h2 className="font-display text-4xl max-md:text-3xl font-bold">
+              Have a project in mind?
+            </h2>
+            <p className="mt-3 text-white/80 text-lg max-w-xl">
+              From feasibility to handover, let’s engineer something that lasts.
+            </p>
+          </div>
+          <Link onClick={scrollToTop} to="/contact" className="relative">
+            <button className="inline-flex items-center gap-2 rounded-md bg-white text-brand-800 px-7 py-3.5 font-semibold transition-all hover:bg-ink hover:text-white active:scale-[0.98]">
+              Request a consultation <FaArrowRight className="text-sm" />
+            </button>
+          </Link>
+        </motion.div>
+      </section>
     </div>
   );
 };

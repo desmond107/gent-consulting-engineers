@@ -3,7 +3,7 @@ export const showCase = [
     id: 1,
     city: "AIA-Terminal Building",
     shortDescription:
-      "Put comment",
+      "A Gent Consulting Engineers project.",
     description:
       "Township establishment infrastructure Bulk Power Designs- building Services reticulation, Data Capturing and Management, Network Audits, Substation Refurbishment and Upgrade, Power Station Management, technical performance and efficiency of Main and Auxiliary Equipment for Power Stations, Energy Management. Lighting- General Lighting, Township Lighting (High masts & Street Lighting), Security Lighting, Specialized LightingSecurity Systems- Access Control, CCTV monitoring Systems, Building Management",
     coverImage: "/Project-showcase/Karachi/Dolmen-bahria-towers.jpg",
@@ -20,7 +20,7 @@ export const showCase = [
     id: 2,
     city: "AIA –Building steel elements",
     shortDescription:
-      "Put comment",
+      "A Gent Consulting Engineers project.",
     description:
       "Put decription",
     coverImage: "/Project-showcase/Islamabad/Faisal-mosque.jpg",
@@ -37,7 +37,7 @@ export const showCase = [
     id: 3,
     city: "Residential construction ",
     shortDescription:
-      "put comment",
+      "A Gent Consulting Engineers project.",
     description:
       "put description",
     coverImage: "/Project-showcase/Lahore/Badshahi-mosque.jpg",
@@ -54,7 +54,7 @@ export const showCase = [
     id: 4,
     city: "Building completed frame structure",
     shortDescription:
-      "put comment",
+      "A Gent Consulting Engineers project.",
     description:
       "put description",
     coverImage: "/Project-showcase/Quetta/Quaid-e-azam-residency.jpg",
@@ -71,7 +71,7 @@ export const showCase = [
     id: 5,
     city: "Apartment load bearing wall structure",
     shortDescription:
-      "put comment",
+      "A Gent Consulting Engineers project.",
     description:
       "put description",
     coverImage: "/Project-showcase/Peshawar/Baab-e-khyber.jpg",
@@ -88,7 +88,7 @@ export const showCase = [
     id: 6,
     city: "Apartment load bearing wall structure",
     shortDescription:
-      "put comment",
+      "A Gent Consulting Engineers project.",
     description:
       "put description",
     coverImage: "/Project-showcase/Murree/Hills-view.jpg",

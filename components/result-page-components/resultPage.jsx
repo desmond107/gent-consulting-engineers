@@ -84,10 +84,10 @@ const ResultPage = ({ searchParams, setSearchParams }) => {
             placeholder="Search"
           />
           <Button
-            _hover={{ backgroundColor: "white", color: "#d5515e" }}
-            backgroundColor={"#d5515e"}
+            _hover={{ backgroundColor: "white", color: "#0f74a6" }}
+            backgroundColor={"#0f74a6"}
             color={"white"}
-            borderColor={"#d5515e"}
+            borderColor={"#0f74a6"}
             variant={"outline"}
             size={"lg"}
             isLoading={btnLoader}

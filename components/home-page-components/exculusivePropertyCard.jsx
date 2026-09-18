@@ -53,7 +53,7 @@ const ExculusivePropertyCard = ({
         <Link
           onClick={scrollToTop}
           to={`/products/${href}`}
-          className="text-xl font-medium hover:text-red-500 w-fit transition-all"
+          className="text-xl font-medium hover:text-brand-600 w-fit transition-all"
         >
           {titlePart1}
           <span className="title-font">{titlePart2}</span>

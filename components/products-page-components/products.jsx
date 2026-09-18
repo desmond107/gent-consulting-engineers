@@ -107,13 +107,13 @@ const Product = ({
             <h1 className="text-5xl font-semibold">House in {title}</h1>
             <p className="details text-2xl">{descr}</p>
             <div>
-              <h2 className="text-xl text-red-500 font-semibold">GCE</h2>
+              <h2 className="text-xl text-brand-600 font-semibold">GCE</h2>
               <h2 className="text-2xl mt-2 font-semibold">
                 Projects & developments
               </h2>
             </div>
             <div className="flex flex-col gap-2">
-              <h2 className="text-xl text-red-500 font-semibold">Civil Engineering & construction</h2>
+              <h2 className="text-xl text-brand-600 font-semibold">Civil Engineering & construction</h2>
 
               
                 
@@ -121,7 +121,7 @@ const Product = ({
               
             </div>
             <div className="flex text-xl flex-col gap-2">
-              <h2 className=" text-red-500 font-semibold">Details</h2>
+              <h2 className=" text-brand-600 font-semibold">Details</h2>
               <p>{descr}</p>
               <ul className="list-disc list-inside ml-2">
                 {details.map((e, i) => {

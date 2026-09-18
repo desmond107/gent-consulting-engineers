@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import {
-  FaCoins,
+  FaCheckCircle,
   FaEnvelope,
   FaMapMarkerAlt,
-  FaMobileAlt,
-  FaPhone,
+  FaPhoneAlt,
 } from "react-icons/fa";
 import {
   Accordion,
@@ -16,11 +15,9 @@ import {
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { animationVariants } from "../../constants/animationVariants";
-import WhatWeDoCard from "../home-page-components/whatwedocard";
+import PageHero from "../page-hero/pageHero";
 import { Button, Input, Textarea, useToast } from "@chakra-ui/react";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import { scrollToTop } from "../../constants/scrollToTop";
 
 const ContactPage = () => {
   const toast = useToast();
@@ -142,576 +139,265 @@ const ContactPage = () => {
     return _error;
   };
 
+  const fieldProps = {
+    size: "lg",
+    fontSize: 16,
+    bg: "white",
+    borderColor: "rgba(11,27,43,.12)",
+    focusBorderColor: "#1891c8",
+    color: "#0b1b2b",
+    _placeholder: { color: "#64748b" },
+    autoComplete: "off",
+    borderRadius: "8px",
+  };
+
+  const contactItems = [
+    {
+      icon: <FaPhoneAlt />,
+      label: "Call us",
+      value: "+254 718 484 254",
+      href: "tel:+254718484254",
+    },
+    {
+      icon: <FaEnvelope />,
+      label: "Email us",
+      value: "info@gtc.com",
+      href: "mailto:info@gtc.com",
+    },
+    {
+      icon: <FaMapMarkerAlt />,
+      label: "Visit us",
+      value: "Nairobi, Kenya",
+    },
+  ];
+
+  const faqs = [
+    {
+      q: "What engineering services do you offer?",
+      a: "We cover building evaluation and rehabilitation, civil and infrastructure design, bridge design, geotechnical engineering, airport and pavement design, construction and project management, quality assurance and control, and site supervision.",
+    },
+    {
+      q: "Which areas do you serve?",
+      a: "We are based in Nairobi and serve clients across Kenya and the wider East African region.",
+    },
+    {
+      q: "How do I start a project with GCE?",
+      a: "Send us a message using the form above or give us a call. We’ll arrange an initial consultation to understand your goals, scope and budget, then propose the right team and approach.",
+    },
+    {
+      q: "Are your engineers registered professionals?",
+      a: "Yes. Most of our engineers and staff are locally registered professionals, and our work is delivered to international standards.",
+    },
+    {
+      q: "Can you assess an existing building?",
+      a: "Yes. Our building evaluation and rehabilitation service assesses structural health and performance, identifies problems and recommends solutions to extend design life.",
+    },
+    {
+      q: "Do you supervise construction on site?",
+      a: "Yes. We provide project site supervision and monitoring, along with quality assurance and control, to make sure what is built matches what was designed.",
+    },
+  ];
+
   return (
-    <div className=" w-full overflow-hidden">
-      <div className="  flex bg-[url('/hero-bg-image.jpg')] pt-44 max-sm:pt-40 pb-32 bg-top bg-no-repeat bg-cover  ">
-        <div
-          style={{ maxWidth: 1200 }}
-          className="mx-auto w-full text-white px-10 max-sm:px-5 flex flex-col max-lg:items-center max-lg:text-center gap-16"
+    <div className="w-full overflow-hidden">
+      <PageHero
+        image="/hero-bg-image.jpg"
+        eyebrow="Contact"
+        title="Let’s talk about your project"
+        subtitle="Whether you’re planning a new build, assessing an existing structure or need site supervision, our engineers are ready to help."
+      />
+
+      {/* contact cards */}
+      <section className="container-x relative z-10 -mt-12 max-md:-mt-8">
+        <motion.div
+          initial="initial"
+          animate="animate"
+          transition={{ staggerChildren: 0.1, delayChildren: 0.3 }}
+          className="grid grid-cols-3 max-md:grid-cols-1 gap-5"
         >
-          <motion.h1
-            initial="initial"
-            whileInView="animate"
-            variants={animationVariants.zoomOut}
-            viewport={{ once: true, amount: 0.2 }}
-            className="text-6xl max-lg:mx-auto font-semibold max-sm:text-5xl max-w-lg "
-          >
-            Contact Us
-          </motion.h1>
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ staggerChildren: 0.2 }}
-            className="grid gap-4 w-full text-start grid-cols-3 grid-rows-1 max-md:grid-cols-1 max-md:grid-rows-3"
-          >
-            <motion.div
-              variants={animationVariants.fadeUp}
-              className="card bg-white text-black rounded-md gap-5  p-6 pb-10 max-lg:p-5 max-lg:pb-8 max-md:p-6 max-md:py-7 max-md:pb-10 flex flex-col gap text-xl "
-            >
-              <div className="card-header text-2xl flex items-center gap-4">
-                <div className="bg-red-500 w-[60px] h-[58px] rounded-md text-xl flex gap-4 justify-center items-center">
-                  <FaEnvelope className="text-white" />
-                </div>
-                <h2 className="title-font font-semibold ">Services</h2>
-              </div>
-              <p>Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.</p>
-            </motion.div>
-            <motion.div
-              variants={animationVariants.fadeUp}
-              className="card bg-white text-black rounded-md gap-5  p-6 pb-10 max-lg:p-5 max-lg:pb-8 max-md:p-6 max-md:py-7 max-md:pb-10 flex flex-col gap text-xl "
-            >
-              <div className="card-header text-2xl flex items-center gap-4">
-                <div className="bg-red-500 w-[60px] h-[58px] rounded-md text-xl flex gap-4 justify-center items-center">
-                  <FaCoins className="text-white" />
-                </div>
-                <h2 className="title-font font-semibold ">Pricing</h2>
-              </div>
-              <p>Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.</p>
-            </motion.div>
-            <motion.div
-              variants={animationVariants.fadeUp}
-              className="card bg-white text-black rounded-md gap-5  p-6 pb-10 max-lg:p-5 max-lg:pb-8 max-md:p-6 max-md:py-7 max-md:pb-10 flex flex-col gap text-xl "
-            >
-              <div className="card-header text-2xl flex items-center gap-4">
-                <div className="bg-red-500 w-[60px] h-[58px] rounded-md text-xl flex gap-4 justify-center items-center">
-                  <FaMobileAlt className="text-white" />
-                </div>
-                <h2 className="title-font font-semibold ">Support</h2>
-              </div>
-              <p>Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.</p>
-            </motion.div>
-          </motion.div>
-        </div>
+          {contactItems.map((c) => {
+            const Tag = c.href ? "a" : "div";
+            return (
+              <motion.div key={c.label} variants={animationVariants.fadeUp}>
+                <Tag
+                  href={c.href}
+                  className="group flex items-center gap-5 bg-white rounded-xl p-6 border border-black/5 shadow-lift transition-all hover:-translate-y-0.5"
+                >
+                  <span className="w-12 h-12 shrink-0 rounded-lg bg-brand-50 text-brand-600 text-lg flex items-center justify-center transition-colors group-hover:bg-brand-600 group-hover:text-white">
+                    {c.icon}
+                  </span>
+                  <span>
+                    <span className="block text-sm text-ink-muted">
+                      {c.label}
+                    </span>
+                    <span className="block font-semibold text-lg">
+                      {c.value}
+                    </span>
+                  </span>
+                </Tag>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+      </section>
 
-        {/* </Reveal> */}
-      </div>
-
-      {/* contact form section start */}
-      <div
-        style={{ maxWidth: 1200 }}
-        className="mx-auto w-full p-10 py-28 max-sm:px-5 flex max-lg:flex-wrap-reverse  gap-12"
-      >
+      {/* contact form section */}
+      <section className="container-x py-24 max-md:py-16 grid grid-cols-12 max-lg:grid-cols-1 gap-14 max-lg:gap-10">
         <motion.div
           initial="initial"
           whileInView="animate"
-          variants={animationVariants.zoomOut}
+          variants={animationVariants.fadeUp}
+          viewport={{ once: true, amount: 0.2 }}
+          className="col-span-5 max-lg:col-span-1 flex flex-col gap-6"
+        >
+          <span className="eyebrow">Send a message</span>
+          <h2 className="section-title">
+            Talk to our team{" "}
+            <span className="text-brand-600">about what you’re building.</span>
+          </h2>
+          <p className="text-lg text-ink-soft leading-relaxed">
+            Gent Consulting Engineers is a civil, structural and construction
+            engineering and management firm based in Nairobi, serving the
+            commercial construction community across Kenya and East Africa.
+          </p>
+          <ul className="flex flex-col gap-3 mt-2">
+            {[
+              "Initial consultation to scope your project",
+              "Registered professional engineers",
+              "Design, management and site supervision",
+            ].map((t) => (
+              <li key={t} className="flex items-center gap-3 font-medium">
+                <FaCheckCircle className="text-brand-500 shrink-0" />
+                {t}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          variants={animationVariants.fadeUp}
           viewport={{ once: true, amount: 0.2 }}
           id="contact"
-          style={{ boxShadow: "0 20px 50px rgba(0, 43, 86, .1)" }}
-          className="w-1/2 max-lg:w-full p-6 py-7 rounded-md flex flex-col h-auto justify-between items-start gap-5"
+          className="col-span-7 max-lg:col-span-1 bg-surface rounded-2xl p-10 max-md:p-6 flex flex-col gap-5 border border-black/5"
         >
-          <div className="name w-full gap-5 text-white max-sm:flex-col flex">
+          <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-5">
             <Input
-              pl={3}
-              fontSize={19}
-              variant={"outline"}
-              borderColor={"#002b561a"}
-              focusBorderColor="#001d3b4d"
+              {...fieldProps}
               maxLength={20}
-              autoComplete="off"
-              _focus={{ borderWidth: 0.1 }}
-              color={"black"}
-              _placeholder={{ color: "#696969" }}
-              placeholder="First Name"
+              placeholder="First name"
               name="firstName"
               value={formData.firstName}
               onChange={handleChange}
             />
             <Input
-              pl={3}
-              fontSize={19}
-              variant={"outline"}
-              borderColor={"#002b561a"}
-              focusBorderColor="#001d3b4d"
+              {...fieldProps}
               maxLength={20}
-              autoComplete="off"
-              color={"black"}
-              _placeholder={{ color: "#696969" }}
-              placeholder="Last Name"
+              placeholder="Last name"
               name="lastName"
               value={formData.lastName}
               onChange={handleChange}
             />
+            <Input
+              {...fieldProps}
+              maxLength={40}
+              placeholder="Email address"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+            <Input
+              {...fieldProps}
+              maxLength={15}
+              type="tel"
+              placeholder="Phone number"
+              name="phoneNo"
+              value={formData.phoneNo}
+              onChange={handleChange}
+            />
           </div>
-          <Input
-            pl={3}
-            fontSize={19}
-            variant={"outline"}
-            borderColor={"#002b561a"}
-            focusBorderColor="#001d3b4d"
-            autoComplete="off"
-            maxLength={40}
-            color={"black"}
-            _placeholder={{ color: "#696969" }}
-            placeholder="Email Address"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-          <Input
-            pl={3}
-            fontSize={19}
-            variant={"outline"}
-            borderColor={"#002b561a"}
-            focusBorderColor="#001d3b4d"
-            max={15}
-            maxLength={15}
-            autoComplete="off"
-            color={"black"}
-            _placeholder={{ color: "#696969" }}
-            type="number"
-            placeholder="Phone No"
-            name="phoneNo"
-            value={formData.phoneNo}
-            onChange={handleChange}
-          />
           <Textarea
-            pl={3}
-            fontSize={19}
-            variant={"outline"}
-            borderColor={"#002b561a"}
-            focusBorderColor="#001d3b4d"
-            autoComplete="off"
+            {...fieldProps}
             maxLength={200}
-            color={"black"}
-            _placeholder={{ color: "#696969" }}
-            placeholder="Message"
-            minHeight={"180px"}
-            className="w-ful text-white"
+            placeholder="Tell us about your project"
+            minHeight={"160px"}
+            resize="vertical"
             name="message"
             value={formData.message}
             onChange={handleChange}
           />
           <Button
-            _hover={{ backgroundColor: "white", color: "#d5515e" }}
-            backgroundColor={"#d5515e"}
+            _hover={{ backgroundColor: "#0d5c84" }}
+            backgroundColor={"#0f74a6"}
             color={"white"}
-            borderColor={"#d5515e"}
-            variant={"outline"}
             size={"lg"}
             isLoading={btnLoader}
-            loadingText={"Sending.."}
+            loadingText={"Sending…"}
             onClick={handleSubmit}
             className="w-full"
-            transitionDuration={"300ms"}
-            fontWeight={"normal"}
-            fontSize={"20px"}
-            borderRadius={"4px"}
+            fontWeight={500}
+            fontSize={"16px"}
+            borderRadius={"8px"}
+            height={"56px"}
           >
-            Submit
+            Send message
           </Button>
         </motion.div>
-        <motion.div
-          initial="initial"
-          whileInView="animate"
-          variants={animationVariants.fadeRight}
-          viewport={{ once: true, amount: 0.2 }}
-          className="w-1/2 flex flex-col gap-5 max-lg:w-full"
-        >
-          <div className="text-5xl max-md:text-4xl max-md:text-center">
-            <h1 className="font-semibold ">
-              Contact our support{" "}
-              <span className="font-semibold title-font  text-red-500">
-                team to grow your business
-              </span>
-            </h1>
-          </div>
-          <p className="text-xl">
-           Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide. 
-          </p>
-          <div className="flex flex-col gap-3">
-            <div className="flex  gap-3 text-xl items-center">
-              <div>
-                <FaEnvelope className="text-red-500" />
-              </div>
-              <p>Nairobi, Kenya</p>
-            </div>
-            <div className="flex  gap-3 text-xl items-center">
-              <div>
-                <FaPhone className="rotate-90 text-red-500" />
-              </div>
-              <p>+254718484254</p>
-            </div>
-            <div className="flex  gap-3 text-xl items-center">
-              <div>
-                <FaMapMarkerAlt className="text-red-500" />
-              </div>
-              <p>info@gtc.com</p>
-            </div>
-          </div>
-        </motion.div>
-      </div>
+      </section>
 
-      {/* map section start */}
-      <div
-        style={{ maxWidth: 1200 }}
-        className="mx-auto w-full p-10 py-28 pt-10 max-sm:py-16 max-sm:pt-5 max-sm:px-5 "
-      >
-        <div className="bg-center bg-no-repeat bg-cover">
-          <div className="relative">
-            <img
-              src="/contact-page-images/map.png"
-              className="h-[379px] max-md:h-[440px] max-sm:h-[500px] max-md:object-cover max-md:object-[70%] max-sm:object-[60%]  "
-              alt=""
-            />
-            <div className="absolute flex justify-center items-center  bg-white/90  top-0 left-0 right-0 bottom-0">
-              <motion.div
-                initial="initial"
-                whileInView="animate"
-                variants={animationVariants.zoomOut}
-                viewport={{ once: true, amount: 0.2 }}
-                className="max-w-xl max-lg:max-w-lg max-sm:w-full text-center"
-              >
-                <h1 className="text-[46px] max-lg:text-4xl max-sm:text-[34px] max-[500px]:text-3xl leading-tight font-semibold">
-                  We provide Innovative, Intelligent and .
-
-                  <br /> Integrated Sustainable Engineering Solutions.
-                </h1>
-                <p className="text-xl mt-3">
-                  We provide equity and debt capital globally to back projects
-                  that make an impact.
-                </p>
-              </motion.div>
-            </div>
-
-            {/* map human images start */}
-            <div className="absolute top-24 max-md:top-6 left-16 max-lg:left-10  max-md:left-16 w-12 h-12 rounded-full overflow-hidden">
-              <img
-                src="/contact-page-images/1.jpg"
-                className="w-full h-full object-cover object-center"
-                alt="1"
-              />
-            </div>
-            <div className="absolute bottom-20 max-lg:bottom-12 left-36 max-lg:left-20 max-sm:left-10 w-12 h-12 rounded-full overflow-hidden">
-              <img
-                src="/contact-page-images/2.jpg"
-                className="w-full h-full object-cover object-center"
-                alt="2"
-              />
-            </div>
-            <div className="absolute top-12 right-36 max-lg:right-24 max-sm:right-12 w-12 h-12 rounded-full overflow-hidden">
-              <img
-                src="/contact-page-images/3.jpg"
-                className="w-full h-full object-cover object-center"
-                alt="3"
-              />
-            </div>
-            {/* map human images end */}
-
-            {/* map points start */}
-            <div className="w-7 h-7 bg-[#d5515e66] flex justify-center items-center rounded-full absolute top-5 left-32 max-sm:left-5 max-sm:top-24">
-              <div className="w-[18px] h-[18px] bg-red-500 rounded-full"></div>
-            </div>
-            <div className="w-7 h-7 bg-[#d5515e66] flex justify-center items-center rounded-full absolute top-10 max-md:top-16 max-md:right-44 max-sm:right-32 right-64">
-              <div className="w-[18px] h-[18px] bg-red-500 rounded-full"></div>
-            </div>
-            <div className="w-7 h-7 bg-[#d5515e66] flex justify-center items-center rounded-full absolute bottom-16 right-28 max-md:right-0 max-md:bottom-20 max-md:left-44 max-sm:bottom-24 max-sm:left-32">
-              <div className="w-[18px] h-[18px] bg-red-500 rounded-full"></div>
-            </div>
-            {/* map points end */}
-          </div>
-        </div>
-      </div>
-
-      {/* what we do section start */}
-      <div className="bg-gray-100">
-        <div
-          style={{ maxWidth: 1200 }}
-          className=" mx-auto flex gap-5 justify-between items-start p-10 py-28 max-md:py-16 max-md:px-5 max-lg:flex-col max-lg:items-center  max-lg:gap-12"
-        >
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            variants={animationVariants.zoomOut}
-            viewport={{ once: true, amount: 0.2 }}
-            className="w-1/3 max-lg:w-full max-lg:text-center flex flex-col gap-2 items-start max-lg:items-center"
-          >
-            <h2 className="text-5xl max-md:text-4xl font-bold title-font">
-              What we do
-            </h2>
-            <p className="text-xl">
-              Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.  GCE has earned a reputation for delivering creative, innovative and sustainable design and cost-effective construction solutions in Kenya and East Africa at large.
-
-
-            </p>
-            <Link to="/about" onClick={scrollToTop}>
-              <button
-                style={{ borderWidth: 1.5, borderRadius: 4 }}
-                className="bg-transparent  text-black border-red-500 text-xl px-5 py-2 duration-300 hover:bg-red-500 hover:text-white transition-all mt-5 max-md:mt-3"
-              >
-                About Us
-              </button>
-            </Link>
-          </motion.div>
-
-          {/* <div className="cards w-2/3 max-lg:w-full flex justify-center max-md:flex-col max-md:items-center gap-7"> */}
-
+      {/* faq section */}
+      <section className="bg-surface">
+        <div className="container-x py-28 max-md:py-20">
           <motion.div
             initial="initial"
             whileInView="animate"
             variants={animationVariants.fadeUp}
             viewport={{ once: true, amount: 0.2 }}
-            className="cards w-2/3 max-lg:w-full flex justify-center max-md:flex-col max-md:items-center gap-7"
+            className="flex flex-col items-center text-center gap-5 mb-14"
           >
-            {/* <Reveal
-              triggerOnce={true}
-              className="flex flex-col gap-7 "
-              keyframes={fadeUp}
-            > */}
-
-            {/* <div className="flex flex-col gap-7 "> */}
-            <div className="flex flex-col gap-7 ">
-              <WhatWeDoCard
-                iconSrc={"/icons/reliability.png"}
-                iconAlt={"reliability"}
-                title={"Reliability"}
-                desc={
-                  "We provide Innovative, Intelligent and Integrated Sustainable Engineering Solutions."
-                }
-              />
-              <WhatWeDoCard
-                iconSrc={"/icons/communication.png"}
-                iconAlt={"communication"}
-                title={"communication"}
-                desc={
-                  "We provide Innovative, Intelligent and Integrated Sustainable Engineering Solutions."
-                }
-              />
-            </div>
-            <div className="flex flex-col gap-7">
-              <div
-                style={{ height: 130 }}
-                className="max-md:hidden rounded-lg w-80 bg-gradient-to-t from-white to-transparent"
-              ></div>
-              <WhatWeDoCard
-                iconSrc={"/icons/quality-first.png"}
-                iconAlt={"quality-first"}
-                title={"Quality First"}
-                desc={
-                  "We provide Innovative, Intelligent and Integrated Sustainable Engineering Solutions."
-                }
-              />
-              <div
-                style={{ height: 130 }}
-                className="max-md:hidden rounded-lg w-80 h-36 bg-gradient-to-b from-white to-transparent"
-              ></div>
-            </div>
+            <span className="eyebrow">FAQ</span>
+            <h2 className="section-title">Frequently asked questions</h2>
           </motion.div>
-          {/* </Reveal> */}
+          <motion.div
+            initial="initial"
+            whileInView="animate"
+            variants={animationVariants.fadeUp}
+            viewport={{ once: true, amount: 0.1 }}
+            className="max-w-3xl mx-auto"
+          >
+            <Accordion allowToggle={true} className="flex flex-col gap-4">
+              {faqs.map((f) => (
+                <AccordionItem
+                  key={f.q}
+                  className="bg-white rounded-xl border border-black/5 shadow-card overflow-hidden"
+                  borderTopWidth={0}
+                  _last={{ borderBottomWidth: 0 }}
+                >
+                  <h3>
+                    <AccordionButton
+                      px={6}
+                      py={5}
+                      fontSize={"lg"}
+                      fontWeight={600}
+                      _hover={{ backgroundColor: "transparent" }}
+                      _expanded={{ color: "#0f74a6" }}
+                    >
+                      <Box as="span" flex="1" textAlign="left">
+                        {f.q}
+                      </Box>
+                      <AccordionIcon />
+                    </AccordionButton>
+                  </h3>
+                  <AccordionPanel px={6} pb={6} color={"#3b4a5a"} lineHeight={1.7}>
+                    {f.a}
+                  </AccordionPanel>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </motion.div>
         </div>
-      </div>
-      <div
-        style={{ maxWidth: 1200 }}
-        className=" mx-auto  p-10 py-28 max-md:py-14 max-md:px-5 "
-      >
-        <motion.h1
-          initial="initial"
-          whileInView="animate"
-          variants={animationVariants.fadeUp}
-          viewport={{ once: true, amount: 0.2 }}
-          className="text-5xl max-md:text-4xl font-semibold text-center  mb-16 max-md:mb-12"
-        >
-          Customers frequently ask
-        </motion.h1>
-        <motion.div
-          initial="initial"
-          whileInView="animate"
-          variants={animationVariants.fadeUp}
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          <Accordion className="flex max-md:flex-col gap-5 " allowToggle={true}>
-            <div className=" w-1/2 max-md:w-full text-xl flex flex-col gap-5 ">
-              <AccordionItem className="border-none box-shadow p-6">
-                <h2>
-                  <AccordionButton
-                    fontSize={"2xl"}
-                    _hover={{ backgroundColor: "transparent" }}
-                    _expanded={{ color: "#ef4444" }}
-                  >
-                    <Box as="span" flex="1" textAlign="left">
-                      How will I know if a special request is confirmed?
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  Many people has the notion that enlightenment is one state.
-                  Many also believe that when it is attained, a person is
-                  forever in that state.For your necessary discernment. Thank
-                  you for reading.
-                </AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem className="border-none box-shadow p-6">
-                <h2>
-                  <AccordionButton
-                    fontSize={"2xl"}
-                    _hover={{ backgroundColor: "transparent" }}
-                    _expanded={{ color: "#ef4444" }}
-                  >
-                    <Box as="span" flex="1" textAlign="left">
-                      Can I request early check-in/late check-out?
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  Many people has the notion that enlightenment is one state.
-                  Many also believe that when it is attained, a person is
-                  forever in that state.For your necessary discernment. Thank
-                  you for reading.
-                </AccordionPanel>
-              </AccordionItem>
-              <AccordionItem className="border-none box-shadow p-6">
-                <h2>
-                  <AccordionButton
-                    fontSize={"2xl"}
-                    _hover={{ backgroundColor: "transparent" }}
-                    _expanded={{ color: "#ef4444" }}
-                  >
-                    <Box as="span" flex="1" textAlign="left">
-                      Where can I check my booking details and status?
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  Many people has the notion that enlightenment is one state.
-                  Many also believe that when it is attained, a person is
-                  forever in that state.For your necessary discernment. Thank
-                  you for reading.
-                </AccordionPanel>
-              </AccordionItem>
-              <AccordionItem className="border-none box-shadow p-6">
-                <h2>
-                  <AccordionButton
-                    fontSize={"2xl"}
-                    _hover={{ backgroundColor: "transparent" }}
-                    _expanded={{ color: "#ef4444" }}
-                  >
-                    <Box as="span" flex="1" textAlign="left">
-                      How will I know if a special request is confirmed?
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  Many people has the notion that enlightenment is one state.
-                  Many also believe that when it is attained, a person is
-                  forever in that state.For your necessary discernment. Thank
-                  you for reading.
-                </AccordionPanel>
-              </AccordionItem>
-            </div>
-            <div className=" w-1/2 max-md:w-full text-xl flex flex-col gap-5 ">
-              <AccordionItem className="border-none box-shadow p-6">
-                <h2>
-                  <AccordionButton
-                    fontSize={"2xl"}
-                    _hover={{ backgroundColor: "transparent" }}
-                    _expanded={{ color: "#ef4444" }}
-                  >
-                    <Box as="span" flex="1" textAlign="left">
-                      Can I choose the type of engineering I want, request for a specific engineer?
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  Many people has the notion that enlightenment is one state.
-                  Many also believe that when it is attained, a person is
-                  forever in that state.For your necessary discernment. Thank
-                  you for reading.
-                </AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem className="border-none box-shadow p-6">
-                <h2>
-                  <AccordionButton
-                    fontSize={"2xl"}
-                    _hover={{ backgroundColor: "transparent" }}
-                    _expanded={{ color: "#ef4444" }}
-                  >
-                    <Box as="span" flex="1" textAlign="left">
-                      When do I get a confirmation email?
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  Many people has the notion that enlightenment is one state.
-                  Many also believe that when it is attained, a person is
-                  forever in that state.For your necessary discernment. Thank
-                  you for reading.
-                </AccordionPanel>
-              </AccordionItem>
-              <AccordionItem className="border-none box-shadow p-6">
-                <h2>
-                  <AccordionButton
-                    fontSize={"2xl"}
-                    _hover={{ backgroundColor: "transparent" }}
-                    _expanded={{ color: "#ef4444" }}
-                  >
-                    <Box as="span" flex="1" textAlign="left">
-                      How can I cancel my booking?
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  Many people has the notion that enlightenment is one state.
-                  Many also believe that when it is attained, a person is
-                  forever in that state.For your necessary discernment. Thank
-                  you for reading.
-                </AccordionPanel>
-              </AccordionItem>
-              <AccordionItem className="border-none box-shadow p-6">
-                <h2>
-                  <AccordionButton
-                    fontSize={"2xl"}
-                    _hover={{ backgroundColor: "transparent" }}
-                    _expanded={{ color: "#ef4444" }}
-                  >
-                    <Box as="span" flex="1" textAlign="left">
-                      If I have booked a project view, how can I check my
-                      cancellation policy?
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  Many people has the notion that enlightenment is one state.
-                  Many also believe that when it is attained, a person is
-                  forever in that state.For your necessary discernment. Thank
-                  you for reading.
-                </AccordionPanel>
-              </AccordionItem>
-            </div>
-          </Accordion>
-        </motion.div>
-      </div>
-      {/* what we do section end */}
+      </section>
     </div>
   );
 };

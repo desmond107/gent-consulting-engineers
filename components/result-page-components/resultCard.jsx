@@ -9,11 +9,11 @@ const ResultCard = ({ title, desc, ind }) => {
         target="_blank"
         to={encodeURI(`https://en.wikipedia.org/wiki/${title}`)}
       >
-        <p className="float-left title-font mr-2 h-7  mt-[0.1px] font-semibold  text-2xl text-red-500">
+        <p className="float-left title-font mr-2 h-7  mt-[0.1px] font-semibold  text-2xl text-brand-600">
           {ind + 1}
           {"."}
         </p>
-        <h1 className="text-2xl font-semibold text-red-500 hover:opacity-80 transition-all duration-200 underline uppercase ">
+        <h1 className="text-2xl font-semibold text-brand-600 hover:opacity-80 transition-all duration-200 underline uppercase ">
           {title}
         </h1>
       </Link>

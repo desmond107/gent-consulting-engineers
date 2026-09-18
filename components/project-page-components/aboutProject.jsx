@@ -18,7 +18,7 @@ const AboutProject = ({ heroImageSrc, attachment }) => {
   const param = useParams();
   const project = showCase[param.id - 1];
   useEffect(() => {
-    document.title = `${project.city} - Homyz `;
+    document.title = `${project.city} | Gent Consulting Engineers`;
   }, [param]);
   return (
     <div className="overflow-hidden">
@@ -82,24 +82,24 @@ const AboutProject = ({ heroImageSrc, attachment }) => {
           </div>
           <div className="">
             <h2 className="text-xl mb-2 ">Share on</h2>
-            <div className="text-xl text-red-500 flex gap-3">
+            <div className="text-xl text-brand-600 flex gap-3">
               <a
                 style={{ borderWidth: 1 }}
-                className="w-12 h-12  border-red-500 rounded-full  flex justify-center  items-center"
+                className="w-12 h-12  border-brand-600 rounded-full  flex justify-center  items-center"
                 href=""
               >
                 <FaFacebookF />
               </a>
               <a
                 style={{ borderWidth: 1 }}
-                className="w-12 h-12  border-red-500 rounded-full  flex justify-center  items-center"
+                className="w-12 h-12  border-brand-600 rounded-full  flex justify-center  items-center"
                 href=""
               >
                 <FaInstagram />
               </a>
               <a
                 style={{ borderWidth: 1 }}
-                className="w-12 h-12  border-red-500 rounded-full  flex justify-center  items-center"
+                className="w-12 h-12  border-brand-600 rounded-full  flex justify-center  items-center"
                 href=""
               >
                 <FaTwitter />
@@ -122,7 +122,7 @@ const AboutProject = ({ heroImageSrc, attachment }) => {
 
         </p>
         <div className="p-5 px-10 max-sm:px-4">
-          <h2 className="text-2xl text-center font-semibold p-5 max-sm:p-3 border-l-4 border-red-500">
+          <h2 className="text-2xl text-center font-semibold p-5 max-sm:p-3 border-l-4 border-brand-600">
             Recognized and awarded on multiple occasions for producing
             consistently outstanding products
           </h2>
@@ -171,7 +171,7 @@ const AboutProject = ({ heroImageSrc, attachment }) => {
           onClick={scrollToTop}
           to={project.prevHref}
           id="prev-btn"
-          className="w-2/5  hover:text-red-500  py-7 flex justify-center items-center gap-3"
+          className="w-2/5  hover:text-brand-600  py-7 flex justify-center items-center gap-3"
         >
           <FaArrowLeft className="prev-arrow transition-all" />
           <p className="transition-all">Prev post</p>
@@ -183,7 +183,7 @@ const AboutProject = ({ heroImageSrc, attachment }) => {
           onClick={scrollToTop}
           to={project.nextHref}
           id="next-btn"
-          className="w-2/5  hover:text-red-500  py-7 flex justify-center items-center gap-3"
+          className="w-2/5  hover:text-brand-600  py-7 flex justify-center items-center gap-3"
         >
           <p className="transition-all">Next post</p>
           <FaArrowRight className="next-arrow transition-all " />

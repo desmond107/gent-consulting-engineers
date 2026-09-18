@@ -1,431 +1,274 @@
 import React from "react";
 import Button from "../buttons-component/solidbutton";
 import { Link } from "react-router-dom";
-import { FaArrowRight } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaAward,
+  FaShieldAlt,
+  FaHardHat,
+} from "react-icons/fa";
 import { motion } from "framer-motion";
 import { animationVariants } from "../../constants/animationVariants";
 import { scrollToTop } from "../../constants/scrollToTop";
 import ReviewCard from "../home-page-components/reviewCard";
 import Carousel from "../home-page-components/carousel";
 import PartnerBrandCard from "../home-page-components/partnerBrandCard";
+import PageHero, { HeroStats } from "../page-hero/pageHero";
 import { partnerBrands } from "../../constants/partnerBrands";
 import "./about.css";
+
+const offers = [
+  {
+    title: "Free initial consultation",
+    desc: "Talk through your project with a registered engineer and get clear, practical advice on scope, feasibility and next steps.",
+  },
+  {
+    title: "Quality engineering services",
+    desc: "Civil, structural, geotechnical and infrastructure design delivered to international standards and local regulations.",
+  },
+  {
+    title: "Infrastructure Q&A and review",
+    desc: "Independent design reviews, building evaluations and quality assurance to de-risk your investment before and during construction.",
+  },
+];
+
+const focus = [
+  {
+    icon: <FaAward />,
+    title: "Quality",
+    desc: "High technical competence and attention to detail at every stage, from concept to completion.",
+  },
+  {
+    icon: <FaShieldAlt />,
+    title: "Assurance",
+    desc: "Rigorous quality assurance and site supervision so what is built matches what was designed.",
+  },
+  {
+    icon: <FaHardHat />,
+    title: "Durability",
+    desc: "Sustainable, value-engineered solutions that minimise environmental impact and stand the test of time.",
+  },
+];
 
 const AboutPage = () => {
   return (
     <>
-      <div className="bg-[url(/services-page-images/service-hero-bg.jpg)] bg-fixed bg-center bg-cover pt-44 pb-36 max-md:pt-36 max-md:pb-24 ">
-        <motion.div
-          initial="initial"
-          whileInView="animate"
-          variants={animationVariants.zoomOut}
-          viewport={{ once: true, amount: 0.2 }}
-          style={{ maxWidth: 1200 }}
-          className="flex gap-10 justify-between items-end max-md:items-center px-10 mx-auto max-md:px-5 max-md:flex-col"
-        >
-          <div className="text-white flex flex-col gap-8 max-md:items-center max-md:text-center">
-            <h1 className="text-5xl font-bold">Who We Are</h1>
-            <p className="text-xl max-w-md">
-              ...Where probity flairs & diligence meet...
-            </p>
-          </div>
-          <div className="flex gap-12 max-sm:text-center text-white">
-            <div className="flex max-md:items-center flex-col gap-4">
-              <h2 className="text-4xl title-font font-bold">100+</h2>
-              <p className="text-lg">Satisfied clients</p>
-            </div>
-            <div className="flex max-md:items-center flex-col gap-4">
-              <h2 className="text-4xl  title-font font-bold">500+</h2>
-              <p className="text-lg">Successful projects</p>
-            </div>
-          </div>
-        </motion.div>
-      </div>
+      <PageHero
+        image="/services-page-images/service-hero-bg.jpg"
+        eyebrow="About"
+        title="Who we are"
+        subtitle="…where probity flairs and diligence meet. A Nairobi-based engineering consultancy delivering sustainable, cost-effective solutions across East Africa."
+      >
+        <HeroStats />
+      </PageHero>
 
-      {/* what we offer section start */}
-      <div>
+      {/* what we offer section */}
+      <section className="container-x py-28 max-md:py-20">
         <motion.div
           initial="initial"
           whileInView="animate"
           variants={animationVariants.fadeUp}
           viewport={{ once: true, amount: 0.2 }}
-          style={{ maxWidth: 1200 }}
-          className="mx-auto  p-10 py-28  max-sm:px-5 max-md:py-16 "
+          className="grid grid-cols-12 max-lg:grid-cols-1 gap-12 max-lg:gap-10 items-center"
         >
-          <div className="flex w-full gap-10 max-md:flex-col max-md:justify-center max-md:items-center max-md:text-center">
-            <div className="flex flex-col items-start justify-between max-md:items-center">
-              <h1 className="text-5xl font-bold title-font w-max">
-                What we offer
-              </h1>
-              <Link onClick={scrollToTop} to={"/services"}>
-                <Button
-                  content={"Services"}
-                  fontSize={"text-xl"}
-                  padding={"px-5  py-2"}
-                  furtherClasses={"mt-8"}
-                />
-              </Link>
-            </div>
-            <div className="w-full">
-              <img
-                src="/about-page-images/what-we-do.jpg"
-                className="w-full h-full"
-                alt=""
+          <div className="col-span-5 max-lg:col-span-1 flex flex-col gap-5 items-start">
+            <span className="eyebrow">What we offer</span>
+            <h2 className="section-title">
+              Engineering partners from first sketch to final handover.
+            </h2>
+            <p className="text-lg text-ink-soft leading-relaxed">
+              Gent Consulting Engineers is a civil, structural and construction
+              engineering and management firm serving the commercial
+              construction community nationwide, with a reputation for
+              creative, innovative and sustainable design.
+            </p>
+            <Link onClick={scrollToTop} to={"/services"} className="mt-2">
+              <Button
+                content={
+                  <>
+                    Our services <FaArrowRight className="text-sm" />
+                  </>
+                }
+                fontSize={"text-base"}
+                padding={"px-6 py-3"}
               />
-            </div>
+            </Link>
           </div>
-          <div className="what-we-do-cards mt-14 gap-8 max-md:grid-cols-1 max-md:grid-rows-3 grid grid-cols-3 grid-rows-1">
-            <div>
-              <h2 className="text-2xl text-red-500 font-semibold">
-                Get an instant free consultation
-              </h2>
-              <p className="text-xl mt-2">
-                Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.  GCE has earned a reputation for delivering creative, innovative and sustainable design and cost-effective construction solutions in Kenya and East Africa at large.
-
+          <div className="col-span-7 max-lg:col-span-1 relative">
+            <img
+              src="/about-page-images/what-we-do.jpg"
+              className="w-full h-[440px] max-md:h-80 object-cover rounded-xl shadow-lift"
+              alt="Tower crane on a GCE construction site"
+            />
+            <div className="absolute -bottom-8 -left-8 max-lg:left-4 max-lg:-bottom-6 bg-white rounded-xl shadow-lift px-7 py-5 border border-black/5">
+              <p className="font-display text-4xl font-bold text-brand-600">
+                2015
               </p>
-            </div>
-            <div>
-              <h2 className="text-2xl text-red-500 font-semibold">
-                Get quality engineering service
-              </h2>
-              <p className="text-xl mt-2">
-                Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.  GCE has earned a reputation for delivering creative, innovative and sustainable design and cost-effective construction solutions in Kenya and East Africa at large.
-
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl text-red-500 font-semibold">
-                Receive infrastructure Q&A services.
-              </h2>
-              <p className="text-xl mt-2">
-                Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.  GCE has earned a reputation for delivering creative, innovative and sustainable design and cost-effective construction solutions in Kenya and East Africa at large.
-
-              </p>
+              <p className="text-ink-muted text-sm">Founded in Nairobi</p>
             </div>
           </div>
         </motion.div>
-      </div>
-      <div className="bg-black">
-        <div
-          style={{ maxWidth: 1200 }}
-          className="mx-auto flex max-md:flex-col justify-center items-center max-md:text-center gap-20 max-md:gap-12 p-10 py-28  max-sm:px-5 max-md:py-16  md:pb-36 "
-        >
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            variants={animationVariants.fadeUp}
-            viewport={{ once: true, amount: 0.2 }}
-            className=" w-1/2 max-md:w-full flex flex-col text-white items-start justify-between max-md:items-center"
-          >
-            <h1 className="text-5xl font-bold title-font w-max">
-              What we offer
-            </h1>
-            <p className="text-xl mt-5">
-              We are an engineering consultancy firm that has been established since 1995
-              with many advantages over our competitors. We have more than 10000
-              happy customers and have worked with more than 200 distributors
-            </p>
-          </motion.div>
 
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            variants={animationVariants.zoomOut}
-            viewport={{ once: true, amount: 0.2 }}
-            className=" w-1/2 max-md:w-full text-white/50"
-          >
-            <h2 className="text-2xl">Our Projects</h2>
-            <div className="relative w-fit max-md:mx-auto -mt-7 max-md:-mt-5">
-              <h1 className="text-[150px] max-sm:text-[120px] font-semibold relative text-red-500">
-                200+
-              </h1>
-              <div
-                className="absolute z-50 top-0 right-0 left-0 bottom-0 bg-no-repeat "
-                style={{
-                  backgroundImage: "url(/200+.png)",
-                  backgroundPosition: "40% 100%",
-                  backgroundSize: "95%",
-                }}
-              ></div>
-            </div>
-          </motion.div>
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ staggerChildren: 0.1 }}
+          className="grid grid-cols-3 max-md:grid-cols-1 gap-10 mt-24 max-md:mt-20"
+        >
+          {offers.map((o, i) => (
+            <motion.div
+              key={o.title}
+              variants={animationVariants.fadeUp}
+              className="border-t-2 border-ink/10 pt-6"
+            >
+              <span className="font-display text-sm font-semibold text-brand-600">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="text-xl font-bold mt-3">{o.title}</h3>
+              <p className="text-ink-soft leading-relaxed mt-2">{o.desc}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
+      {/* numbers band */}
+      <section className="relative bg-ink text-white overflow-hidden">
+        <div className="blueprint absolute inset-0"></div>
+        <div className="container-x relative py-20 grid grid-cols-4 max-md:grid-cols-2 gap-10">
+          {[
+            ["100+", "Satisfied clients"],
+            ["500+", "Successful projects"],
+            ["15+", "Years of combined experience"],
+            ["8", "Core engineering services"],
+          ].map(([v, l]) => (
+            <motion.div
+              key={l}
+              initial="initial"
+              whileInView="animate"
+              variants={animationVariants.fadeUp}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <p className="font-display text-6xl max-md:text-5xl font-bold bg-gradient-to-b from-white to-brand-300 bg-clip-text text-transparent">
+                {v}
+              </p>
+              <p className="text-white/60 mt-2">{l}</p>
+            </motion.div>
+          ))}
         </div>
-      </div>
-      {/* we focus section start */}
-      <div>
-        <div
-          style={{ maxWidth: 1200 }}
-          className="mx-auto  p-10 py-28  max-sm:px-5 max-md:py-16  "
-        >
+      </section>
+
+      {/* we focus section */}
+      <section className="bg-surface">
+        <div className="container-x py-28 max-md:py-20 grid grid-cols-2 max-lg:grid-cols-1 gap-16 items-center">
           <motion.div
             initial="initial"
             whileInView="animate"
             variants={animationVariants.fadeUp}
             viewport={{ once: true, amount: 0.2 }}
-            className=" flex max-md:flex-wrap-reverse justify-center items-end max-md:text-center gap-10 max-md:gap-12  -mt-44 max-md:mt-0 "
           >
-            <div className=" w-1/2 max-md:w-full flex flex-col text-white items-start justify-between max-md:items-center">
-              <img src="/we-focus.jpg" alt="" />
-            </div>
-
-            <div className=" w-1/2 text-5xl max-lg:text-4xl max-md:w-full ">
-              <h1 className="font-semibold ">We focus on all</h1>
-              <h1 className="font-semibold  text-red-500">
-                Engineering & structural development
-              </h1>
-            </div>
+            <img
+              src="/we-focus.jpg"
+              alt="Hard hats on a construction site"
+              className="w-full h-[520px] max-md:h-80 object-cover rounded-xl"
+            />
           </motion.div>
-          <div className="we-focus-cards grid grid-cols-3 max-md:grid-cols-1 grid-rows-1 max-md:grid-rows-3 gap-6 mt-10">
+          <div className="flex flex-col gap-8">
             <motion.div
               initial="initial"
               whileInView="animate"
-              variants={animationVariants.zoomIn}
+              variants={animationVariants.fadeUp}
               viewport={{ once: true, amount: 0.2 }}
-              className="border-t-2 text-xl border-black/20 pt-4"
+              className="flex flex-col gap-5"
             >
-              <h2 className="title-font font-semibold">-01</h2>
-              <h2 className="title-font mt-7  font-medium text-red-500">
-                Quality
+              <span className="eyebrow">Our focus</span>
+              <h2 className="section-title">
+                We focus on all{" "}
+                <span className="text-brand-600">
+                  engineering &amp; structural development.
+                </span>
               </h2>
-              <p className="mt-2">
-                Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.  GCE has earned a reputation for delivering creative, innovative and sustainable design and cost-effective construction solutions in Kenya and East Africa at large.
-
-              </p>
             </motion.div>
             <motion.div
               initial="initial"
               whileInView="animate"
-              variants={animationVariants.zoomIn}
               viewport={{ once: true, amount: 0.2 }}
-              className="border-t-2 text-xl border-black/20 pt-4"
+              transition={{ staggerChildren: 0.1 }}
+              className="flex flex-col gap-4"
             >
-              <h2 className="title-font font-semibold">-01</h2>
-              <h2 className="title-font mt-7  font-medium text-red-500">
-                Assurance
-              </h2>
-              <p className="mt-2">
-                Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.  GCE has earned a reputation for delivering creative, innovative and sustainable design and cost-effective construction solutions in Kenya and East Africa at large.
-
-              </p>
-            </motion.div>
-            <motion.div
-              initial="initial"
-              whileInView="animate"
-              variants={animationVariants.zoomIn}
-              viewport={{ once: true, amount: 0.2 }}
-              className="border-t-2 text-xl border-black/20 pt-4"
-            >
-              <h2 className="title-font font-semibold">-01</h2>
-              <h2 className="title-font mt-7  font-medium text-red-500">
-                Durability
-              </h2>
-              <p className="mt-2">
-                Gent Consulting Engineers is a Civil, structural and Construction Engineering and management firm based in Nairobi serving the commercial construction community nationwide.  GCE has earned a reputation for delivering creative, innovative and sustainable design and cost-effective construction solutions in Kenya and East Africa at large.
-
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </div>
-      {/* we focus section start */}
-      <div
-        className="bg-[50%] max-lg:bg-[55%] max-md:bg-[90%] bg-no-repeat bg-fixed"
-        style={{ backgroundImage: "url('/faq-bannar.jpg')" }}
-      >
-        <div
-          style={{ maxWidth: 1200 }}
-          className="mx-auto  p-10 py-28  max-sm:px-5 max-md:py-16 flex justify-end  "
-        >
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            variants={animationVariants.fadeUp}
-            viewport={{ once: true, amount: 0.2 }}
-            className="w-1/2 max-lg:w-2/3 max-md:w-full"
-          >
-            <h1 className="text-5xl ">
-              We seek to create value for investors across the
-              <span className="text-red-500"> Engineering & development spectrum</span>
-            </h1>
-            <div className="flex flex-col gap-3 mt-7">
-              
-              
-              
-              <div className="flex justify-between items-center border-b-2 border-black/30 pb-5 text-2xl">
-                <h2>Investment Management</h2>
-                <Link
-                  to={"/services"}
-                  onClick={scrollToTop}
-                  className="text-red-500"
+              {focus.map((f) => (
+                <motion.div
+                  key={f.title}
+                  variants={animationVariants.fadeUp}
+                  className="flex gap-5 bg-white rounded-xl p-6 border border-black/5 shadow-card"
                 >
-                  <FaArrowRight className="rotate-45" />
-                </Link>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-
-      {/* appreciation section start */}
-      <div className="bg-white">
-        <div
-          style={{ maxWidth: 1200 }}
-          className="p-10 max-md:px-5 py-28 mx-auto grid grid-cols-2 grid-rows-1 gap-20 max-lg:grid-cols-1 max-lg:grid-rows-2 "
-        >
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ staggerChildren: 0.1 }}
-            className="w-full max-lg:w-full flex flex-col  items-start max-lg:items-center max-lg:text-center gap-7"
-          >
-            <motion.h1
-              variants={animationVariants.fadeLeft}
-              className="text-5xl max-md:text-4xl font-semibold"
-            >
-              We use value engineering & sustainable innovation to showcase our appreciation of the world.
-            </motion.h1>
-            <motion.p
-              variants={animationVariants.fadeLeft}
-              className="text-2xl"
-            >
-              We provide equity and debt capital globally to back projects that
-              make an impact.
-            </motion.p>
-            <motion.div
-              variants={animationVariants.fadeLeft}
-              className="grid grid-cols-2 grid-rows-2 gap-10"
-            >
-              <div className="flex flex-col max-lg:justify-center max-lg:items-center">
-                <h2 className="title-font text-red-500 text-5xl max-md:text-4xl font-semibold">
-                  10
-                </h2>
-                <p className="text-xl">
-                  Years of seccessful experience in engineering
-                </p>
-              </div>
-              <div className="flex flex-col max-lg:justify-center max-lg:items-center">
-                <h2 className="title-font text-red-500 text-5xl max-md:text-4xl font-semibold">
-                  10
-                </h2>
-                <p className="text-xl">
-                  Years of seccessful experience in  engineering
-                </p>
-              </div>
-              <div className="flex flex-col max-lg:justify-center max-lg:items-center">
-                <h2 className="title-font text-red-500 text-5xl max-md:text-4xl font-semibold">
-                  10
-                </h2>
-                <p className="text-xl">
-                  Years of seccessful experience in engineering
-                </p>
-              </div>
-              <div className="flex flex-col max-lg:justify-center max-lg:items-center">
-                <h2 className="title-font text-red-500 text-5xl max-md:text-4xl font-semibold">
-                  10
-                </h2>
-                <p className="text-xl">
-                  Years of seccessful experience in engineering
-                </p>
-              </div>
+                  <div className="w-12 h-12 shrink-0 rounded-lg bg-brand-50 text-brand-600 text-xl flex items-center justify-center">
+                    {f.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold">{f.title}</h3>
+                    <p className="text-ink-soft leading-relaxed mt-1">
+                      {f.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
             </motion.div>
-            <motion.div variants={animationVariants.fadeLeft}>
-              <Link onClick={scrollToTop} to={"/contact"}>
-                <Button
-                  content={"Get In Touch"}
-                  padding={"px-6 py-3"}
-                  fontSize={"text-xl"}
-                />
-              </Link>
-            </motion.div>
-          </motion.div>
-          <div className="w-full max-lg:w-full h-full max-sm:max-h-[500px] ">
-            <div className=" h-full w-full relative overflow-hidden rounded-lg">
-              <img
-                src="/appriciation-section-image.jpg"
-                className="absolute w-full h-full object-cover object-center "
-                alt=""
-              />
-              <div className="absolute w-full h-full bg-black/50 "></div>
-              <motion.div
-                initial="initial"
-                whileInView="animate"
-                variants={animationVariants.toLeft}
-                viewport={{ once: true, amount: 0.2 }}
-                className="absolute w-full h-full bg-white origin-left z-20 "
-              >
-                <div className=""></div>
-              </motion.div>
-            </div>
           </div>
         </div>
-      </div>
-      {/* appreciation section end */}
-      {/* review section start */}
-      <div className="bg-gray-100">
-        <div
-          style={{ maxWidth: 1200 }}
-          className=" mx-auto flex max-md:flex-col justify-center items-center gap-16 p-10 max-md:px-5 py-28 "
-        >
+      </section>
+
+      {/* leadership & why us */}
+      <section>
+        <div className="container-x grid grid-cols-2 max-lg:grid-cols-1 gap-20 max-lg:gap-14 py-28 max-md:py-20 items-center">
           <motion.div
             initial="initial"
             whileInView="animate"
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ staggerChildren: 0.1 }}
-            className="w-2/4 max-md:w-full max-md:px-3 items-center flex flex-col gap-5"
+            transition={{ staggerChildren: 0.12 }}
+            className="flex flex-col gap-5"
           >
-            
-            <motion.div
-              className="w-full mr-6"
-              variants={animationVariants.zoomIn}
-            >
+            <motion.span variants={animationVariants.fadeUp} className="eyebrow">
+              Leadership
+            </motion.span>
+            <motion.div variants={animationVariants.fadeUp}>
               <ReviewCard
-                imgSrc={"/reviews/robert-fox.jpg"}
-                title={"CPA. Omondi Angeline N.A"}
-                from={"MD, Director Finance & Adm"}
+                initials={"AK"}
+                title={"Eng. Alvince O. Korero, PE"}
+                from={"Technical Director & CEO · Founded GCE in 2015"}
               />
             </motion.div>
-            <motion.div
-              className="w-full ml-6"
-              variants={animationVariants.zoomIn}
-            >
+            <motion.div variants={animationVariants.fadeUp} className="lg:ml-12">
               <ReviewCard
-                imgSrc={"/reviews/marvin-mckinney.jpg"}
-                title={"ENG Alvince Korero"}
-                from={"Technical director & CEO"}
+                initials={"AO"}
+                title={"CPA Angeline N.M. Omondi"}
+                from={"MD, Director Finance & Administration · Joined 2016"}
               />
             </motion.div>
           </motion.div>
           <motion.div
             initial="initial"
             whileInView="animate"
-            variants={animationVariants.fadeRight}
+            variants={animationVariants.fadeUp}
             viewport={{ once: true, amount: 0.2 }}
-            className="w-2/4 max-md:w-full max-md:text-center flex flex-col gap-8"
+            className="flex flex-col gap-6 min-w-0"
           >
-            <h1 className="text-5xl max-md:text-4xl font-semibold">
-              Why do people love Gent consulting engineering?
-            </h1>
-            <div>
-              <Carousel />
-            </div>
+            <span className="eyebrow">Why choose us</span>
+            <h2 className="section-title">
+              Why clients choose Gent Consulting Engineers
+            </h2>
+            <Carousel />
           </motion.div>
         </div>
-      </div>
-      {/* review section end */}
-      {/* partner brand section start */}
-      <div className="bg-gray-100 border-t-2 border-black/30  border-dashed">
-        <div
-          style={{ maxWidth: 1200 }}
-          className=" mx-auto flex max-md:flex-col justify-center items-center gap-10 p-10 max-md:px-5  "
-        >
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            variants={animationVariants.fadeIn}
-            viewport={{ once: true, amount: 0.1 }}
-            className="flex gap-8 flex-wrap justify-center items-center"
-          >
+      </section>
+
+      {/* partner brand section */}
+      <section className="border-y border-black/5">
+        <div className="container-x py-12 flex max-md:flex-col items-center gap-10">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-ink-muted whitespace-nowrap">
+            Trusted by
+          </p>
+          <div className="flex-1 flex gap-12 max-sm:gap-8 flex-wrap justify-around items-center">
             {partnerBrands.map((e, i) => {
               return (
                 <PartnerBrandCard
@@ -436,10 +279,29 @@ const AboutPage = () => {
                 />
               );
             })}
-          </motion.div>
+          </div>
         </div>
-      </div>
-      {/* partner brand section end */}
+      </section>
+
+      {/* call to action */}
+      <section className="container-x py-24 max-md:py-16">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-600 to-brand-800 px-14 py-16 max-md:px-7 max-md:py-12 text-white flex max-lg:flex-col justify-between items-center gap-8 max-lg:text-center">
+          <div className="blueprint absolute inset-0"></div>
+          <div className="relative">
+            <h2 className="font-display text-4xl max-md:text-3xl font-bold">
+              Let’s build something that lasts.
+            </h2>
+            <p className="mt-3 text-white/80 text-lg max-w-xl">
+              Speak to our team about your next project.
+            </p>
+          </div>
+          <Link onClick={scrollToTop} to="/contact" className="relative">
+            <button className="inline-flex items-center gap-2 rounded-md bg-white text-brand-800 px-7 py-3.5 font-semibold transition-all hover:bg-ink hover:text-white active:scale-[0.98]">
+              Contact us <FaArrowRight className="text-sm" />
+            </button>
+          </Link>
+        </div>
+      </section>
     </>
   );
 };

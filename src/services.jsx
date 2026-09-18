@@ -3,7 +3,7 @@ import ServicesComponent from "../components/services-page-components/services";
 
 const Services = () => {
   useEffect(() => {
-    document.title = "Servics - gent consulting engineers";
+    document.title = "Services | Gent Consulting Engineers";
   }, []);
   return (
     <div className="overflow-hidden">

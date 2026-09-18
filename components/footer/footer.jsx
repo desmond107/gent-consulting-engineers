@@ -1,6 +1,12 @@
 import { Button, Input, Textarea, useToast } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaTwitter,
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { scrollToTop } from "../../constants/scrollToTop";
@@ -125,178 +131,174 @@ const Footer = () => {
     return _error;
   };
 
-  // You can add more validations based on your requirements
+  const fieldProps = {
+    pl: 0,
+    fontSize: 16,
+    variant: "flushed",
+    borderColor: "rgba(255,255,255,.18)",
+    focusBorderColor: "#35a0d4",
+    _placeholder: { color: "rgba(255,255,255,.45)" },
+    autoComplete: "off",
+  };
+
+  const footerLinks = [
+    ["/", "Home"],
+    ["/services", "Services"],
+    ["/showcases/showcase1", "Projects"],
+    ["/about", "About Us"],
+    ["/contact", "Contact"],
+  ];
 
   return (
-    <div className="bg-black">
-      <footer
-        style={{ maxWidth: 1200 }}
-        className="mx-auto flex justify-between gap-20 max-lg:flex-col py-20 px-8 max-sm:px-5  "
-      >
-        <div className="flex flex-col items-start h-auto justify-between gap-16 w-2/4 max-lg:w-full pr-10 max-sm:pr-0">
-          <div className="flex flex-col text-lg items-start  justify-between gap-10 ">
-            <a href="/">
-              <img src="/Homyz-logo.png" className="w-36" alt="Gents-logo" />
-            </a>
-            <p style={{ color: "#696969" }}>
-              Gent leads a collaborative environment with a mission to providing functional, sound, economical, quality and sustainable 
-              engineering & construction solutions that achieve our customer’s requirements.
-              Founded in 2015, Gent has over 10 years of value engineering design, construction and project management experience.  
+    <div className="bg-ink text-white relative overflow-hidden">
+      <div className="blueprint absolute inset-0 pointer-events-none"></div>
+      <div className="absolute -top-40 -right-40 w-[480px] h-[480px] rounded-full bg-brand-500/20 blur-3xl pointer-events-none"></div>
 
-            </p>
-            <div className="flex text-xl justify-start items-center gap-10 text-red-500">
-              <Link target="_blank" to={"https://facebook.com"}>
-                <FaFacebookF />
-              </Link>
-              <Link target="_blank" to={"https://instagram.com"}>
-                <FaInstagram />
-              </Link>
-              <Link target="_blank" to={"https://twitter.com"}>
-                <FaTwitter />
-              </Link>
-            </div>
-            <ul className="text-white text-lg flex justify-start items-center flex-wrap gap-x-8 gap-y-4">
-              <Link
-                onClick={scrollToTop}
-                className="hover:text-red-500 transition-all"
-                to="/"
-              >
-                Home
-              </Link>
-              <Link
-                onClick={scrollToTop}
-                className="hover:text-red-500 transition-all"
-                to="/services"
-              >
-                Services
-              </Link>
-              <Link
-                onClick={scrollToTop}
-                className="hover:text-red-500 transition-all"
-                to="/about"
-              >
-                About Us
-              </Link>
-              <Link
-                onClick={scrollToTop}
-                className="hover:text-red-500 transition-all"
-                to="/contact"
-              >
-                Contact Us
-              </Link>
-            </ul>
+      <footer className="container-x relative grid grid-cols-2 gap-20 max-lg:grid-cols-1 max-lg:gap-14 pt-24 pb-10 max-md:pt-16">
+        <div className="flex flex-col items-start gap-8">
+          <Link onClick={scrollToTop} to="/">
+            <img
+              src="/gce-logo-light.png"
+              className="w-36"
+              alt="Gent Consulting Engineers"
+            />
+          </Link>
+          <p className="text-white/60 text-base leading-relaxed max-w-md">
+            Gent leads a collaborative environment with a mission to provide
+            functional, sound, economical, quality and sustainable engineering
+            &amp; construction solutions that achieve our clients’ requirements.
+          </p>
+          <div className="flex flex-col gap-3 text-white/80">
+            <a
+              href="tel:+254718484254"
+              className="flex items-center gap-3 hover:text-white transition-colors"
+            >
+              <span className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-300">
+                <FaPhoneAlt className="text-sm" />
+              </span>
+              +254 718 484 254
+            </a>
+            <span className="flex items-center gap-3">
+              <span className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-300">
+                <FaMapMarkerAlt className="text-sm" />
+              </span>
+              Nairobi, Kenya
+            </span>
           </div>
-          <p style={{ color: "#696969" }}>© Gent Consulting Engineers. All Rights Reserved 2024.</p>
+          <div className="flex items-center gap-3">
+            {[
+              ["https://facebook.com", <FaFacebookF key="f" />, "Facebook"],
+              ["https://instagram.com", <FaInstagram key="i" />, "Instagram"],
+              ["https://twitter.com", <FaTwitter key="t" />, "Twitter"],
+            ].map(([href, icon, label]) => (
+              <a
+                key={label}
+                aria-label={label}
+                target="_blank"
+                rel="noreferrer"
+                href={href}
+                className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/70 hover:bg-brand-500 hover:border-brand-500 hover:text-white transition-all"
+              >
+                {icon}
+              </a>
+            ))}
+          </div>
         </div>
-        
-        <div
-          id="contact"
-          className="w-2/4 max-lg:w-full flex flex-col h-auto justify-between items-start gap-10 "
-        >
-          <h1 className="text-3xl text-white">Get in Touch</h1>
-          <div className="name w-full gap-8 text-white max-sm:flex-col max-sm:gap-10 mt-3 flex">
+
+        <div id="contact" className="flex flex-col gap-8">
+          <div>
+            <span className="eyebrow eyebrow-light">Start a project</span>
+            <h2 className="text-3xl font-bold mt-3">Get in touch</h2>
+            <p className="text-white/60 mt-2">
+              Tell us about your project and our engineers will get back to you.
+            </p>
+          </div>
+          <div className="w-full grid grid-cols-2 gap-8 max-sm:grid-cols-1">
             <Input
-              pl={3}
-              fontSize={19}
-              variant={"flushed"}
-              borderColor={"#696969"}
-              focusBorderColor="white"
-              _placeholder={{ color: "#696969" }}
-              placeholder="First Name"
+              {...fieldProps}
+              placeholder="First name"
               name="firstName"
               maxLength={20}
               value={formData.firstName}
               onChange={handleChange}
-              autoComplete="off"
             />
             <Input
-              pl={3}
-              fontSize={19}
-              variant={"flushed"}
-              borderColor={"#696969"}
-              focusBorderColor="white"
-              _placeholder={{ color: "#696969" }}
-              placeholder="Last Name"
+              {...fieldProps}
+              placeholder="Last name"
               name="lastName"
               maxLength={20}
               value={formData.lastName}
               onChange={handleChange}
-              autoComplete="off"
             />
-          </div>
-          <div className="contact w-full text-white gap-8 max-sm:flex-col max-sm:gap-10  flex">
             <Input
-              pl={3}
-              fontSize={19}
-              variant={"flushed"}
-              borderColor={"#696969"}
-              focusBorderColor="white"
-              _placeholder={{ color: "#696969" }}
-              placeholder="Email Address"
+              {...fieldProps}
+              placeholder="Email address"
               name="email"
               maxLength={40}
               value={formData.email}
               onChange={handleChange}
-              autoComplete="off"
             />
             <Input
-              pl={3}
-              fontSize={19}
-              variant={"flushed"}
-              borderColor={"#696969"}
-              focusBorderColor="white"
-              _placeholder={{ color: "#696969" }}
-              type="number"
-              placeholder="Phone No"
+              {...fieldProps}
+              type="tel"
+              placeholder="Phone number"
               name="phoneNo"
               value={formData.phoneNo}
               onChange={handleChange}
-              autoComplete="off"
-              max={15}
               maxLength={15}
             />
           </div>
           <Textarea
-            pl={3}
-            fontSize={19}
-            variant={"flushed"}
-            borderColor={"#696969"}
-            focusBorderColor="white"
-            _placeholder={{ color: "#696969" }}
-            placeholder="Message"
+            {...fieldProps}
+            placeholder="How can we help?"
             maxLength={200}
-            className="w-full text-white"
             name="message"
+            rows={3}
+            resize="none"
             value={formData.message}
             onChange={handleChange}
-            autoComplete="off"
           />
           <Button
-            _hover={{ backgroundColor: "white", color: "#d5515e" }}
-            backgroundColor={"#d5515e"}
+            _hover={{ backgroundColor: "#0d5c84" }}
+            backgroundColor={"#0f74a6"}
             color={"white"}
-            borderColor={"#d5515e"}
-            variant={"outline"}
             size={"lg"}
             isLoading={btnLoader}
-            loadingText={"Sending.."}
+            loadingText={"Sending…"}
             onClick={handleSubmit}
-            className="mt-4  max-lg:w-72 max-sm:w-full"
-            transitionDuration={"300ms"}
-            fontWeight={"normal"}
-            fontSize={"20px"}
-            borderRadius={"4px"}
+            className="self-start max-sm:w-full"
+            px={10}
+            fontWeight={500}
+            fontSize={"16px"}
+            borderRadius={"6px"}
           >
-            Submit
+            Send message
           </Button>
         </div>
-  
       </footer>
-      
+
+      <div className="container-x relative">
+        <div className="flex justify-between items-center gap-6 flex-wrap border-t border-white/10 py-8 text-sm text-white/50">
+          <p>
+            © {new Date().getFullYear()} Gent Consulting Engineers. All rights
+            reserved.
+          </p>
+          <ul className="flex flex-wrap gap-x-7 gap-y-2">
+            {footerLinks.map(([to, label]) => (
+              <Link
+                key={to}
+                onClick={scrollToTop}
+                className="hover:text-white transition-colors"
+                to={to}
+              >
+                {label}
+              </Link>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
-    
   );
-  
 };
 
 export default Footer;
