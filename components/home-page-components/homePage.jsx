@@ -117,19 +117,16 @@ const HomePage = () => {
           onProgress={onClipProgress}
           controlRef={heroVideoControl}
         />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/90 via-ink/55 to-ink/10 max-lg:bg-ink/50"></div>
-        <div className="absolute inset-x-0 top-0 h-40 -z-10 bg-gradient-to-b from-ink/60 to-transparent"></div>
-        <div className="absolute inset-x-0 bottom-0 h-1/2 -z-10 bg-gradient-to-t from-ink/90 to-transparent"></div>
 
         <motion.div
           initial="initial"
           animate="animate"
           transition={{ staggerChildren: 0.12, delayChildren: 0.1 }}
-          className="container-x text-white pt-40 pb-14 max-md:pt-32 flex flex-col gap-8 max-lg:items-center max-lg:text-center"
+          className="hero-text container-x text-white pt-40 pb-14 max-md:pt-32 flex flex-col gap-8 max-lg:items-center max-lg:text-center"
         >
           <motion.span
             variants={animationVariants.fadeUp}
-            className="eyebrow eyebrow-light max-lg:before:hidden"
+            className="eyebrow max-lg:before:hidden text-white before:bg-white"
           >
             Civil · Structural · Construction
           </motion.span>
@@ -138,14 +135,14 @@ const HomePage = () => {
             className="text-7xl max-lg:text-6xl max-sm:text-[2.6rem] font-bold leading-[1.02] max-w-3xl"
           >
             The Future of{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-brand-500">
+            <span className="text-brand-400">
               Sustainable
             </span>{" "}
             Engineering.
           </motion.h1>
           <motion.p
             variants={animationVariants.fadeUp}
-            className="text-xl max-sm:text-lg text-white/80 max-w-xl leading-relaxed"
+            className="text-xl max-sm:text-lg text-white max-w-xl leading-relaxed font-medium"
           >
             Leading civil, structural and construction engineering and
             management consultants in Kenya &amp; East Africa.
@@ -193,7 +190,7 @@ const HomePage = () => {
                   className={`flex items-baseline gap-2 text-xs font-semibold uppercase tracking-[0.18em] transition-colors ${
                     activeClip === i
                       ? "text-white"
-                      : "text-white/45 group-hover:text-white/80"
+                      : "text-white/75 group-hover:text-white"
                   }`}
                 >
                   <span className="font-display">
@@ -203,7 +200,7 @@ const HomePage = () => {
                     {clip.label}
                   </span>
                 </span>
-                <span className="mt-2 block h-[2px] w-full bg-white/20 overflow-hidden rounded-full">
+                <span className="mt-2 block h-[3px] w-full bg-white/35 overflow-hidden rounded-full shadow-[0_1px_4px_rgba(0,0,0,.4)]">
                   <span
                     ref={(el) => (clipBars.current[i] = el)}
                     className="block h-full w-full origin-left bg-brand-300"
@@ -216,7 +213,7 @@ const HomePage = () => {
 
           <motion.div
             variants={animationVariants.fadeUp}
-            className="w-full mt-4 grid grid-cols-4 max-md:grid-cols-2 rounded-xl border border-white/15 bg-white/5 backdrop-blur-md overflow-hidden"
+            className="w-full mt-4 grid grid-cols-4 max-md:grid-cols-2 rounded-xl border border-white/20 bg-black/20 backdrop-blur-md overflow-hidden"
           >
             {stats.map((s, i) => (
               <div
@@ -230,7 +227,7 @@ const HomePage = () => {
                 <p className="font-display text-4xl max-sm:text-3xl font-bold">
                   {s.value}
                 </p>
-                <p className="text-white/60 text-sm mt-1">{s.label}</p>
+                <p className="text-white/90 text-sm font-medium mt-1">{s.label}</p>
               </div>
             ))}
           </motion.div>

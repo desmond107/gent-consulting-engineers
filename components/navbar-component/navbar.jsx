@@ -36,7 +36,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
         } top-0 left-0 right-0 transition-all duration-300 ${
           solid
             ? "bg-white/95 backdrop-blur-md shadow-[0_1px_0_rgba(11,27,43,.08),0_8px_24px_-12px_rgba(11,27,43,.18)]"
-            : "bg-gradient-to-b from-black/40 to-transparent"
+            : "bg-transparent [text-shadow:0_1px_10px_rgba(0,0,0,.55)]"
         }`}
       >
         <nav

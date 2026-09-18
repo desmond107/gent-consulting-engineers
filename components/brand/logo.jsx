@@ -65,7 +65,7 @@ const Logo = ({ tone = "dark", size = "md", className = "" }) => {
         <span
           className={`mt-1 font-semibold uppercase tracking-[0.26em] whitespace-nowrap ${
             s.tag
-          } ${tone === "light" ? "text-brand-200" : "text-brand-700"}`}
+          } ${tone === "light" ? "text-white/90" : "text-brand-700"}`}
         >
           Consulting Engineers
         </span>
