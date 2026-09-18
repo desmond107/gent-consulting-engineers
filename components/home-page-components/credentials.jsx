@@ -8,12 +8,12 @@ const Credentials = ({ dark = false }) => {
   return (
     <div
       className={`flex flex-wrap items-center gap-x-8 gap-y-4 ${
-        dark ? "text-white/80" : "text-ink-soft"
+        dark ? "text-white/80" : "text-fg-soft"
       }`}
     >
       <span
         className={`text-sm font-semibold uppercase tracking-[0.18em] ${
-          dark ? "text-brand-300" : "text-ink-muted"
+          dark ? "text-brand-300" : "text-fg-muted"
         }`}
       >
         Registered with
@@ -23,7 +23,7 @@ const Credentials = ({ dark = false }) => {
           key={c.body}
           title={c.detail ? `${c.body} — ${c.detail}` : c.body}
           className={`inline-flex items-center gap-2.5 rounded-full border px-4 py-2 text-sm font-medium ${
-            dark ? "border-white/15 bg-white/5" : "border-black/10 bg-white"
+            dark ? "border-white/15 bg-white/5" : "border-line/10 bg-card"
           }`}
         >
           <FaCertificate className="text-brand-500" />

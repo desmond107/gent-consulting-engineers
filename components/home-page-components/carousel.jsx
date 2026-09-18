@@ -28,7 +28,7 @@ export default function Carousel() {
           clickable: true,
         }}
         modules={[Pagination, Navigation]}
-        className="mySwiper w-full max-w-full text-lg leading-relaxed text-ink-soft"
+        className="mySwiper w-full max-w-full text-lg leading-relaxed text-fg-soft"
       >
         <SwiperSlide>
           Gent Consulting Engineers is committed to providing innovative, 
@@ -50,7 +50,7 @@ export default function Carousel() {
         <div className="slider-controler flex max-md:justify-center gap-3 mt-10">
           <button
             aria-label="Previous"
-            className="swiper-button-prev static m-0 w-12 h-12 rounded-full border border-ink/15 text-ink bg-white flex items-center justify-center transition-all duration-300 hover:bg-brand-600 hover:border-brand-600 hover:text-white"
+            className="swiper-button-prev static m-0 w-12 h-12 rounded-full border border-fg/15 text-fg bg-card flex items-center justify-center transition-all duration-300 hover:bg-brand-600 hover:border-brand-600 hover:text-white"
           >
             <FaArrowLeft className="text-sm" />
           </button>

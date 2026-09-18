@@ -44,9 +44,9 @@ export const LogoMark = ({ size = 44, className = "" }) => {
 // tone="light" for dark backgrounds, "dark" for light backgrounds.
 const Logo = ({ tone = "dark", size = "md", className = "" }) => {
   const s = {
-    sm: { mark: 36, name: "text-[19px]", tag: "text-[7.5px]", gap: "gap-2.5" },
-    md: { mark: 44, name: "text-[23px]", tag: "text-[8.5px]", gap: "gap-3" },
-    lg: { mark: 56, name: "text-[30px]", tag: "text-[10.5px]", gap: "gap-3.5" },
+    sm: { mark: 36, name: "text-[19px]", tag: "text-[11px]", gap: "gap-2.5" },
+    md: { mark: 44, name: "text-[23px]", tag: "text-[13px]", gap: "gap-3" },
+    lg: { mark: 56, name: "text-[30px]", tag: "text-[15px]", gap: "gap-3.5" },
   }[size];
   return (
     <span
@@ -57,15 +57,15 @@ const Logo = ({ tone = "dark", size = "md", className = "" }) => {
       <span className="flex flex-col leading-none" aria-hidden="true">
         <span
           className={`font-display font-bold tracking-[0.04em] ${s.name} ${
-            tone === "light" ? "text-white" : "text-ink"
+            tone === "light" ? "text-white" : "text-fg"
           }`}
         >
           GENT
         </span>
         <span
-          className={`mt-1 font-semibold uppercase tracking-[0.26em] whitespace-nowrap ${
+          className={`mt-1.5 font-display font-bold uppercase tracking-[0.1em] whitespace-nowrap ${
             s.tag
-          } ${tone === "light" ? "text-white/90" : "text-brand-700"}`}
+          } ${tone === "light" ? "text-white" : "text-brand-800"}`}
         >
           Consulting Engineers
         </span>

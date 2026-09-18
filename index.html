@@ -12,7 +12,21 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <meta name="theme-color" content="#0b1b2b" />
+    <meta name="theme-color" content="#ffffff" />
+    <script>
+      // Apply the saved (or system) theme before first paint to avoid a flash.
+      (function () {
+        var t = null;
+        try { t = localStorage.getItem("gce-theme"); } catch (e) {}
+        if (t !== "light" && t !== "dark") {
+          t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        if (t === "dark") {
+          document.documentElement.classList.add("dark");
+          document.querySelector('meta[name="theme-color"]').setAttribute("content", "#07101a");
+        }
+      })();
+    </script>
     <meta
       name="description"
       content="Gent Consulting Engineers — civil, structural and construction engineering and management consultants in Nairobi, serving Kenya and East Africa."

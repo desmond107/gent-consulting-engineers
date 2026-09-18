@@ -147,11 +147,12 @@ const ContactPage = () => {
   const fieldProps = {
     size: "lg",
     fontSize: 16,
-    bg: "white",
-    borderColor: "rgba(11,27,43,.12)",
+    bg: "rgb(var(--c-card))",
+    borderColor: "rgb(var(--c-line) / 0.14)",
     focusBorderColor: "#1891c8",
-    color: "#0b1b2b",
-    _placeholder: { color: "#64748b" },
+    color: "rgb(var(--c-fg))",
+    _placeholder: { color: "rgb(var(--c-fg-muted))" },
+    _hover: { borderColor: "rgb(var(--c-line) / 0.28)" },
     autoComplete: "off",
     borderRadius: "8px",
   };
@@ -235,13 +236,13 @@ const ContactPage = () => {
                   href={c.href}
                   target={c.external ? "_blank" : undefined}
                   rel={c.external ? "noreferrer" : undefined}
-                  className="group flex items-center gap-5 bg-white rounded-xl p-6 border border-black/5 shadow-lift transition-all hover:-translate-y-0.5"
+                  className="group flex items-center gap-5 bg-card rounded-xl p-6 border border-line/5 shadow-lift transition-all hover:-translate-y-0.5"
                 >
                   <span className="w-12 h-12 shrink-0 rounded-lg bg-brand-50 text-brand-600 text-lg flex items-center justify-center transition-colors group-hover:bg-brand-600 group-hover:text-white">
                     {c.icon}
                   </span>
                   <span>
-                    <span className="block text-sm text-ink-muted">
+                    <span className="block text-sm text-fg-muted">
                       {c.label}
                     </span>
                     <span className="block font-semibold [overflow-wrap:anywhere]">
@@ -269,7 +270,7 @@ const ContactPage = () => {
             Talk to our team{" "}
             <span className="text-brand-600">about what you’re building.</span>
           </h2>
-          <p className="text-lg text-ink-soft leading-relaxed">
+          <p className="text-lg text-fg-soft leading-relaxed">
             Gent Consulting Engineers is a civil, structural and construction
             engineering and management firm based in Nairobi, serving the
             commercial construction community across Kenya and East Africa.
@@ -294,7 +295,7 @@ const ContactPage = () => {
           variants={animationVariants.fadeUp}
           viewport={{ once: true, amount: 0.2 }}
           id="contact"
-          className="col-span-7 max-lg:col-span-1 bg-surface rounded-2xl p-10 max-md:p-6 flex flex-col gap-5 border border-black/5"
+          className="col-span-7 max-lg:col-span-1 bg-surface rounded-2xl p-10 max-md:p-6 flex flex-col gap-5 border border-line/5"
         >
           <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-5">
             <Input
@@ -384,7 +385,7 @@ const ContactPage = () => {
               {faqs.map((f) => (
                 <AccordionItem
                   key={f.q}
-                  className="bg-white rounded-xl border border-black/5 shadow-card overflow-hidden"
+                  className="bg-card rounded-xl border border-line/5 shadow-card overflow-hidden"
                   borderTopWidth={0}
                   _last={{ borderBottomWidth: 0 }}
                 >
@@ -395,7 +396,7 @@ const ContactPage = () => {
                       fontSize={"lg"}
                       fontWeight={600}
                       _hover={{ backgroundColor: "transparent" }}
-                      _expanded={{ color: "#0f74a6" }}
+                      _expanded={{ color: "var(--c-accent-text)" }}
                     >
                       <Box as="span" flex="1" textAlign="left">
                         {f.q}
@@ -403,7 +404,7 @@ const ContactPage = () => {
                       <AccordionIcon />
                     </AccordionButton>
                   </h3>
-                  <AccordionPanel px={6} pb={6} color={"#3b4a5a"} lineHeight={1.7}>
+                  <AccordionPanel px={6} pb={6} color={"rgb(var(--c-fg-soft))"} lineHeight={1.7}>
                     {f.a}
                   </AccordionPanel>
                 </AccordionItem>

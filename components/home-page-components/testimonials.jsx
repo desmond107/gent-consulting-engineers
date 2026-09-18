@@ -36,15 +36,15 @@ const Testimonials = () => {
           <motion.figure
             key={t.name + t.quote.slice(0, 20)}
             variants={animationVariants.fadeUp}
-            className="flex flex-col gap-6 bg-white rounded-xl p-8 border border-black/5 shadow-card"
+            className="flex flex-col gap-6 bg-card rounded-xl p-8 border border-line/5 shadow-card"
           >
             <FaQuoteLeft className="text-2xl text-brand-300" />
-            <blockquote className="text-lg leading-relaxed text-ink flex-1">
+            <blockquote className="text-lg leading-relaxed text-fg flex-1">
               “{t.quote}”
             </blockquote>
-            <figcaption className="border-t border-black/5 pt-5">
+            <figcaption className="border-t border-line/5 pt-5">
               <p className="font-semibold">{t.name}</p>
-              <p className="text-sm text-ink-muted">
+              <p className="text-sm text-fg-muted">
                 {[t.role, t.company].filter(Boolean).join(", ")}
               </p>
             </figcaption>

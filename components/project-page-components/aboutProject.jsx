@@ -101,10 +101,10 @@ const AboutProject = () => {
           </p>
           {project.description ? (
             <div>
-              <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-ink-muted">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-fg-muted">
                 Scope of work
               </h2>
-              <p className="mt-3 text-lg text-ink-soft leading-relaxed">
+              <p className="mt-3 text-lg text-fg-soft leading-relaxed">
                 {project.description}
               </p>
             </div>
@@ -120,12 +120,12 @@ const AboutProject = () => {
           viewport={{ once: true, amount: 0.2 }}
           className="col-span-4 max-lg:col-span-1"
         >
-          <div className="bg-surface rounded-xl border border-black/5 p-7 flex flex-col gap-5">
+          <div className="bg-surface rounded-xl border border-line/5 p-7 flex flex-col gap-5">
             {facts.length ? (
               <dl className="flex flex-col gap-4">
                 {facts.map(([k, v]) => (
-                  <div key={k} className="border-b border-black/5 pb-4">
-                    <dt className="text-sm text-ink-muted">{k}</dt>
+                  <div key={k} className="border-b border-line/5 pb-4">
+                    <dt className="text-sm text-fg-muted">{k}</dt>
                     <dd className="font-semibold mt-0.5">{v}</dd>
                   </div>
                 ))}
@@ -137,7 +137,7 @@ const AboutProject = () => {
               <p className="font-display text-lg font-semibold">
                 Planning a similar project?
               </p>
-              <p className="text-ink-soft text-sm mt-1">
+              <p className="text-fg-soft text-sm mt-1">
                 Talk to the team that delivered this one.
               </p>
             </div>
@@ -155,7 +155,7 @@ const AboutProject = () => {
               )}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-ink-soft hover:text-brand-700"
+              className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-fg-soft hover:text-brand-700"
             >
               <FaWhatsapp className="text-[#25D366] text-lg" /> Or chat on
               WhatsApp
@@ -223,18 +223,18 @@ const AboutProject = () => {
       </section>
 
       {/* prev / next */}
-      <nav className="border-t border-black/5">
+      <nav className="border-t border-line/5">
         <div className="container-x grid grid-cols-[1fr_auto_1fr] items-center gap-6 py-8">
           <Link
             onClick={scrollToTop}
             to={`/projects/${prev.id}`}
             className="group flex items-center gap-4 min-w-0"
           >
-            <span className="w-11 h-11 shrink-0 rounded-full border border-ink/15 flex items-center justify-center transition-all group-hover:bg-brand-600 group-hover:border-brand-600 group-hover:text-white">
+            <span className="w-11 h-11 shrink-0 rounded-full border border-fg/15 flex items-center justify-center transition-all group-hover:bg-brand-600 group-hover:border-brand-600 group-hover:text-white">
               <FaArrowLeft className="text-sm" />
             </span>
             <span className="min-w-0 max-sm:hidden">
-              <span className="block text-sm text-ink-muted">Previous</span>
+              <span className="block text-sm text-fg-muted">Previous</span>
               <span className="block font-semibold truncate">
                 {prev.city.trim()}
               </span>
@@ -244,7 +244,7 @@ const AboutProject = () => {
             onClick={scrollToTop}
             to="/showcases/showcase1"
             aria-label="All projects"
-            className="w-11 h-11 rounded-full bg-surface flex items-center justify-center text-ink-soft hover:text-brand-600"
+            className="w-11 h-11 rounded-full bg-surface flex items-center justify-center text-fg-soft hover:text-brand-600"
           >
             <FaThLarge />
           </Link>
@@ -254,12 +254,12 @@ const AboutProject = () => {
             className="group flex items-center justify-end gap-4 text-right min-w-0"
           >
             <span className="min-w-0 max-sm:hidden">
-              <span className="block text-sm text-ink-muted">Next</span>
+              <span className="block text-sm text-fg-muted">Next</span>
               <span className="block font-semibold truncate">
                 {next.city.trim()}
               </span>
             </span>
-            <span className="w-11 h-11 shrink-0 rounded-full border border-ink/15 flex items-center justify-center transition-all group-hover:bg-brand-600 group-hover:border-brand-600 group-hover:text-white">
+            <span className="w-11 h-11 shrink-0 rounded-full border border-fg/15 flex items-center justify-center transition-all group-hover:bg-brand-600 group-hover:border-brand-600 group-hover:text-white">
               <FaArrowRight className="text-sm" />
             </span>
           </Link>

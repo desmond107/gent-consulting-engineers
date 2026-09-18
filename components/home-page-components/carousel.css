@@ -15,7 +15,7 @@
   height: 14px;
 }
 .slider-controler .swiper-button-prev {
-  color: #0b1b2b;
+  color: rgb(var(--c-fg));
 }
 .slider-controler .swiper-button-next,
 .slider-controler .swiper-button-prev:hover {

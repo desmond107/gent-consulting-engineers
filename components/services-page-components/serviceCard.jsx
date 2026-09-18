@@ -15,7 +15,7 @@ const ServiceCard = ({ id, title, imgSrc, iconSrc, brief, index }) => {
       <Link
         to={`/services/${id}`}
         onClick={scrollToTop}
-        className="group flex flex-col h-full bg-white rounded-xl overflow-hidden border border-black/5 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
+        className="group flex flex-col h-full bg-card rounded-xl overflow-hidden border border-line/5 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
       >
         <div className="relative h-64 overflow-hidden bg-ink">
           <img
@@ -40,7 +40,7 @@ const ServiceCard = ({ id, title, imgSrc, iconSrc, brief, index }) => {
           <h2 className="text-2xl font-bold leading-snug transition-colors group-hover:text-brand-700">
             {title}
           </h2>
-          <p className="text-ink-soft leading-relaxed">{brief}</p>
+          <p className="text-fg-soft leading-relaxed">{brief}</p>
           <span className="mt-auto pt-3 inline-flex items-center gap-2 font-semibold text-brand-600">
             Learn more
             <FaArrowRight className="text-sm transition-transform group-hover:translate-x-1" />

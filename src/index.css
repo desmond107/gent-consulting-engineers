@@ -2,6 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Theme tokens (RGB channels so Tailwind opacity modifiers work).
+   Light is the default; `.dark` on <html> switches everything. */
+:root {
+  --c-page: 255 255 255;
+  --c-card: 255 255 255;
+  --c-surface: 244 247 250;
+  --c-fg: 11 27 43;
+  --c-fg-soft: 59 74 90;
+  --c-fg-muted: 100 116 139;
+  --c-line: 11 27 43;
+  --c-accent-text: #0f74a6;
+  color-scheme: light;
+}
+.dark {
+  --c-page: 7 16 26;
+  --c-card: 15 29 44;
+  --c-surface: 11 22 34;
+  --c-fg: 230 237 243;
+  --c-fg-soft: 176 190 204;
+  --c-fg-muted: 134 150 167;
+  --c-line: 255 255 255;
+  --c-accent-text: #6fbae2;
+  color-scheme: dark;
+}
+
+/* Smooth cross-fade when the visitor switches theme (class added briefly
+   by the toggle so normal hovers keep their own timing). */
+.theme-transition,
+.theme-transition *,
+.theme-transition *::before,
+.theme-transition *::after {
+  transition: background-color 0.35s ease, border-color 0.35s ease,
+    color 0.35s ease, fill 0.35s ease !important;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -16,8 +51,8 @@ body {
   margin: auto;
   overflow-x: hidden;
   font-family: "DM Sans", system-ui, sans-serif;
-  color: #0b1b2b;
-  background: #ffffff;
+  background: rgb(var(--c-page)) !important;
+  color: rgb(var(--c-fg)) !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -48,13 +83,13 @@ img {
 .modal::-webkit-scrollbar,
 body::-webkit-scrollbar {
   width: 10px;
-  background-color: #f4f7fa;
+  background-color: rgb(var(--c-surface));
 }
 
 .modal::-webkit-scrollbar-thumb,
 body::-webkit-scrollbar-thumb {
   border-radius: 20px;
-  border: 2px solid #f4f7fa;
+  border: 2px solid rgb(var(--c-surface));
   background-color: #0f74a6;
 }
 
@@ -74,7 +109,7 @@ body::-webkit-scrollbar-thumb {
     @apply bg-brand-300;
   }
   .section-title {
-    @apply font-display text-5xl font-bold leading-[1.08] text-ink max-md:text-4xl;
+    @apply font-display text-5xl font-bold leading-[1.08] text-fg max-md:text-4xl;
   }
   .container-x {
     @apply mx-auto w-full max-w-[1200px] px-10 max-sm:px-5;
@@ -85,6 +120,45 @@ body::-webkit-scrollbar-thumb {
       linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
     background-size: 48px 48px;
   }
+}
+
+/* ---- Dark theme accents ----
+   Brand blues used for text/tints are tuned for white backgrounds; lift them
+   so they keep contrast on dark surfaces. Solid brand buttons are unchanged. */
+.dark .text-brand-600,
+.dark .text-brand-700,
+.dark .text-brand-800:not(.bg-white),
+.dark .hover\:text-brand-600:hover,
+.dark .hover\:text-brand-700:hover,
+.dark .group:hover .group-hover\:text-brand-700,
+.dark .eyebrow:not(.eyebrow-light):not(.text-white) {
+  color: #6fbae2;
+}
+.dark .bg-brand-50,
+.dark .hover\:bg-brand-50:hover {
+  background-color: rgba(24, 145, 200, 0.14);
+}
+.dark .border-brand-600 {
+  border-color: #35a0d4;
+}
+.dark .shadow-card,
+.dark .shadow-lift,
+.dark .review-card {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset,
+    0 12px 32px -12px rgba(0, 0, 0, 0.6);
+}
+/* Client logos are artwork made for white backgrounds (some with solid
+   fills), so give each one a light plate in dark mode. */
+.dark .partner-logo {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 10px;
+  padding: 8px 14px;
+  opacity: 1;
+}
+/* Dark sections sit on a dark page in dark mode; a hairline keeps them distinct. */
+.dark section.bg-ink {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset,
+    0 -1px 0 rgba(255, 255, 255, 0.06) inset;
 }
 
 /* Hero copy sits directly on video with no overlay; shadows keep it legible

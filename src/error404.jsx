@@ -9,7 +9,7 @@ const Error404 = () => {
   }, []);
   return (
     <>
-      <nav className="fixed bg-white top-0 py-8 left-0 right-0 flex justify-center items-center">
+      <nav className="fixed bg-card top-0 py-8 left-0 right-0 flex justify-center items-center">
         <Link to="/">
           <Logo tone="dark" size="md" />
         </Link>

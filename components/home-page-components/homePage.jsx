@@ -258,13 +258,13 @@ const HomePage = () => {
           viewport={{ once: true, amount: 0.3 }}
           className="flex flex-col gap-6 md:pt-10"
         >
-          <p className="text-lg text-ink-soft leading-relaxed">
+          <p className="text-lg text-fg-soft leading-relaxed">
             GCE was founded by Eng. Alvince O. Korero, PE in 2015 and joined by
             CPA Angeline N.M. Omondi in 2016. Together, they bring over 15 years
             of structural engineering design, construction and project
             management experience.
           </p>
-          <p className="text-lg text-ink-soft leading-relaxed">
+          <p className="text-lg text-fg-soft leading-relaxed">
             Gent leads a collaborative environment with a mission to provide
             functional, sound, economical and sustainable engineering &amp;
             construction solutions that achieve our clients’ vision.
@@ -300,7 +300,7 @@ const HomePage = () => {
               <a
                 href={site.companyProfilePdf}
                 download
-                className="inline-flex items-center gap-2 font-semibold text-ink-soft hover:text-brand-700"
+                className="inline-flex items-center gap-2 font-semibold text-fg-soft hover:text-brand-700"
               >
                 <FaFilePdf className="text-brand-600" /> Download company
                 profile
@@ -326,7 +326,7 @@ const HomePage = () => {
               <span className="eyebrow">What we do</span>
               <h2 className="section-title">Engineering you can build on.</h2>
             </div>
-            <p className="text-lg text-ink-soft leading-relaxed">
+            <p className="text-lg text-fg-soft leading-relaxed">
               A Nairobi-based civil, structural and construction engineering and
               management firm serving the commercial construction community,
               with a reputation for creative, sustainable design and
@@ -622,9 +622,9 @@ const HomePage = () => {
       </section>
 
       {/* partner brand section */}
-      <section className="border-y border-black/5">
+      <section className="border-y border-line/5">
         <div className="container-x py-12 flex max-md:flex-col items-center gap-10">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-ink-muted whitespace-nowrap">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-fg-muted whitespace-nowrap">
             Trusted by
           </p>
           <div className="flex-1 flex gap-12 max-sm:gap-8 flex-wrap justify-around items-center">

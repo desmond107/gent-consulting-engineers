@@ -50,13 +50,13 @@ const ServicePage = ({ service }) => {
             <h2 className="section-title text-4xl max-md:text-3xl">
               {service.heading}
             </h2>
-            <p className="text-lg text-ink-soft leading-relaxed">
+            <p className="text-lg text-fg-soft leading-relaxed">
               {service.mainDescription}
             </p>
           </div>
 
           {service.includes?.length ? (
-            <div className="bg-surface rounded-xl p-8 max-md:p-6 border border-black/5">
+            <div className="bg-surface rounded-xl p-8 max-md:p-6 border border-line/5">
               <h3 className="text-xl font-bold">What’s included</h3>
               <ul className="grid grid-cols-2 max-md:grid-cols-1 gap-x-8 gap-y-3 mt-5">
                 {service.includes.map((item) => (
@@ -79,7 +79,7 @@ const ServicePage = ({ service }) => {
                   key={s.id}
                   onClick={scrollToTop}
                   to={`/services/${s.id}`}
-                  className="group flex items-center justify-between gap-4 rounded-lg border border-black/10 px-5 py-4 font-medium transition-all hover:border-brand-500 hover:bg-brand-50 hover:text-brand-700"
+                  className="group flex items-center justify-between gap-4 rounded-lg border border-line/10 px-5 py-4 font-medium transition-all hover:border-brand-500 hover:bg-brand-50 hover:text-brand-700"
                 >
                   {s.title}
                   <FaArrowRight className="text-sm shrink-0 transition-transform group-hover:translate-x-1" />
@@ -94,7 +94,7 @@ const ServicePage = ({ service }) => {
               {additionalServices.map((a) => (
                 <AccordionItem
                   key={a.title}
-                  className="bg-white rounded-lg border border-black/10 overflow-hidden"
+                  className="bg-card rounded-lg border border-line/10 overflow-hidden"
                   borderTopWidth={0}
                   _last={{ borderBottomWidth: 0 }}
                 >
@@ -104,7 +104,7 @@ const ServicePage = ({ service }) => {
                       py={4}
                       fontWeight={600}
                       _hover={{ backgroundColor: "transparent" }}
-                      _expanded={{ color: "#0f74a6" }}
+                      _expanded={{ color: "var(--c-accent-text)" }}
                     >
                       <Box as="span" flex="1" textAlign="left">
                         {a.title}
@@ -112,7 +112,7 @@ const ServicePage = ({ service }) => {
                       <AccordionIcon />
                     </AccordionButton>
                   </h4>
-                  <AccordionPanel px={5} pb={5} color={"#3b4a5a"} lineHeight={1.7}>
+                  <AccordionPanel px={5} pb={5} color={"rgb(var(--c-fg-soft))"} lineHeight={1.7}>
                     {a.description}
                   </AccordionPanel>
                 </AccordionItem>

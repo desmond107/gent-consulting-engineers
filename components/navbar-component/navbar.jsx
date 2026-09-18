@@ -1,3 +1,4 @@
+import ThemeToggle from "../theme-toggle/themeToggle";
 import Logo from "../brand/logo";
 import { FaAngleDown, FaBars } from "react-icons/fa";
 import "./navbar.css";
@@ -35,7 +36,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
           showCase1Page ? "absolute" : "fixed"
         } top-0 left-0 right-0 transition-all duration-300 ${
           solid
-            ? "bg-white/95 backdrop-blur-md shadow-[0_1px_0_rgba(11,27,43,.08),0_8px_24px_-12px_rgba(11,27,43,.18)]"
+            ? "bg-card/95 backdrop-blur-md shadow-[0_1px_0_rgb(var(--c-line)/0.08),0_8px_24px_-12px_rgba(0,0,0,.25)]"
             : "bg-transparent [text-shadow:0_1px_10px_rgba(0,0,0,.55)]"
         }`}
       >
@@ -58,7 +59,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
           </Link>
           <ul
             className={`${
-              solid ? "text-ink" : "text-white/90"
+              solid ? "text-fg" : "text-white/90"
             } text-[15px] font-medium flex max-lg:hidden items-center gap-9`}
           >
             <NavLink onClick={scrollToTop} className={linkClass} to="/" end>
@@ -70,7 +71,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
             <div className="showcase-menu cursor-pointer relative py-1 flex items-center gap-1.5 transition-colors">
               Projects <FaAngleDown className="text-xs opacity-70" />
               <div className="showcase-list hidden absolute cursor-default -left-5 top-full pt-4">
-                <ul className="flex flex-col gap-1 bg-white text-ink p-2 rounded-lg shadow-lift border border-black/5 w-56">
+                <ul className="flex flex-col gap-1 bg-card text-fg p-2 rounded-lg shadow-lift border border-line/5 w-56">
                   <li className="listItem">
                     <Link
                       onClick={scrollToTop}
@@ -95,6 +96,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
             <NavLink onClick={scrollToTop} className={linkClass} to="/about">
               About
             </NavLink>
+            <ThemeToggle onDark={!solid} />
             <Link onClick={scrollToTop} to="/contact">
               <Button
                 content={"Get a Quote"}
@@ -106,9 +108,10 @@ const NavBar = ({ navBar2, showCase1Page }) => {
           </ul>
           <div
             className={`${
-              solid ? "text-ink" : "text-white"
+              solid ? "text-fg" : "text-white"
             } text-xl hidden max-lg:flex items-center gap-6`}
           >
+            <ThemeToggle onDark={!solid} />
             <button
               aria-label="Open menu"
               onClick={() => {
@@ -136,7 +139,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
         style={{ zIndex: 100 }}
         className={`fixed top-0 bottom-0 left-0 hidden max-lg:flex flex-col ${
           viewSideNav ? "translate-x-0" : "-translate-x-full"
-        } bg-white w-80 max-w-[85vw] p-6 transition-transform duration-300 ease-out shadow-2xl`}
+        } bg-card w-80 max-w-[85vw] p-6 transition-transform duration-300 ease-out shadow-2xl`}
       >
         <div className="flex justify-between items-center">
           <Logo tone="dark" size="sm" />
@@ -145,12 +148,12 @@ const NavBar = ({ navBar2, showCase1Page }) => {
             onClick={() => {
               setViewSideNav(false);
             }}
-            className="w-9 h-9 rounded-full hover:bg-surface flex items-center justify-center text-2xl leading-none text-ink"
+            className="w-9 h-9 rounded-full hover:bg-surface flex items-center justify-center text-2xl leading-none text-fg"
           >
             &times;
           </button>
         </div>
-        <ul className="flex flex-col mt-10 text-lg font-medium text-ink">
+        <ul className="flex flex-col mt-10 text-lg font-medium text-fg">
           {[
             ["/", "Home"],
             ["/services", "Services"],
@@ -164,7 +167,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
               }}
               to={to}
               className={({ isActive }) =>
-                `py-3 border-b border-black/5 transition-colors ${
+                `py-3 border-b border-line/5 transition-colors ${
                   isActive ? "text-brand-600" : "hover:text-brand-600"
                 }`
               }
@@ -172,7 +175,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
               {label}
             </NavLink>
           ))}
-          <li className="border-b border-black/5">
+          <li className="border-b border-line/5">
             <button
               onClick={() => {
                 setShowcaseDropDown(!showcaseDropDown);
@@ -191,7 +194,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
                 showcaseDropDown ? "grid-rows-[1fr] pb-3" : "grid-rows-[0fr]"
               }`}
             >
-              <div className="overflow-hidden flex flex-col gap-1 pl-4 text-base text-ink-soft">
+              <div className="overflow-hidden flex flex-col gap-1 pl-4 text-base text-fg-soft">
                 <Link
                   onClick={() => {
                     hideNav();
@@ -222,7 +225,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
             }}
             to={"/about"}
             className={({ isActive }) =>
-              `py-3 border-b border-black/5 transition-colors ${
+              `py-3 border-b border-line/5 transition-colors ${
                 isActive ? "text-brand-600" : "hover:text-brand-600"
               }`
             }
@@ -244,7 +247,8 @@ const NavBar = ({ navBar2, showCase1Page }) => {
             furtherClasses={"w-full"}
           />
         </Link>
-        <div className="mt-auto text-sm text-ink-muted">
+        <ThemeToggle withLabel className="mt-8" />
+        <div className="mt-auto text-sm text-fg-muted">
           Nairobi, Kenya · +254 718 484 254
         </div>
       </nav>

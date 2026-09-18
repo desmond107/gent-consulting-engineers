@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -21,12 +22,22 @@ export default {
           800: "#0e4a69",
           900: "#0c2e44",
         },
+        // Fixed deep navy for sections that stay dark in both themes.
         ink: {
           DEFAULT: "#0b1b2b",
           soft: "#3b4a5a",
           muted: "#64748b",
         },
-        surface: "#f4f7fa",
+        // Theme-aware tokens (values in src/index.css, swapped by `.dark`).
+        fg: {
+          DEFAULT: "rgb(var(--c-fg) / <alpha-value>)",
+          soft: "rgb(var(--c-fg-soft) / <alpha-value>)",
+          muted: "rgb(var(--c-fg-muted) / <alpha-value>)",
+        },
+        page: "rgb(var(--c-page) / <alpha-value>)",
+        card: "rgb(var(--c-card) / <alpha-value>)",
+        surface: "rgb(var(--c-surface) / <alpha-value>)",
+        line: "rgb(var(--c-line) / <alpha-value>)",
       },
       fontFamily: {
         sans: ['"DM Sans"', "system-ui", "sans-serif"],

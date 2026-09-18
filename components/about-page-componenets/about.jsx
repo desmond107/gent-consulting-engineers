@@ -79,7 +79,7 @@ const AboutPage = () => {
             <h2 className="section-title">
               Engineering partners from first sketch to final handover.
             </h2>
-            <p className="text-lg text-ink-soft leading-relaxed">
+            <p className="text-lg text-fg-soft leading-relaxed">
               Gent Consulting Engineers is a civil, structural and construction
               engineering and management firm serving the commercial
               construction community nationwide, with a reputation for
@@ -104,11 +104,11 @@ const AboutPage = () => {
               className="w-full h-[440px] max-md:h-80 object-cover rounded-xl shadow-lift"
               alt="Tower crane on a GCE construction site"
             />
-            <div className="absolute -bottom-8 -left-8 max-lg:left-4 max-lg:-bottom-6 bg-white rounded-xl shadow-lift px-7 py-5 border border-black/5">
+            <div className="absolute -bottom-8 -left-8 max-lg:left-4 max-lg:-bottom-6 bg-card rounded-xl shadow-lift px-7 py-5 border border-line/5">
               <p className="font-display text-4xl font-bold text-brand-600">
                 2015
               </p>
-              <p className="text-ink-muted text-sm">Founded in Nairobi</p>
+              <p className="text-fg-muted text-sm">Founded in Nairobi</p>
             </div>
           </div>
         </motion.div>
@@ -124,13 +124,13 @@ const AboutPage = () => {
             <motion.div
               key={o.title}
               variants={animationVariants.fadeUp}
-              className="border-t-2 border-ink/10 pt-6"
+              className="border-t-2 border-fg/10 pt-6"
             >
               <span className="font-display text-sm font-semibold text-brand-600">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="text-xl font-bold mt-3">{o.title}</h3>
-              <p className="text-ink-soft leading-relaxed mt-2">{o.desc}</p>
+              <p className="text-fg-soft leading-relaxed mt-2">{o.desc}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -204,14 +204,14 @@ const AboutPage = () => {
                 <motion.div
                   key={f.title}
                   variants={animationVariants.fadeUp}
-                  className="flex gap-5 bg-white rounded-xl p-6 border border-black/5 shadow-card"
+                  className="flex gap-5 bg-card rounded-xl p-6 border border-line/5 shadow-card"
                 >
                   <div className="w-12 h-12 shrink-0 rounded-lg bg-brand-50 text-brand-600 text-xl flex items-center justify-center">
                     {f.icon}
                   </div>
                   <div>
                     <h3 className="text-lg font-bold">{f.title}</h3>
-                    <p className="text-ink-soft leading-relaxed mt-1">
+                    <p className="text-fg-soft leading-relaxed mt-1">
                       {f.desc}
                     </p>
                   </div>
@@ -270,9 +270,9 @@ const AboutPage = () => {
       <Testimonials />
 
       {/* partner brand section */}
-      <section className="border-y border-black/5">
+      <section className="border-y border-line/5">
         <div className="container-x py-12 flex max-md:flex-col items-center gap-10">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-ink-muted whitespace-nowrap">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-fg-muted whitespace-nowrap">
             Trusted by
           </p>
           <div className="flex-1 flex gap-12 max-sm:gap-8 flex-wrap justify-around items-center">

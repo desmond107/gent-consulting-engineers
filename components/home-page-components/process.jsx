@@ -56,7 +56,7 @@ const Process = () => {
         >
           <span className="eyebrow">How we work</span>
           <h2 className="section-title">From first call to final handover.</h2>
-          <p className="text-lg text-ink-soft leading-relaxed">
+          <p className="text-lg text-fg-soft leading-relaxed">
             A clear, proven process that keeps you informed at every stage and
             your project on schedule and within budget.
           </p>
@@ -72,18 +72,18 @@ const Process = () => {
             <motion.li
               key={s.title}
               variants={animationVariants.fadeUp}
-              className="relative bg-white rounded-xl p-7 border border-black/5 shadow-card"
+              className="relative bg-card rounded-xl p-7 border border-line/5 shadow-card"
             >
               <div className="flex items-center justify-between">
                 <span className="w-12 h-12 rounded-lg bg-brand-600 text-white text-lg flex items-center justify-center">
                   {s.icon}
                 </span>
-                <span className="font-display text-5xl font-bold text-ink/[0.06] leading-none">
+                <span className="font-display text-5xl font-bold text-fg/[0.06] leading-none">
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
               <h3 className="text-xl font-bold mt-5">{s.title}</h3>
-              <p className="text-ink-soft leading-relaxed mt-2">{s.desc}</p>
+              <p className="text-fg-soft leading-relaxed mt-2">{s.desc}</p>
             </motion.li>
           ))}
         </motion.ol>
