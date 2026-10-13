@@ -9,6 +9,8 @@ const variants = {
     "bg-white/10 border-white/40 text-white backdrop-blur hover:bg-white hover:text-ink",
 };
 
+// `as="span"` renders the same styling without a nested <button>, for use
+// inside a <Link> (a button inside a link is two tab stops and invalid HTML).
 const Button = ({
   styles,
   padding,
@@ -19,11 +21,16 @@ const Button = ({
   onClick,
   variant = "solid",
   type = "button",
+  as,
+  ariaLabel,
 }) => {
+  const Tag = as === "span" ? "span" : "button";
+  // The span carries the link's visible text, so it must stay readable.
+  const tagProps = Tag === "button" ? { type, onClick } : {};
   return (
-    <button
-      type={type}
-      onClick={onClick}
+    <Tag
+      {...tagProps}
+      aria-label={ariaLabel}
       style={styles}
       className={`inline-flex items-center justify-center gap-2 rounded-md border-[1.5px] ${
         variants[variant]
@@ -32,7 +39,7 @@ const Button = ({
       } ${furtherClasses || ""} duration-300 transition-all active:scale-[0.98]`}
     >
       {content}
-    </button>
+    </Tag>
   );
 };
 

@@ -22,6 +22,7 @@ const PageHero = ({ image, eyebrow, title, subtitle, children }) => {
       >
         <div className="flex flex-col gap-5 max-w-2xl">
           <motion.nav
+            aria-label="Breadcrumb"
             variants={animationVariants.fadeUp}
             className="flex items-center gap-2 text-sm text-white/60"
           >

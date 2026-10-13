@@ -4,15 +4,24 @@ import { FaAngleDown, FaBars } from "react-icons/fa";
 import "./navbar.css";
 import Button from "../buttons-component/solidbutton";
 import { Link, NavLink } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { scrollToTop } from "../../constants/scrollToTop";
+
+const projectLinks = [
+  ["/showcases/showcase1", "Project Showcase I"],
+  ["/showcases/showcase2", "Project Showcase II"],
+];
+
 const NavBar = ({ navBar2, showCase1Page }) => {
   const [scrolled, setScrolled] = useState(false);
+  const [projectsOpen, setProjectsOpen] = useState(false);
   const [showcaseDropDown, setShowcaseDropDown] = useState(false);
   const [viewSideNav, setViewSideNav] = useState(false);
-  const hideNav = () => {
-    setViewSideNav(false);
-  };
+  const drawerRef = useRef(null);
+  const openButtonRef = useRef(null);
+  const closeButtonRef = useRef(null);
+  const projectsRef = useRef(null);
+  const hideNav = () => setViewSideNav(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY >= 40);
@@ -20,6 +29,51 @@ const NavBar = ({ navBar2, showCase1Page }) => {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // The closed drawer is off-screen but would still be reachable by keyboard
+  // and screen readers, so take it out of the accessibility tree entirely.
+  useEffect(() => {
+    const el = drawerRef.current;
+    if (!el) return;
+    el.inert = !viewSideNav;
+    el.setAttribute("aria-hidden", viewSideNav ? "false" : "true");
+    if (viewSideNav) closeButtonRef.current?.focus();
+  }, [viewSideNav]);
+
+  // Escape closes whichever menu is open; focus goes back where it came from.
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (e.key !== "Escape") return;
+      if (viewSideNav) {
+        setViewSideNav(false);
+        openButtonRef.current?.focus();
+      }
+      if (projectsOpen) {
+        setProjectsOpen(false);
+        projectsRef.current?.querySelector("button")?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [viewSideNav, projectsOpen]);
+
+  // Keep focus inside the open drawer.
+  const trapFocus = (e) => {
+    if (e.key !== "Tab" || !viewSideNav) return;
+    const items = drawerRef.current?.querySelectorAll(
+      'a[href], button:not([disabled])'
+    );
+    if (!items?.length) return;
+    const first = items[0];
+    const last = items[items.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  };
 
   // Solid (light) bar when scrolled or on pages without a dark hero
   const solid = !showCase1Page && (navBar2 || scrolled);
@@ -41,6 +95,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
         }`}
       >
         <nav
+          aria-label="Main"
           className={`container-x flex justify-between items-center gap-4 transition-all duration-300 ${
             solid ? "py-3" : "py-6 max-md:py-4"
           }`}
@@ -62,49 +117,88 @@ const NavBar = ({ navBar2, showCase1Page }) => {
               solid ? "text-fg" : "text-white/90"
             } text-[15px] font-medium flex max-lg:hidden items-center gap-9`}
           >
-            <NavLink onClick={scrollToTop} className={linkClass} to="/" end>
-              Home
-            </NavLink>
-            <NavLink onClick={scrollToTop} className={linkClass} to="/services">
-              Services
-            </NavLink>
-            <div className="showcase-menu cursor-pointer relative py-1 flex items-center gap-1.5 transition-colors">
-              Projects <FaAngleDown className="text-xs opacity-70" />
-              <div className="showcase-list hidden absolute cursor-default -left-5 top-full pt-4">
-                <ul className="flex flex-col gap-1 bg-card text-fg p-2 rounded-lg shadow-lift border border-line/5 w-56">
-                  <li className="listItem">
-                    <Link
-                      onClick={scrollToTop}
-                      className="block rounded-md px-3 py-2.5 hover:bg-brand-50 hover:text-brand-700 transition-colors"
-                      to="/showcases/showcase1"
-                    >
-                      Project Showcase I
-                    </Link>
-                  </li>
-                  <li className="listItem">
-                    <Link
-                      onClick={scrollToTop}
-                      className="block rounded-md px-3 py-2.5 hover:bg-brand-50 hover:text-brand-700 transition-colors"
-                      to="/showcases/showcase2"
-                    >
-                      Project Showcase II
-                    </Link>
-                  </li>
+            <li>
+              <NavLink onClick={scrollToTop} className={linkClass} to="/" end>
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                onClick={scrollToTop}
+                className={linkClass}
+                to="/services"
+              >
+                Services
+              </NavLink>
+            </li>
+            <li
+              ref={projectsRef}
+              className="relative"
+              onMouseEnter={() => setProjectsOpen(true)}
+              onMouseLeave={() => setProjectsOpen(false)}
+              onBlur={(e) => {
+                if (!e.currentTarget.contains(e.relatedTarget))
+                  setProjectsOpen(false);
+              }}
+            >
+              <button
+                type="button"
+                aria-expanded={projectsOpen}
+                aria-haspopup="true"
+                onClick={() => setProjectsOpen((v) => !v)}
+                className={`py-1 flex items-center gap-1.5 transition-colors ${
+                  solid ? "hover:text-brand-600" : "hover:text-white"
+                }`}
+              >
+                Projects
+                <FaAngleDown
+                  className={`text-xs opacity-70 transition-transform ${
+                    projectsOpen ? "-rotate-180" : ""
+                  }`}
+                />
+              </button>
+              <div
+                className={`absolute -left-5 top-full pt-4 ${
+                  projectsOpen ? "block" : "hidden"
+                }`}
+              >
+                <ul className="flex flex-col gap-1 bg-card text-fg p-2 rounded-lg shadow-lift border border-line/5 w-56 menu-in">
+                  {projectLinks.map(([to, label]) => (
+                    <li key={to}>
+                      <Link
+                        onClick={() => {
+                          setProjectsOpen(false);
+                          scrollToTop();
+                        }}
+                        className="block rounded-md px-3 py-2.5 hover:bg-brand-50 hover:text-brand-700 transition-colors"
+                        to={to}
+                      >
+                        {label}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
-            </div>
-            <NavLink onClick={scrollToTop} className={linkClass} to="/about">
-              About
-            </NavLink>
-            <ThemeToggle onDark={!solid} />
-            <Link onClick={scrollToTop} to="/contact">
-              <Button
-                content={"Get a Quote"}
-                fontSize={"text-[15px]"}
-                padding={"px-5 py-2.5"}
-                variant={solid ? "solid" : "light"}
-              />
-            </Link>
+            </li>
+            <li>
+              <NavLink onClick={scrollToTop} className={linkClass} to="/about">
+                About
+              </NavLink>
+            </li>
+            <li className="flex items-center">
+              <ThemeToggle onDark={!solid} />
+            </li>
+            <li>
+              <Link onClick={scrollToTop} to="/contact">
+                <Button
+                  as="span"
+                  content={"Get a Quote"}
+                  fontSize={"text-[15px]"}
+                  padding={"px-5 py-2.5"}
+                  variant={solid ? "solid" : "light"}
+                />
+              </Link>
+            </li>
           </ul>
           <div
             className={`${
@@ -113,10 +207,11 @@ const NavBar = ({ navBar2, showCase1Page }) => {
           >
             <ThemeToggle onDark={!solid} />
             <button
+              ref={openButtonRef}
               aria-label="Open menu"
-              onClick={() => {
-                setViewSideNav(!viewSideNav);
-              }}
+              aria-expanded={viewSideNav}
+              aria-controls="mobile-menu"
+              onClick={() => setViewSideNav(true)}
               className="p-1"
             >
               <FaBars />
@@ -127,15 +222,17 @@ const NavBar = ({ navBar2, showCase1Page }) => {
 
       {/* side nav bar for mobile view */}
       <div
-        onClick={() => {
-          setViewSideNav(false);
-        }}
+        onClick={() => setViewSideNav(false)}
         style={{ zIndex: 99 }}
         className={`fixed inset-0 bg-ink/50 backdrop-blur-sm transition-opacity duration-300 ${
           viewSideNav ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       ></div>
       <nav
+        id="mobile-menu"
+        aria-label="Mobile"
+        ref={drawerRef}
+        onKeyDown={trapFocus}
         style={{ zIndex: 100 }}
         className={`fixed top-0 bottom-0 left-0 hidden max-lg:flex flex-col ${
           viewSideNav ? "translate-x-0" : "-translate-x-full"
@@ -144,9 +241,11 @@ const NavBar = ({ navBar2, showCase1Page }) => {
         <div className="flex justify-between items-center">
           <Logo tone="dark" size="sm" />
           <button
+            ref={closeButtonRef}
             aria-label="Close menu"
             onClick={() => {
               setViewSideNav(false);
+              openButtonRef.current?.focus();
             }}
             className="w-9 h-9 rounded-full hover:bg-surface flex items-center justify-center text-2xl leading-none text-fg"
           >
@@ -158,28 +257,28 @@ const NavBar = ({ navBar2, showCase1Page }) => {
             ["/", "Home"],
             ["/services", "Services"],
           ].map(([to, label]) => (
-            <NavLink
-              key={to}
-              end
-              onClick={() => {
-                hideNav();
-                scrollToTop();
-              }}
-              to={to}
-              className={({ isActive }) =>
-                `py-3 border-b border-line/5 transition-colors ${
-                  isActive ? "text-brand-600" : "hover:text-brand-600"
-                }`
-              }
-            >
-              {label}
-            </NavLink>
+            <li key={to}>
+              <NavLink
+                end
+                onClick={() => {
+                  hideNav();
+                  scrollToTop();
+                }}
+                to={to}
+                className={({ isActive }) =>
+                  `block py-3 border-b border-line/5 transition-colors ${
+                    isActive ? "text-brand-600" : "hover:text-brand-600"
+                  }`
+                }
+              >
+                {label}
+              </NavLink>
+            </li>
           ))}
           <li className="border-b border-line/5">
             <button
-              onClick={() => {
-                setShowcaseDropDown(!showcaseDropDown);
-              }}
+              aria-expanded={showcaseDropDown}
+              onClick={() => setShowcaseDropDown((v) => !v)}
               className="w-full py-3 flex justify-between items-center hover:text-brand-600 transition-colors"
             >
               Projects
@@ -194,44 +293,40 @@ const NavBar = ({ navBar2, showCase1Page }) => {
                 showcaseDropDown ? "grid-rows-[1fr] pb-3" : "grid-rows-[0fr]"
               }`}
             >
-              <div className="overflow-hidden flex flex-col gap-1 pl-4 text-base text-fg-soft">
-                <Link
-                  onClick={() => {
-                    hideNav();
-                    scrollToTop();
-                  }}
-                  className="py-1.5 hover:text-brand-600"
-                  to={"/showcases/showcase1"}
-                >
-                  Project Showcase I
-                </Link>
-                <Link
-                  onClick={() => {
-                    hideNav();
-                    scrollToTop();
-                  }}
-                  to={"/showcases/showcase2"}
-                  className="py-1.5 hover:text-brand-600"
-                >
-                  Project Showcase II
-                </Link>
-              </div>
+              <ul className="overflow-hidden flex flex-col gap-1 pl-4 text-base text-fg-soft">
+                {projectLinks.map(([to, label]) => (
+                  <li key={to}>
+                    <Link
+                      onClick={() => {
+                        hideNav();
+                        scrollToTop();
+                      }}
+                      className="block py-1.5 hover:text-brand-600"
+                      to={to}
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </li>
-          <NavLink
-            onClick={() => {
-              hideNav();
-              scrollToTop();
-            }}
-            to={"/about"}
-            className={({ isActive }) =>
-              `py-3 border-b border-line/5 transition-colors ${
-                isActive ? "text-brand-600" : "hover:text-brand-600"
-              }`
-            }
-          >
-            About
-          </NavLink>
+          <li>
+            <NavLink
+              onClick={() => {
+                hideNav();
+                scrollToTop();
+              }}
+              to={"/about"}
+              className={({ isActive }) =>
+                `block py-3 border-b border-line/5 transition-colors ${
+                  isActive ? "text-brand-600" : "hover:text-brand-600"
+                }`
+              }
+            >
+              About
+            </NavLink>
+          </li>
         </ul>
         <Link
           onClick={() => {
@@ -242,6 +337,7 @@ const NavBar = ({ navBar2, showCase1Page }) => {
           className="mt-8"
         >
           <Button
+            as="span"
             content={"Get a Quote"}
             padding={"py-3"}
             furtherClasses={"w-full"}

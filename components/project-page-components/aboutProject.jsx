@@ -16,9 +16,6 @@ const AboutProject = () => {
   const project = showCase[index];
 
   useEffect(() => {
-    if (project) {
-      document.title = `${project.city.trim()} | Gent Consulting Engineers`;
-    }
   }, [project]);
 
   if (!project) return <Navigate to="/showcases/showcase1" replace />;
@@ -56,6 +53,7 @@ const AboutProject = () => {
           className="container-x pt-40 pb-16 max-md:pb-12 flex flex-col gap-5"
         >
           <motion.nav
+            aria-label="Breadcrumb"
             variants={animationVariants.fadeUp}
             className="flex items-center gap-2 text-sm text-white/60"
           >
@@ -143,6 +141,7 @@ const AboutProject = () => {
             </div>
             <Link onClick={scrollToTop} to="/contact">
               <Button
+              as="span"
                 content={"Request a consultation"}
                 padding={"py-3"}
                 fontSize={"text-base"}
@@ -214,6 +213,7 @@ const AboutProject = () => {
                   }`}
                   src={e}
                   loading="lazy"
+                  decoding="async"
                   alt={`${project.city.trim()} — photo ${i + 1}`}
                 />
               </motion.div>
@@ -223,7 +223,7 @@ const AboutProject = () => {
       </section>
 
       {/* prev / next */}
-      <nav className="border-t border-line/5">
+      <nav aria-label="Project" className="border-t border-line/5">
         <div className="container-x grid grid-cols-[1fr_auto_1fr] items-center gap-6 py-8">
           <Link
             onClick={scrollToTop}

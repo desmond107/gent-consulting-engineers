@@ -2,9 +2,6 @@ import { useEffect } from "react";
 import ContactPage from "../components/contact-page-component/contact-page";
 
 const Contact = () => {
-  useEffect(() => {
-    document.title = "Contact Us | Gent Consulting Engineers";
-  }, []);
   return (
     <div className="overflow-hidden">
       <ContactPage />

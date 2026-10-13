@@ -4,9 +4,6 @@ import ShowCase2HeroSection from "../components/showcase2-components/showcase2He
 import { useEffect } from "react";
 
 const ShowCase2 = () => {
-  useEffect(() => {
-    document.title = "Projects | Gent Consulting Engineers";
-  }, []);
   return (
     <div className="overflow-hidden">
       <ShowCase2HeroSection />

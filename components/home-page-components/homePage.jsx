@@ -104,10 +104,6 @@ const HomePage = () => {
         bar.style.transform = `scaleX(${i === index ? progress : 0})`;
     });
   }, []);
-  useEffect(() => {
-    document.title =
-      "Gent Consulting Engineers | Civil & Structural Engineering, Kenya";
-  }, []);
   return (
     <div className="w-full overflow-hidden">
       {/* hero section */}
@@ -153,6 +149,7 @@ const HomePage = () => {
           >
             <Link onClick={scrollToTop} to="/services">
               <Button
+              as="span"
                 content={
                   <>
                     Explore our services <FaArrowRight className="text-sm" />
@@ -164,6 +161,7 @@ const HomePage = () => {
             </Link>
             <Link onClick={scrollToTop} to="/contact">
               <Button
+              as="span"
                 content={"Talk to an engineer"}
                 fontSize={"text-base"}
                 padding={"px-7 py-3.5"}
@@ -286,6 +284,7 @@ const HomePage = () => {
           <div className="flex flex-wrap items-center gap-4 mt-2">
             <Link onClick={scrollToTop} to={"/about"}>
               <Button
+              as="span"
                 content={
                   <>
                     More about us <FaArrowRight className="text-sm" />
@@ -371,6 +370,7 @@ const HomePage = () => {
           </div>
           <Link onClick={scrollToTop} to="/services">
             <Button
+              as="span"
               content={
                 <>
                   All services <FaArrowRight className="text-sm" />
@@ -400,6 +400,7 @@ const HomePage = () => {
                   src={s.image}
                   alt=""
                   loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/5 transition-colors duration-500 group-hover:from-brand-900"></div>
@@ -500,6 +501,7 @@ const HomePage = () => {
                 className="absolute w-full h-full object-cover object-center"
                 alt="Construction site at dusk"
                 loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent"></div>
               <motion.div
@@ -521,6 +523,7 @@ const HomePage = () => {
             </div>
             <Link onClick={scrollToTop} to={"/contact"}>
               <Button
+              as="span"
                 content={
                   <>
                     Get in touch <FaArrowRight className="text-sm" />
@@ -550,6 +553,7 @@ const HomePage = () => {
           </div>
           <Link onClick={scrollToTop} to="/showcases/showcase1">
             <Button
+              as="span"
               content={
                 <>
                   View all projects <FaArrowRight className="text-sm" />

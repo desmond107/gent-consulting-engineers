@@ -87,6 +87,7 @@ const AboutPage = () => {
             </p>
             <Link onClick={scrollToTop} to={"/services"} className="mt-2">
               <Button
+              as="span"
                 content={
                   <>
                     Our services <FaArrowRight className="text-sm" />

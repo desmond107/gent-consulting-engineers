@@ -7,6 +7,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import { site, whatsappLink } from "../../constants/site";
+import { faqs } from "../../constants/faqs";
 import {
   Accordion,
   AccordionItem,
@@ -184,32 +185,7 @@ const ContactPage = () => {
     },
   ];
 
-  const faqs = [
-    {
-      q: "What engineering services do you offer?",
-      a: "We cover building evaluation and rehabilitation, civil and infrastructure design, bridge design, geotechnical engineering, airport and pavement design, construction and project management, quality assurance and control, and site supervision.",
-    },
-    {
-      q: "Which areas do you serve?",
-      a: "We are based in Nairobi and serve clients across Kenya and the wider East African region.",
-    },
-    {
-      q: "How do I start a project with GCE?",
-      a: "Send us a message using the form above or give us a call. We’ll arrange an initial consultation to understand your goals, scope and budget, then propose the right team and approach.",
-    },
-    {
-      q: "Are your engineers registered professionals?",
-      a: "Yes. Most of our engineers and staff are locally registered professionals, and our work is delivered to international standards.",
-    },
-    {
-      q: "Can you assess an existing building?",
-      a: "Yes. Our building evaluation and rehabilitation service assesses structural health and performance, identifies problems and recommends solutions to extend design life.",
-    },
-    {
-      q: "Do you supervise construction on site?",
-      a: "Yes. We provide project site supervision and monitoring, along with quality assurance and control, to make sure what is built matches what was designed.",
-    },
-  ];
+
 
   return (
     <div className="w-full overflow-hidden">
@@ -302,6 +278,7 @@ const ContactPage = () => {
               {...fieldProps}
               maxLength={20}
               placeholder="First name"
+              aria-label="First name"
               name="firstName"
               value={formData.firstName}
               onChange={handleChange}
@@ -310,6 +287,7 @@ const ContactPage = () => {
               {...fieldProps}
               maxLength={20}
               placeholder="Last name"
+              aria-label="Last name"
               name="lastName"
               value={formData.lastName}
               onChange={handleChange}
@@ -318,6 +296,7 @@ const ContactPage = () => {
               {...fieldProps}
               maxLength={40}
               placeholder="Email address"
+              aria-label="Email address"
               name="email"
               value={formData.email}
               onChange={handleChange}
@@ -327,6 +306,7 @@ const ContactPage = () => {
               maxLength={15}
               type="tel"
               placeholder="Phone number"
+              aria-label="Phone number"
               name="phoneNo"
               value={formData.phoneNo}
               onChange={handleChange}
@@ -336,6 +316,7 @@ const ContactPage = () => {
             {...fieldProps}
             maxLength={200}
             placeholder="Tell us about your project"
+            aria-label="Tell us about your project"
             minHeight={"160px"}
             resize="vertical"
             name="message"

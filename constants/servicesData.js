@@ -1,9 +1,9 @@
 export const servicesData = [
   {
     id: 1,
-    image: "/Services/images/it-consultancy.jpg",
+    image: "/service-media/images/it-consultancy.jpg",
     title: "Building Evaluation & Rehabilitation",
-    icon: "/Services/icons/it-consultancy-icon.png",
+    icon: "/service-media/icons/it-consultancy-icon.png",
     shortDescription:
       "Structural assessments that diagnose problems in existing buildings and extend their safe design life.",
     heading: "Know exactly how your building is performing",
@@ -18,9 +18,9 @@ export const servicesData = [
   },
   {
     id: 2,
-    image: "/Services/images/cloud-migration.jpg",
+    image: "/service-media/images/cloud-migration.jpg",
     title: "Civil & Infrastructure Design",
-    icon: "/Services/icons/cloud-migration-icon.png",
+    icon: "/service-media/icons/cloud-migration-icon.png",
     shortDescription:
       "Planning and design of efficient, robust civil infrastructure built for performance and safety.",
     heading: "Infrastructure designed for buildability and safety",
@@ -35,9 +35,9 @@ export const servicesData = [
   },
   {
     id: 3,
-    image: "/Services/images/poc-development.jpg",
+    image: "/service-media/images/poc-development.jpg",
     title: "Bridge Design",
-    icon: "/Services/icons/poc-development-icon.png",
+    icon: "/service-media/icons/poc-development-icon.png",
     shortDescription:
       "Bridges designed to withstand gravity, wind and seismic loads in line with relevant codes.",
     heading: "Bridges engineered to last",
@@ -52,9 +52,9 @@ export const servicesData = [
   },
   {
     id: 4,
-    image: "/Services/images/smart-team.jpg",
+    image: "/service-media/images/smart-team.jpg",
     title: "Geotechnical Engineering and Design",
-    icon: "/Services/icons/smart-team-icon.png",
+    icon: "/service-media/icons/smart-team-icon.png",
     shortDescription:
       "Site investigation and foundation design grounded in a clear understanding of site conditions.",
     heading: "Build on a clear understanding of the ground",
@@ -69,9 +69,9 @@ export const servicesData = [
   },
   {
     id: 5,
-    image: "/Services/images/quality-assurance.jpg",
+    image: "/service-media/images/quality-assurance.jpg",
     title: "Airport Engineering and Pavement Design",
-    icon: "/Services/icons/quality-assurance-icon.png",
+    icon: "/service-media/icons/quality-assurance-icon.png",
     shortDescription:
       "Airfield pavement design, from surveying and soil investigation to construction drawings.",
     heading: "Integrated airfield and pavement engineering",
@@ -88,9 +88,9 @@ export const servicesData = [
   },
   {
     id: 6,
-    image: "/Services/images/product-design.jpg",
+    image: "/service-media/images/product-design.jpg",
     title: "Construction and Project Management",
-    icon: "/Services/icons/product-design-icon.png",
+    icon: "/service-media/icons/product-design-icon.png",
     shortDescription:
       "Guiding projects from conception to completion, on time and within budget.",
     heading: "Your project, delivered on time and on budget",
@@ -105,9 +105,9 @@ export const servicesData = [
   },
   {
     id: 7,
-    image: "/Services/images/q&a.jpg",
+    image: "/service-media/images/q&a.jpg",
     title: "Project Quality Assurance and Control",
-    icon: "/Services/icons/product-design-icon.png",
+    icon: "/service-media/icons/product-design-icon.png",
     shortDescription:
       "Materials testing and compliance checks that keep construction defect-free and to specification.",
     heading: "Quality you can verify",
@@ -122,9 +122,9 @@ export const servicesData = [
   },
   {
     id: 8,
-    image: "/Services/images/supervision.jpg",
+    image: "/service-media/images/supervision.jpg",
     title: "Project Site Supervision and Monitoring",
-    icon: "/Services/icons/product-design-icon.png",
+    icon: "/service-media/icons/product-design-icon.png",
     shortDescription:
       "Day-to-day site supervision that keeps work on schedule and compliant with the contract.",
     heading: "Eyes on site, every step of the way",

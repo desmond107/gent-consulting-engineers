@@ -13,6 +13,7 @@ const ProjectCard = ({ src, title, href, index }) => {
       <img
         src={src}
         loading="lazy"
+        decoding="async"
         className="absolute w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
         alt=""
       />

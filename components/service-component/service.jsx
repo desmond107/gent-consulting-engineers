@@ -152,6 +152,7 @@ const ServicePage = ({ service }) => {
             </div>
             <Link onClick={scrollToTop} to="/contact" className="relative">
               <Button
+              as="span"
                 content={"Request a consultation"}
                 padding={"py-3"}
                 fontSize={"text-base"}

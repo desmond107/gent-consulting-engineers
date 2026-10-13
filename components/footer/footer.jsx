@@ -167,11 +167,11 @@ const Footer = () => {
   ];
 
   return (
-    <div className="bg-ink text-white relative overflow-hidden">
+    <footer className="bg-ink text-white relative overflow-hidden">
       <div className="blueprint absolute inset-0 pointer-events-none"></div>
       <div className="absolute -top-40 -right-40 w-[480px] h-[480px] rounded-full bg-brand-500/20 blur-3xl pointer-events-none"></div>
 
-      <footer className="container-x relative grid grid-cols-2 gap-20 max-lg:grid-cols-1 max-lg:gap-14 pt-24 pb-10 max-md:pt-16">
+      <div className="container-x relative grid grid-cols-2 gap-20 max-lg:grid-cols-1 max-lg:gap-14 pt-24 pb-10 max-md:pt-16">
         <div className="flex flex-col items-start gap-8">
           <Link onClick={scrollToTop} to="/">
             <Logo tone="light" size="lg" />
@@ -249,6 +249,7 @@ const Footer = () => {
             <Input
               {...fieldProps}
               placeholder="First name"
+              aria-label="First name"
               name="firstName"
               maxLength={20}
               value={formData.firstName}
@@ -257,6 +258,7 @@ const Footer = () => {
             <Input
               {...fieldProps}
               placeholder="Last name"
+              aria-label="Last name"
               name="lastName"
               maxLength={20}
               value={formData.lastName}
@@ -265,6 +267,7 @@ const Footer = () => {
             <Input
               {...fieldProps}
               placeholder="Email address"
+              aria-label="Email address"
               name="email"
               maxLength={40}
               value={formData.email}
@@ -274,6 +277,7 @@ const Footer = () => {
               {...fieldProps}
               type="tel"
               placeholder="Phone number"
+              aria-label="Phone number"
               name="phoneNo"
               value={formData.phoneNo}
               onChange={handleChange}
@@ -283,6 +287,7 @@ const Footer = () => {
           <Textarea
             {...fieldProps}
             placeholder="How can we help?"
+            aria-label="How can we help?"
             maxLength={200}
             name="message"
             rows={3}
@@ -307,7 +312,7 @@ const Footer = () => {
             Send message
           </Button>
         </div>
-      </footer>
+      </div>
 
       <div className="container-x relative">
         <div className="flex justify-between items-center gap-6 flex-wrap border-t border-white/10 py-8 text-sm text-white/50">
@@ -315,21 +320,24 @@ const Footer = () => {
             © {new Date().getFullYear()} Gent Consulting Engineers. All rights
             reserved.
           </p>
-          <ul className="flex flex-wrap gap-x-7 gap-y-2">
-            {footerLinks.map(([to, label]) => (
-              <Link
-                key={to}
-                onClick={scrollToTop}
-                className="hover:text-white transition-colors"
-                to={to}
-              >
-                {label}
-              </Link>
-            ))}
-          </ul>
+          <nav aria-label="Footer">
+            <ul className="flex flex-wrap gap-x-7 gap-y-2">
+              {footerLinks.map(([to, label]) => (
+                <li key={to}>
+                  <Link
+                    onClick={scrollToTop}
+                    className="hover:text-white transition-colors"
+                    to={to}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

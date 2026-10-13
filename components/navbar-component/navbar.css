@@ -1,6 +1,4 @@
-.showcase-menu:hover > .showcase-list,
-.showcase-menu:focus-within > .showcase-list {
-  display: block;
+.menu-in {
   animation: menu-in 180ms ease-out;
 }
 

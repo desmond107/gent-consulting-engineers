@@ -13,6 +13,7 @@ const WhatsAppButton = () => {
   }, []);
 
   return (
+    <aside aria-label="Quick contact">
     <a
       href={whatsappLink()}
       target="_blank"
@@ -29,7 +30,8 @@ const WhatsAppButton = () => {
       <span className="max-w-0 overflow-hidden whitespace-nowrap font-semibold transition-all duration-300 group-hover:max-w-[200px] group-hover:pr-5">
         Chat with an engineer
       </span>
-    </a>
+      </a>
+    </aside>
   );
 };
 

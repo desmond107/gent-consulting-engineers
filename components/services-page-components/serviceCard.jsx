@@ -21,6 +21,7 @@ const ServiceCard = ({ id, title, imgSrc, iconSrc, brief, index }) => {
           <img
             src={imgSrc}
             loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             alt=""
           />
